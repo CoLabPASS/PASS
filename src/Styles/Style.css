@@ -264,6 +264,10 @@ header .headerDiv div button {
   margin-right: 1.3rem;
   padding: 10px;
 }
+header .headerDiv div form {
+  display: flex;
+  flex-direction: column;
+}
 
 .appDescription {
   background-color: lightgrey;
@@ -367,6 +371,14 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.modal {
+  background-color: rgba(23, 23, 24, 0.543);
+}
+.modal form {
+  display: flex;
+  flex-direction: column;
 }
 
 body .row {
