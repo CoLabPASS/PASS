@@ -223,9 +223,6 @@ html {
 
 nav {
   background-color: grey;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 nav h2 {
   padding: 1rem 0.5rem;
@@ -240,38 +237,47 @@ nav ul .navItem {
   background-color: transparent;
   padding: 1rem 0.5rem;
 }
+nav ul li button {
+  padding-top: 2px;
+}
 
 header {
-  width: 100vw;
   height: 80vh;
   display: flex;
   justify-content: flex-end;
+}
+header .wrapper {
+  display: flex;
+  justify-content: end;
 }
 header .headerDiv {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 header .headerDiv div {
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: start;
+}
+header .headerDiv div button {
+  margin-right: 1.3rem;
+  padding: 10px;
 }
 
 .appDescription {
-  width: 100vw;
-  height: 200vh;
   background-color: lightgrey;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 50px 0;
 }
 .appDescription .appDescDiv {
-  width: 100%;
-  height: 80vh;
+  height: 60vh;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 .appDescription .appDescDiv .appDescText {
   width: 45%;
@@ -282,12 +288,11 @@ header .headerDiv div {
 }
 .appDescription .appDescDiv .appDescImg {
   width: 45%;
-  height: 80%;
+  height: 380px;
   background-color: white;
 }
 
 .callToAction {
-  width: 100vw;
   height: 200vh;
   display: flex;
   flex-direction: column;
@@ -295,19 +300,21 @@ header .headerDiv div {
   align-items: center;
 }
 .callToAction .ctaDiv {
-  width: 100%;
   height: 30%;
   background-color: lightgrey;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 54px;
 }
 .callToAction .ctaDiv .ctaText {
   width: 40%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  text-align: center;
 }
 .callToAction .ctaDiv .ctaImg {
   width: 40%;
@@ -315,12 +322,14 @@ header .headerDiv div {
   background-color: white;
 }
 .callToAction .testimonialsModal {
-  width: 100%;
   height: 30%;
   background-color: lightgrey;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 54px;
+  padding: 100px;
+  position: relative;
 }
 .callToAction .testimonialsModal .testimonialText {
   width: 45%;
@@ -334,9 +343,39 @@ header .headerDiv div {
   height: 80%;
   background-color: white;
 }
+.callToAction .testimonialsModal .arrowDiv {
+  position: absolute;
+  left: -20px;
+  width: 105%;
+  display: flex;
+  justify-content: space-between;
+}
+.callToAction .testimonialsModal .arrowDiv button {
+  background-color: transparent;
+  cursor: pointer;
+}
+.callToAction .testimonialsModal .arrowDiv img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: white;
+}
 
+footer {
+  min-height: 30vh;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 body .wrapper {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   width: 70%;
 }
@@ -349,8 +388,10 @@ body ul li {
 }
 body button {
   border: none;
+  padding: 0;
+  margin: 0;
 }
 body a {
   text-decoration: none;
   display: inline-block;
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=Style.css.map */

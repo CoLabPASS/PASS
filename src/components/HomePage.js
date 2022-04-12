@@ -1,5 +1,6 @@
 import React from 'react'
 import NavBar from './NavBar'
+import arrowImg from '../Assets/next.png'
 
 function HomePage() {
   return (
@@ -7,18 +8,20 @@ function HomePage() {
         <NavBar/>
         <main>
           <header>
-            <div className="headerDiv">
-              <h1>CTA Headline & <br/> Emotion Regulation</h1>
-            <div>
-              <button>SignIn</button>
-              <button>SignUp</button>
-            </div>
+            <div className="wrapper">
+              <div className="headerDiv">
+                <h1>CTA Headline & <br/> Emotion Regulation</h1>
+                <div>
+                  <button>SignIn</button>
+                  <button>SignUp</button>
+                </div>
+              </div>
             </div>
           </header> {/**** HEADER END ****/}
 
           <section className='appDescription'>
 
-            <div className='appDescDiv wrappr'>
+            <div className='appDescDiv wrapper'>
               <div className='appDescText'>
                 <h2>Line One <br/> Line 2</h2>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam hic in magnam explicabo architecto velit odio ratione consequuntur eum ullam.</p>
@@ -55,6 +58,15 @@ function HomePage() {
                 <h3>Name <br/> <span>city,State</span></h3>
               </div>
               <div className='testimonialImg'><img src="" alt="" /></div>
+              <div className='row arrowDiv'>
+                <button>
+                  <img src={arrowImg} alt="" />
+                </button>
+                <button>
+                  <img src={arrowImg} alt="" />
+
+                </button>
+              </div>
             </div>
 
           </section> {/**** CALL TO ACTION SECTION END ****/}
@@ -62,6 +74,9 @@ function HomePage() {
 
 
           <footer>
+            <div className="wrapper">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi repudiandae, iure voluptates quis, ipsam necessitatibus dolorem sequi corrupti architecto, cum inventore aperiam distinctio omnis unde non temporibus nisi dolores fuga?</p>
+            </div>
           </footer>
 
         </main>
