@@ -1,0 +1,55 @@
+
+.callToAction {
+    width: 100vw;
+    height: 200vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .ctaDiv {
+        width: 100%;
+        height: 30%;
+        background-color: lightgrey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .ctaText {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .ctaImg {
+            width: 40%;
+            height: 80%;
+            background-color: white;
+        }
+    }
+
+    .testimonialsModal {
+        width: 100%;
+        height: 30%;
+        background-color: lightgrey;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .testimonialText {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: flex-start;
+        }
+
+        .testimonialImg {
+            width: 45%;
+            height: 80%;
+            background-color: white;
+        }
+    }
+}

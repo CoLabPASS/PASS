@@ -1,0 +1,22 @@
+nav {
+
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    h2 {
+        padding: 1rem 0.5rem;
+        margin: 0;
+    }
+    ul {
+        display: flex;
+        flex-direction: row;
+        
+        .navItem {
+            color: black;
+            background-color: transparent;
+            padding: 1rem 0.5rem;
+        }
+    }
+}

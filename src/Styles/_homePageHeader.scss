@@ -1,0 +1,20 @@
+
+
+header {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: flex-end;
+    
+    .headerDiv {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        div {
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+}

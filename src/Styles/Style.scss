@@ -1,0 +1,33 @@
+@import "normalize";
+@import "navBar";
+@import "homePageHeader";
+@import "homePageDescription";
+@import "homePageCTA";
+
+
+body {
+
+    .wrapper {
+        margin: 0;
+        padding: 0;
+        width: 70%;
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+
+        li {
+            list-style: none;
+        }
+    }
+
+    button {
+        border: none;
+    }
+
+    a {
+        text-decoration: none;
+        display: inline-block;
+    }
+}
