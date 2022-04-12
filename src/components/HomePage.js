@@ -1,14 +1,83 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import NavBar from './NavBar'
 import arrowImg from '../Assets/next.png'
 import {Modal, Button} from 'react-bootstrap'
+import { useNavigate, Link } from "react-router-dom";
 
 function HomePage() {
+  let navigate = useNavigate();
+
   const [show, setShow] = useState(false);
+  const [signInForm, setSignInForm] = useState(false)
+  const [signUpForm, setSignUpForm] = useState(false)
+  const [alert, setAlert] = useState({ show: false, message:'' })
+  const [userInfo, setUserInfo]=useState({
+    userName: '', userEmail: '', password: '', confirmPassword:''
+  })
+  const userName = useRef();
+  const userEmail = useRef();
+  const password = useRef();
+  const confirmPassword = useRef();
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleClose = () => {
+    setSignUpForm(false)
+    setSignInForm(false)
+    setShow(false)
+  };
 
+  const handleShow = (type) => {
+    if(type==="signUp"){
+      setSignUpForm(true)
+    }
+    if(type==="SignIn") {
+      setSignInForm(true)
+    }
+    setShow(true)
+  };
+  const handleInput=(e)=>{
+    const {id, value} =e.target
+    setUserInfo({...userInfo, [id]: value})
+  }
+  const handleSubmit =(e)=>{
+    e.preventDefault()
+    // console.log(userInfo)
+    if(userInfo.userName ===''){
+      console.log('please enter name!')
+      userName.current.focus();
+      setAlert({show: true, message: 'please enter your name!'})
+      return
+    }
+    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+
+    if( userInfo.userEmail ==='' ){
+
+      userEmail.current.focus();
+      setAlert({show: true, message: 'please enter a valid email!'})
+      return
+    }
+    if( !emailRegex.test(userInfo.userEmail)){
+      userEmail.current.focus();
+      setAlert({show: true, message: 'please enter a valid email!'})
+      return
+    }
+    if(userInfo.password === ""){
+      password.current.focus();
+      setAlert({show: true, message: 'please enter your password!'})
+      return
+    }
+    if(userInfo.confirmPassword !== userInfo.password){
+      confirmPassword.current.focus();
+      setAlert({show: true, message: 'password does not match'})
+      return
+    }
+
+    setAlert({show: true, message: 'success!!!!'})
+    setTimeout(() => {
+      handleClose()
+      navigate(`/MyAccount`)
+    }, 1000);
+
+  }
   return (
     <>
         <NavBar/>
@@ -18,33 +87,54 @@ function HomePage() {
               <div className="headerDiv">
                 <h1>CTA Headline & <br/> Emotion Regulation</h1>
                 <div>
-                  <button >SignIn</button>
-                  <button onClick={handleShow}>SignUp</button>
+                  <button onClick={()=>handleShow('SignIn')}>SignIn</button>
+                  <button onClick={()=>handleShow('signUp')}>SignUp</button>
                   <Modal show={show} onHide={handleClose} animation={false} size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
                     centered
 >
                     <Modal.Header closeButton>
-                      <Modal.Title>Modal heading</Modal.Title>
+                      <Modal.Title>{signUpForm ? 'Sign Up' : 'Sign In'}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                      <form>
-                        <label htmlFor="userName" className='sr-only'>User Name</label>
-                        <input type="text" placeholder='User Name' id="userName"/>
-                        <label htmlFor="userEmail" className='sr-only'>Email</label>
-                        <input type="email" placeholder='Email' id="userEmail" />
-                        <label htmlFor="password" className='sr-only'>password</label>
-                        <input type="password" placeholder='Password' id="password" />
-                        <label htmlFor="confirmPassword" className='sr-only'>Confirm Password</label>
-                        <input type="password" placeholder='confirmPassword' id="confirmPassword" />
-                      </form>
+                      {
+                        signUpForm ?
+                        <form>
+                          <label htmlFor="userName" className='sr-only'>User Name</label>
+                          <input type="text" ref={userName} placeholder='User Name' id="userName" onChange={handleInput}/>
+
+                          <label htmlFor="userEmail" className='sr-only'>Email</label>
+                          <input type="email" ref={userEmail} placeholder='Email' id="userEmail" onChange={handleInput} />
+
+                          <label htmlFor="password" className='sr-only' >password</label>
+                          <input type="password" ref={password} placeholder='Password' id="password" onChange={handleInput}/>
+
+                          <label htmlFor="confirmPassword" className='sr-only'>Confirm Password</label>
+                          <input type="password" ref={confirmPassword}  placeholder='confirmPassword' id="confirmPassword" onChange={handleInput}/>
+                        </form>
+                        : null
+                      }
+                      {
+                        signInForm ?
+                        <form>
+                          <label htmlFor="userEmail" className='sr-only'>Email</label>
+                          <input type="email" placeholder='Email' id="userEmail" />
+                          <label htmlFor="password" className='sr-only'>password</label>
+                          <input type="password" placeholder='Password' id="password" />
+                        </form>
+                        : null
+                      }
+                      {
+                        alert.show ? <p>{alert.message}</p> : null
+                      }
                     </Modal.Body>
                     <Modal.Footer>
                       <Button variant="secondary" onClick={handleClose}>
                         Close
                       </Button>
-                      <Button variant="primary" onClick={handleClose}>
-                        Save Changes
+
+                      <Button variant="primary" onClick={handleSubmit}>
+                        submit
                       </Button>
                     </Modal.Footer>
                   </Modal>
