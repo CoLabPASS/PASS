@@ -224,20 +224,24 @@ html {
 nav {
   background-color: grey;
 }
-nav h2 {
+nav div {
+  display: flex;
+  justify-content: space-between;
+}
+nav div h2 {
   padding: 1rem 0.5rem;
   margin: 0;
 }
-nav ul {
+nav div ul {
   display: flex;
   flex-direction: row;
 }
-nav ul .navItem {
+nav div ul .navItem {
   color: black;
   background-color: transparent;
   padding: 1rem 0.5rem;
 }
-nav ul li button {
+nav div ul li button {
   padding-top: 2px;
 }
 
@@ -381,11 +385,6 @@ footer {
   flex-direction: column;
 }
 
-body .row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
 body .wrapper {
   margin: 0 auto;
   padding: 0;

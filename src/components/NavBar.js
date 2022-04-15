@@ -2,10 +2,12 @@ import React from 'react'
 import {Link } from "react-router-dom";
 
 function NavBar() {
-  return (
+    return (
     <nav>
-        <div className="wrapper row">
+        <div className="wrapper">
+
             <h2>LOGO</h2>
+
             <ul>
                 <li>
                     <Link to="/" className='navItem'>Home</Link>
@@ -23,9 +25,10 @@ function NavBar() {
                     <button className='navItem'>Sign Out</button>
                 </li>
             </ul>
+
         </div>
     </nav>
-  )
+    )
 }
 
 export default NavBar

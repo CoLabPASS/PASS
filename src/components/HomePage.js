@@ -8,12 +8,15 @@ function HomePage() {
   let navigate = useNavigate();
 
   const [show, setShow] = useState(false);
+
   const [signInForm, setSignInForm] = useState(false)
   const [signUpForm, setSignUpForm] = useState(false)
+
   const [alert, setAlert] = useState({ show: false, message:'' })
   const [userInfo, setUserInfo]=useState({
     userName: '', userEmail: '', password: '', confirmPassword:''
   })
+  
   const userName = useRef();
   const userEmail = useRef();
   const password = useRef();
@@ -34,10 +37,12 @@ function HomePage() {
     }
     setShow(true)
   };
+
   const handleInput=(e)=>{
     const {id, value} =e.target
     setUserInfo({...userInfo, [id]: value})
   }
+
   const handleSubmit =(e)=>{
     e.preventDefault()
     // console.log(userInfo)
@@ -47,10 +52,10 @@ function HomePage() {
       setAlert({show: true, message: 'please enter your name!'})
       return
     }
+
     const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 
     if( userInfo.userEmail ==='' ){
-
       userEmail.current.focus();
       setAlert({show: true, message: 'please enter a valid email!'})
       return
@@ -179,7 +184,7 @@ function HomePage() {
                 <h3>Name <br/> <span>city,State</span></h3>
               </div>
               <div className='testimonialImg'><img src="" alt="" /></div>
-              <div className='row arrowDiv'>
+              <div className='arrowDiv'>
                 <button>
                   <img src={arrowImg} alt="" />
                 </button>
