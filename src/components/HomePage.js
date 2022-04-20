@@ -151,7 +151,7 @@ function HomePage() {
           <section className='appDescription'>
             <div className='appDescDiv wrapper'>
               <div className='appDescText'>
-                <h2>Articulate Emotions,<br/> <span>improve relationships</span></h2>
+                <h2>Articulate Emotions,<br/> <span>improve relationships!!!</span></h2>
                 <p>Emotional regulation is hard and can impact your relationships. Having conflicts with loved ones is a normal part of life. <br /> By journaling your emotional experiences of a coflict you utilize this tool to come to a solution. </p>
               </div>
               <div className='appDescImg'><img src="" alt="" /></div>
