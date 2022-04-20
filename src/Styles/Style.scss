@@ -6,13 +6,26 @@
 @import "homePageFooter";
 @import "signUpModal";
 
+// Background colours
+$lightBlue: #D8F0FD;
+$offWhite: #F8FFFF;
+
+// Foreground colours 
+$purple: #34344A;
+
+// Accent colours 
+$teal: #087E8B;
+$orange: #E4572E;
+
+// Others
+$black: #000000;
+$darkGrey: #363636;
+
+
 
 body {
-    // .row{
-    //     display: flex;
-    //     flex-direction: row;
-    //     justify-content: space-between;
-    // }
+
+
 
     .wrapper {
         margin: 0 auto;

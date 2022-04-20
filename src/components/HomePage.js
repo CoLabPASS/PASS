@@ -5,6 +5,7 @@ import {Modal, Button} from 'react-bootstrap'
 import { useNavigate, Link } from "react-router-dom";
 
 function HomePage() {
+  
   let navigate = useNavigate();
 
   const [show, setShow] = useState(false);
@@ -90,7 +91,7 @@ function HomePage() {
           <header>
             <div className="wrapper">
               <div className="headerDiv">
-                <h1>CTA Headline & <br/> Emotion Regulation</h1>
+                <h1>Journal emotional experiences, <br/> <span>Strengthen relationships!</span></h1>
                 <div>
                   <button onClick={()=>handleShow('SignIn')}>SignIn</button>
                   <button onClick={()=>handleShow('signUp')}>SignUp</button>
@@ -150,16 +151,16 @@ function HomePage() {
           <section className='appDescription'>
             <div className='appDescDiv wrapper'>
               <div className='appDescText'>
-                <h2>Line One <br/> Line 2</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam hic in magnam explicabo architecto velit odio ratione consequuntur eum ullam.</p>
+                <h2>Articulate Emotions,<br/> <span>improve relationships</span></h2>
+                <p>Emotional regulation is hard and can impact your relationships. Having conflicts with loved ones is a normal part of life. <br /> By journaling your emotional experiences of a coflict you utilize this tool to come to a solution. </p>
               </div>
               <div className='appDescImg'><img src="" alt="" /></div>
             </div>
             <div className='appDescDiv wrapper'>
               <div className='appDescImg'><img src="" alt="" /></div>
               <div className='appDescText'>
-                <h2>Line One <br/> Line 2</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam hic in magnam explicabo architecto velit odio ratione consequuntur eum ullam.</p>
+                <h2>Fast and memorable <br/> <span>during counseling sessions</span> </h2>
+                <p>If you struggle with exactly how you felt during an experience of conflict, journaling your emotional experience could be vital to finding solutions with your mental health care provider.</p>
               </div>
             </div>
 
@@ -169,8 +170,8 @@ function HomePage() {
 
             <div className='ctaDiv wrapper'>
               <div className='ctaText'>
-                <h2>CTA NOW</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque aperiam vitae sapiente, neque non ea pariatur minima corrupti perferendis exercitationem?</p>
+                <h2>Build healthy, <br /><span>emotional bonds</span> </h2>
+                <p>Our journal is fast and easy to use. It allows you to quickly add your emotional state and details about your experiences with a device that is already in your pocket.</p>
                 <button>Get Started</button>
               </div>
               <div className='ctaImg'><img src="" alt="" /></div>
