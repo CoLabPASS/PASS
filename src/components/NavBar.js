@@ -1,14 +1,20 @@
 import React from 'react'
-import {Link, useLocation } from "react-router-dom";
+import {Link, useLocation, useNavigate } from "react-router-dom";
 
 
 function NavBar() {
+    let navigate = useNavigate();
     let location = useLocation();
-    const localUserId = localStorage.userId
+    const localUserId = localStorage.userId;
+    const signOut=()=>{
+        localStorage.removeItem("userId");
+        setTimeout(() => {
+            navigate(`/`)
+        }, 1000);
+    }
     return (
     <nav>
         <div className="wrapper">
-
             <h2>LOGO</h2>
             <ul>
                 {localUserId ?
@@ -44,7 +50,7 @@ function NavBar() {
                 }
                 {localUserId ?
                     <li>
-                        <button className='navItem'>Sign Out</button>
+                        <button className='navItem' onClick={signOut}>Sign Out</button>
                     </li> :
                     null
                 }

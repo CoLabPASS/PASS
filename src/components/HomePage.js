@@ -6,6 +6,7 @@ import {  Link } from "react-router-dom";
 import SignUp from './SignUp';
 
 import { Navigate, useNavigate } from 'react-router-dom';
+import SignIn from './SignIn';
 
 function HomePage() {
   let navigate = useNavigate();
@@ -74,12 +75,7 @@ function HomePage() {
                       }
                       {
                         signInForm ?
-                        <form>
-                          <label htmlFor="userEmail" className='sr-only'>Email</label>
-                          <input type="email" placeholder='Email' id="userEmail" />
-                          <label htmlFor="password" className='sr-only'>password</label>
-                          <input type="password" placeholder='Password' id="password" />
-                        </form>
+                        <SignIn/>
                         : null
                       }
                       {

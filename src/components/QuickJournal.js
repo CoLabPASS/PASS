@@ -3,6 +3,7 @@ import NavBar from './NavBar'
 import { v4 as uuidv4 } from 'uuid';
 import firebase from '../firebase';
 import { getDatabase, ref, push } from 'firebase/database';
+import Facts from './Facts';
 
 
 
@@ -15,6 +16,7 @@ function QuickJournal() {
     const localUserId = localStorage.userId
 
     const [journalEntry, setJournalEntry]=useState({title: '', text: '', userId: localUserId})
+    const [showFactsForm, setShowFactsForm]=useState(false)
 
     const handleInput =(e)=>{
         const {id, value}=e.target
@@ -66,21 +68,42 @@ return (
     <>
         <NavBar/>
         <section>
-            <form onSubmit={submitEntry}>
+            <form onSubmit={(e)=>e.preventDefault()}>
                 <label htmlFor="title">What had happened was...</label>
                 <input type="text" id='title' name="title" placeholder='What had happened was...' value={journalEntry.title}onChange={handleInput}/>
                 <label htmlFor="title">What had happened was...</label>
                 <textarea name="text" id="text" cols="30" rows="10" value={journalEntry.text} onChange={handleInput}></textarea>
                 {
-                    showSaveBtn ?
+            showFactsForm ? 
+            <div>
+                <Facts/>
+
+            </div>
+            :null
+        }
+            {
+                showSaveBtn ?
+                <div>
                     <button onClick={submitEntry}>Save</button>
-                    : null
+                    {
+                        showFactsForm ? null: 
+                        <button onClick={()=>setShowFactsForm(true)}>Let try diving deeper</button>
+                    }
+                    {
+                        showFactsForm ? <button>never mind</button>
+                        : 
+                        null
+                    }
+                    
+                </div>
+                : null
                 }
             </form>
             {
-            alert.show ? <p>{alert.message}</p> : null
+                alert.show ? <p>{alert.message}</p> : null
             }
         </section>
+
     </>
   )
 }

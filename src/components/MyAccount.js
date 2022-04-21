@@ -35,7 +35,6 @@ function MyAccount() {
   return (
     <>
         {!localUserId? <Navigate to='/' /> : null}
-
         <NavBar/>
         <section>
             <h2>My Account</h2>
