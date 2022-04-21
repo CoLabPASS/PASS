@@ -2,11 +2,14 @@ import React, {useState, useRef} from 'react'
 import NavBar from './NavBar'
 import arrowImg from '../Assets/next.png'
 import {Modal, Button} from 'react-bootstrap'
-import { useNavigate, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
+import SignUp from './SignUp';
+
+import { Navigate, useNavigate } from 'react-router-dom';
 
 function HomePage() {
-  
   let navigate = useNavigate();
+  const localUserId = localStorage.userId
 
   const [show, setShow] = useState(false);
 
@@ -44,48 +47,9 @@ function HomePage() {
     setUserInfo({...userInfo, [id]: value})
   }
 
-  const handleSubmit =(e)=>{
-    e.preventDefault()
-    // console.log(userInfo)
-    if(userInfo.userName ===''){
-      console.log('please enter name!')
-      userName.current.focus();
-      setAlert({show: true, message: 'please enter your name!'})
-      return
-    }
-
-    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-
-    if( userInfo.userEmail ==='' ){
-      userEmail.current.focus();
-      setAlert({show: true, message: 'please enter a valid email!'})
-      return
-    }
-    if( !emailRegex.test(userInfo.userEmail)){
-      userEmail.current.focus();
-      setAlert({show: true, message: 'please enter a valid email!'})
-      return
-    }
-    if(userInfo.password === ""){
-      password.current.focus();
-      setAlert({show: true, message: 'please enter your password!'})
-      return
-    }
-    if(userInfo.confirmPassword !== userInfo.password){
-      confirmPassword.current.focus();
-      setAlert({show: true, message: 'password does not match'})
-      return
-    }
-
-    setAlert({show: true, message: 'success!!!!'})
-    setTimeout(() => {
-      handleClose()
-      navigate(`/MyAccount`)
-    }, 1000);
-
-  }
   return (
     <>
+    {localUserId? <Navigate to='/MyAccount' /> : null}
         <NavBar/>
         <main>
           <header>
@@ -105,19 +69,7 @@ function HomePage() {
                     <Modal.Body>
                       {
                         signUpForm ?
-                        <form>
-                          <label htmlFor="userName" className='sr-only'>User Name</label>
-                          <input type="text" ref={userName} placeholder='User Name' id="userName" onChange={handleInput}/>
-
-                          <label htmlFor="userEmail" className='sr-only'>Email</label>
-                          <input type="email" ref={userEmail} placeholder='Email' id="userEmail" onChange={handleInput} />
-
-                          <label htmlFor="password" className='sr-only' >password</label>
-                          <input type="password" ref={password} placeholder='Password' id="password" onChange={handleInput}/>
-
-                          <label htmlFor="confirmPassword" className='sr-only'>Confirm Password</label>
-                          <input type="password" ref={confirmPassword}  placeholder='confirmPassword' id="confirmPassword" onChange={handleInput}/>
-                        </form>
+                        <SignUp userName={userName} handleInput={handleInput} userEmail={userEmail} password={password} confirmPassword={confirmPassword} userInfo={userInfo} setAlert={setAlert} handleClose={handleClose}/>
                         : null
                       }
                       {
@@ -134,15 +86,6 @@ function HomePage() {
                         alert.show ? <p>{alert.message}</p> : null
                       }
                     </Modal.Body>
-                    <Modal.Footer>
-                      <Button variant="secondary" onClick={handleClose}>
-                        Close
-                      </Button>
-
-                      <Button variant="primary" onClick={handleSubmit}>
-                        submit
-                      </Button>
-                    </Modal.Footer>
                   </Modal>
                 </div>
               </div>
