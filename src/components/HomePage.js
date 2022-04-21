@@ -75,7 +75,7 @@ function HomePage() {
                       }
                       {
                         signInForm ?
-                        <SignIn/>
+                        <SignIn setAlert={setAlert} handleClose={handleClose}/>
                         : null
                       }
                       {
