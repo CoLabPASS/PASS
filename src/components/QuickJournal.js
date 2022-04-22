@@ -77,7 +77,6 @@ return (
             showFactsForm ? 
             <div>
                 <Facts/>
-
             </div>
             :null
         }

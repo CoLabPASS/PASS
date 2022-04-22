@@ -1,8 +1,28 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import firebase from '../firebase';
+import { getDatabase, ref, onValue } from 'firebase/database';
+
 
 function Facts() {
+
   return (
-    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta, itaque corporis! Totam odio necessitatibus cum velit veritatis tempore adipisci aliquam doloremque doloribus. Est cumque exercitationem voluptates ex expedita magni quidem quod ad saepe voluptas assumenda deleniti sint laudantium veritatis fugiat iure, accusamus praesentium quae sed molestiae, minima eum neque molestias nobis? Esse id eligendi incidunt nesciunt quod odit dolores neque? Dignissimos harum provident laborum voluptas atque, maxime fugiat corrupti! Voluptate velit reprehenderit obcaecati. Rerum dolore eligendi, praesentium expedita dolorem qui repudiandae ipsa! Iste, in error praesentium reprehenderit ea voluptate atque dolores commodi esse adipisci facere quia reiciendis libero veniam maiores.</div>
+    <>
+      <section>
+        <h1>Check the Facts Journal Entry</h1>
+        <hr />
+        <div className="feelingSect">
+          <h3>What am I feeling?</h3>
+          <ul>
+            <li >
+              <button>
+                <img src="https://toppng.com/uploads/preview/facebook-angry-emoji-png-facebook-angry-emoji-11562897326xbugxlhbk8.png" alt="bb" />
+              </button>
+            </li>
+          </ul>
+
+        </div>
+      </section>
+    </>
   )
 }
 

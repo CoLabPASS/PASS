@@ -54,6 +54,12 @@ function NavBar() {
                     </li> :
                     null
                 }
+                {localUserId ?
+                    <li>
+                        <Link to="/journals" className='navItem'>My Account</Link>
+                    </li> :
+                    null
+                }
             </ul>
 
         </div>
