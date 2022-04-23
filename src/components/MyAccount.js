@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import NavBar from './NavBar'
 import firebase from '../firebase';
 import { getDatabase, ref, onValue } from 'firebase/database';
-import { Navigate, useNavigate, Link } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 
 
 function MyAccount() {
@@ -29,7 +29,7 @@ function MyAccount() {
           }
         })
       })
-  }, [])
+  }, [localUserId])
   return (
     <div className='myAccount'>
         {!localUserId? <Navigate to='/' /> : null}
