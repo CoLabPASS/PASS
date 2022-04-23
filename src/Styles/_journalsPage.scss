@@ -1,0 +1,45 @@
+.journals{
+    display: flex;
+    justify-content: center;
+    .entryDate{
+        color: #608b8c;
+        font-weight: bold;
+    }
+    div {
+        width: 45%;
+        padding: 20px;
+    }
+    .journalDetails{
+        div {
+            width: 100%;
+            margin: 0 auto;
+            min-height: 80vh;
+            background-color: #e0eff0;
+
+        }
+
+    }
+    ul {
+        li{
+            button {
+                background-color: #e0eff0;
+                font-size: 1.1rem;
+                width: 100%;
+                margin: 5px auto;
+                padding: 20px;
+                text-align: left;
+                cursor: pointer;
+            }
+            .active{
+                background-color: #5ed5de;
+                color: white;
+
+            }
+            h6 {
+                font-size: .9rem;
+                color: #608b8c;
+                font-weight: bold;
+            }
+        }
+    }
+}
