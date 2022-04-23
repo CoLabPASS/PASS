@@ -40,7 +40,7 @@ function Journals() {
         console.log(usersEntryList)
         setUserEntries(usersEntryList)
     })
-    }, [])
+    }, [localUserId])
   return (
 
     <>

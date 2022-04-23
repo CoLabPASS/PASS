@@ -8,7 +8,7 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import SignIn from './SignIn';
 
 function HomePage() {
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
   const localUserId = localStorage.userId
 
   const [show, setShow] = useState(false);
