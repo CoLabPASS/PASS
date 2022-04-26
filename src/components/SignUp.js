@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from "react-router-dom";
 import bcrypt from 'bcryptjs'
 import firebase from '../firebase';
-import { getDatabase, ref, push } from 'firebase/database';
+import { getDatabase, ref, push, onValue } from 'firebase/database';
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -42,6 +42,8 @@ function SignUp({userName, handleInput, userEmail, password, confirmPassword, us
             setAlert({show: true, message: 'password does not match'})
             return
         }
+        // first check if email exist 
+
         // encrypting password
         const saltRounds = 10;
         const hash = bcrypt.hashSync(userInfo.password, saltRounds);
@@ -55,22 +57,43 @@ function SignUp({userName, handleInput, userEmail, password, confirmPassword, us
         // fetiching database 
         const database = getDatabase(firebase);
         const dbRef = ref(database, `/users`);
+        // check if users email is already in the database
+        let doesEmailExist = false
 
-        // push the value of the `userInput` state to the database
-        try {
-            push(dbRef, newUser);
-            
-            setAlert({show: true, message: 'success!!!!'})
-            localStorage.setItem("userId", userId);
-            setTimeout(() => {
-                handleClose()
-                navigate(`/MyAccount`)
-            }, 1000);
-            
-        } catch (error) {
-            setAlert({show: true, message: 'there was an error, please try again'+ error})
+        onValue(dbRef, (response)=>{
+            const data = response.val()
+            const dataArray = []
+            for (let key in data) {
+                const newObje = {...data[key], firebaseId: key}
+                dataArray.push(newObje)
+            }
+            dataArray.forEach(user=>{
+                if(userInfo.userEmail === user.userEmail){
+                // setUser(user)
+                doesEmailExist=true
+                }
+            })
+        })
+        if(doesEmailExist){
+            setAlert({show: true, message: 'There is already an email associated with this email.!!!'})
+            return
+
+        }else {
+            // push the value of the `userInput` state to the database
+            try {
+                push(dbRef, newUser);
+                
+                setAlert({show: true, message: 'success!!!!'})
+                localStorage.setItem("userId", userId);
+                setTimeout(() => {
+                    handleClose()
+                    navigate(`/MyAccount`)
+                }, 1000);
+                
+            } catch (error) {
+                setAlert({show: true, message: 'there was an error, please try again'+ error})
+            }
         }
-    
     }
     return (
         <form>

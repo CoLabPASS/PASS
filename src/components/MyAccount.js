@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import NavBar from './NavBar'
 import firebase from '../firebase';
 import { getDatabase, ref, onValue } from 'firebase/database';
-import { Navigate, useNavigate, Link } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 
 
 function MyAccount() {
@@ -16,7 +16,6 @@ function MyAccount() {
         const dbRef = ref(database, '/users')
 
         onValue(dbRef, (response) => {
-          // here we use Firebase's .val() method to parse our database info the way we want it
 
         const data = response.val()
         const dataArray = []
@@ -24,29 +23,32 @@ function MyAccount() {
             const newObje = {...data[key], firebaseId: key}
             dataArray.push(newObje)
         }
-        console.log(dataArray)
         dataArray.forEach(user=>{
           if(user.userId === localUserId){
             setUser(user)
           }
         })
       })
-  }, [])
+  }, [localUserId])
   return (
-    <>
+    <div className='myAccount'>
         {!localUserId? <Navigate to='/' /> : null}
         <NavBar/>
-        <section>
-            <h2>My Account</h2>
-            <h3>Welcome {user.userName} !!</h3>
+        <section className='wrapper'>
+            <h3>Hello <span>{user.userName}</span>!!</h3>
+            <h1>Ready To Journal</h1>
+            <hr />
         </section>
-        <section>
-          <button>Check the Fact</button>
-          <span> or </span>
-          {/* <button>Quick Journal</button> */}
-          <Link to="/QuickJournal" >Quick Journal</Link>
+        <section className='wrapper buttonContainer'>
+          <div>
+            <Link className="mainBtn" to="/CheckTheFacts" >Check the Fact</Link>
+            <span> or </span>
+            {/* <button>Quick Journal</button> */}
+            <Link className="mainBtn" to="/QuickJournal" >Quick Journal</Link>
+
+          </div>
         </section>
-    </>
+    </div>
   )
 }
 

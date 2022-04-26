@@ -4,11 +4,15 @@ import { v4 as uuidv4 } from 'uuid';
 import firebase from '../firebase';
 import { getDatabase, ref, push } from 'firebase/database';
 import Facts from './Facts';
+import { useNavigate } from "react-router-dom";
+
 
 
 
 
 function QuickJournal() {
+    let navigate = useNavigate();
+
     const [showSaveBtn, setShowSaveBtn] = useState(false)
 
     const [alert, setAlert] = useState({ show: false, message:'' })
@@ -50,15 +54,16 @@ function QuickJournal() {
             try {
                 push(dbRef, newEntry);
 
-                setAlert({show: true, message: 'success!!!!'})
+                setAlert({show: true, message: 'journal added!'})
+                setJournalEntry({title: '', text: '', userId: localUserId})
                 setTimeout(() => {
                     setAlert({show: false, message: ''})
-                }, 1000);
+                    navigate(`/MyAccount`)
+                }, 500);
                 
             } catch (error) {
                 setAlert({show: true, message: 'there was an error, please try again'+ error})
             }
-            setJournalEntry({title: '', text: '', userId: localUserId})
 
         }else {
             return 
@@ -67,20 +72,24 @@ function QuickJournal() {
 return (
     <>
         <NavBar/>
-        <section>
+        <section className='wrapper quickJournal'>
             <form onSubmit={(e)=>e.preventDefault()}>
-                <label htmlFor="title">What had happened was...</label>
-                <input type="text" id='title' name="title" placeholder='What had happened was...' value={journalEntry.title}onChange={handleInput}/>
-                <label htmlFor="title">What had happened was...</label>
-                <textarea name="text" id="text" cols="30" rows="10" value={journalEntry.text} onChange={handleInput}></textarea>
-                {
-            showFactsForm ? 
-            <div>
-                <Facts/>
+                <div>
+                    <label className='srOnly' hidden htmlFor="title">What had happened was...</label>
+                    <input type="text" id='title' name="title" placeholder='What had happened was...' value={journalEntry.title}onChange={handleInput}/>
+                </div>
+                <div>
+                    <label className='srOnly' hidden htmlFor="title">What had happened was...</label>
+                    <textarea name="text" id="text" cols="30" rows="10" value={journalEntry.text} onChange={handleInput}></textarea>
 
-            </div>
-            :null
-        }
+                </div>
+                {
+                showFactsForm ? 
+                    <div>
+                        <Facts/>
+                    </div>
+                    :null
+                }
             {
                 showSaveBtn ?
                 <div>
@@ -90,7 +99,7 @@ return (
                         <button onClick={()=>setShowFactsForm(true)}>Let try diving deeper</button>
                     }
                     {
-                        showFactsForm ? <button>never mind</button>
+                        showFactsForm ? <button >never mind</button>
                         : 
                         null
                     }

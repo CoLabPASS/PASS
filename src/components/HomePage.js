@@ -1,15 +1,13 @@
 import React, {useState, useRef} from 'react'
+import { Navigate} from 'react-router-dom';
 import NavBar from './NavBar'
 import arrowImg from '../Assets/next.png'
-import {Modal, Button} from 'react-bootstrap'
-import {  Link } from "react-router-dom";
+import {Modal} from 'react-bootstrap'
 import SignUp from './SignUp';
 
-import { Navigate, useNavigate } from 'react-router-dom';
 import SignIn from './SignIn';
 
 function HomePage() {
-  let navigate = useNavigate();
   const localUserId = localStorage.userId
 
   const [show, setShow] = useState(false);
@@ -75,7 +73,7 @@ function HomePage() {
                       }
                       {
                         signInForm ?
-                        <SignIn/>
+                        <SignIn setAlert={setAlert} handleClose={handleClose}/>
                         : null
                       }
                       {

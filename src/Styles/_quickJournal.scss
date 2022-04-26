@@ -1,0 +1,28 @@
+.quickJournal{
+    form {
+        width: 80%;
+        margin: 0 auto;
+        min-height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        div {
+            width: 100%;
+            input {
+                width: 100%;
+                border: none;
+            }
+            textarea{
+                width: 100%;
+                background-color: #dbdbdb;
+                border: none;
+            }
+            button {
+                padding: 20px;
+                margin-top: 10px;
+                margin-right: 10px;
+            }
+
+        }
+    }
+}

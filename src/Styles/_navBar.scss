@@ -1,6 +1,5 @@
 nav {
-    background-color: grey;
-
+    background-color: #087E8B;
         div {
 
             display: flex;
@@ -16,9 +15,10 @@ nav {
                 flex-direction: row;
             
                 .navItem {
-                    color: black;
+                    // color: black;
                     background-color: transparent;
                     padding: 1rem 0.5rem;
+                    color: white;
                 }
             
                 li {

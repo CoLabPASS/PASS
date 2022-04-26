@@ -24,7 +24,6 @@ function NavBar() {
                     </li>
                 }
                 {localUserId ?
-
                     location.pathname === "/MyAccount" ?null :
                     <li>
                         <Link to="/MyAccount" className='navItem'>My Account</Link>
@@ -47,6 +46,15 @@ function NavBar() {
                     <li>
                         <button className='navItem'>Sign Up</button>
                     </li>
+                }
+                {localUserId ?
+                    location.pathname === "/journals" ?null :
+
+                    <li>
+                        <Link to="/journals" className='navItem'>Journals</Link>
+                    </li> 
+                    :
+                    null
                 }
                 {localUserId ?
                     <li>
