@@ -1,4 +1,5 @@
 @import "normalize";
+@import "typography";
 @import "navBar";
 @import "homePageHeader";
 @import "homePageDescription";
@@ -10,46 +11,27 @@
 @import "quickJournal";
 @import "journalsPage";
 
-
-// Background colours
 // Background colours
 $lightBlue: #D8F0FD;
-$lightBlue: #D8F0FD;
-$offWhite: #F8FFFF;
 $offWhite: #F8FFFF;
 
 
 // Foreground colours 
-// Foreground colours 
-$purple: #34344A;
 $purple: #34344A;
 
-
-// Accent colours 
 // Accent colours 
 $teal: #087E8B;
-$teal: #087E8B;
-$orange: #E4572E;
 $orange: #E4572E;
 
 
 // Others
-// Others
 $black: #000000;
-$black: #000000;
-$darkGrey: #363636;
 $darkGrey: #363636;
 
 
 
 
 body {
-
-
-
-
-
-
     .wrapper {
         margin: 0 auto;
         padding: 0;

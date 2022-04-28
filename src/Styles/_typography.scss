@@ -1,0 +1,50 @@
+// TYPOGRAPHY
+
+@import url('https://fonts.googleapis.com/css2?family=Halant&family=Lustria&display=swap');
+
+// Background colours
+$lightBlue: #D8F0FD;
+$offWhite: #F8FFFF;
+
+
+// Foreground colours 
+$purple: #34344A;
+
+// Accent colours 
+$teal: #087E8B;
+$orange: #E4572E;
+
+
+// Others
+$black: #000000;
+$darkGrey: #363636;
+
+h1, h2, h3, h4, label, .modal-header {
+    font-family: 'Halant',
+    serif;}
+
+h5, p, li, button, a {
+    font-family: 'Lustria',
+    serif;
+    font-size: 14pt;
+}
+
+    span {
+        color: $teal;
+    }
+
+    h1 {
+        font-size: 48pt;
+    }
+
+    h2 {
+        font-size: 36pt;
+    }
+
+    h3 {
+        font-size: 24pt;
+    }
+
+    h4 {
+        font-size: 18pt;
+    }

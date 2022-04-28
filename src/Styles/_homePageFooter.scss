@@ -1,6 +1,23 @@
+// Background colours
+$lightBlue: #D8F0FD;
+$offWhite: #F8FFFF;
+
+
+// Foreground colours 
+$purple: #34344A;
+
+// Accent colours 
+$teal: #087E8B;
+$orange: #E4572E;
+
+
+// Others
+$black: #000000;
+$darkGrey: #363636;
+
 footer {
     min-height: 30vh;
-    background-color: gray;
+    background-color: lightgray;
     display: flex;
     justify-content: center;
     align-items: center;

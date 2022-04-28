@@ -56,14 +56,14 @@ function HomePage() {
               <div className="headerDiv">
                 <h1>Journal emotional experiences, <br/> <span>Strengthen relationships!</span></h1>
                 <div>
-                  <button onClick={()=>handleShow('SignIn')}>SignIn</button>
-                  <button onClick={()=>handleShow('signUp')}>SignUp</button>
+                  <button onClick={()=>handleShow('SignIn')}>Sign In</button>
+                  <button onClick={()=>handleShow('signUp')}>Sign Up</button>
                   <Modal show={show} onHide={handleClose} animation={false} size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
                     centered
 >
                     <Modal.Header closeButton>
-                      <Modal.Title>{signUpForm ? 'Sign Up' : 'Sign In'}</Modal.Title>
+                      {/* <Modal.Title>{signUpForm ? 'Sign Up' : 'Sign In'}</Modal.Title> */}
                     </Modal.Header>
                     <Modal.Body>
                       {
@@ -88,7 +88,7 @@ function HomePage() {
           <section className='appDescription'>
             <div className='appDescDiv wrapper'>
               <div className='appDescText'>
-                <h2>Articulate Emotions,<br/> <span>improve relationships!!!</span></h2>
+                <h2>Articulate Emotions,<br/> <span>improve relationships </span></h2>
                 <p>Emotional regulation is hard and can impact your relationships. Having conflicts with loved ones is a normal part of life. <br /> By journaling your emotional experiences of a coflict you utilize this tool to come to a solution. </p>
               </div>
               <div className='appDescImg'><img src="" alt="" /></div>
@@ -124,10 +124,10 @@ function HomePage() {
               <div className='testimonialImg'><img src="" alt="" /></div>
               <div className='arrowDiv'>
                 <button>
-                  <img src={arrowImg} alt="" />
+                  <img src="../Assets/Right Arrow Icon.jpg" alt="" />
                 </button>
                 <button>
-                  <img src={arrowImg} alt="" />
+                  <img src="../Assets/Left Arrow Icon.png" alt="" />
 
                 </button>
               </div>
@@ -137,7 +137,6 @@ function HomePage() {
 
           <footer>
             <div className="wrapper">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi repudiandae, iure voluptates quis, ipsam necessitatibus dolorem sequi corrupti architecto, cum inventore aperiam distinctio omnis unde non temporibus nisi dolores fuga?</p>
             </div>
           </footer>
         </main>

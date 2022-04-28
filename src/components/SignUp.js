@@ -12,11 +12,11 @@ function SignUp({userName, handleInput, userEmail, password, confirmPassword, us
 
     const handleSignUp =(e)=>{
         e.preventDefault()
-        // console.log(userInfo)
+
         if(userInfo.userName ===''){
-            console.log('please enter name!')
+
             userName.current.focus();
-            setAlert({show: true, message: 'please enter your name!'})
+            setAlert({show: true, message: "Oops! Forgot your name!"})
             return
         }
     
@@ -24,37 +24,37 @@ function SignUp({userName, handleInput, userEmail, password, confirmPassword, us
     
         if( userInfo.userEmail ==='' ){
             userEmail.current.focus();
-            setAlert({show: true, message: 'please enter a valid email!'})
+            setAlert({show: true, message: "Mmm that doesn't look like a valid email"})
             return
         }
         if( !emailRegex.test(userInfo.userEmail)){
             userEmail.current.focus();
-            setAlert({show: true, message: 'please enter a valid email!'})
+            setAlert({show: true, message: "Mmm that doesn't look like a valid email"})
             return
         }
         if(userInfo.password === ""){
             password.current.focus();
-            setAlert({show: true, message: 'please enter your password!'})
+            setAlert({show: true, message: "Don't forget your password!"})
             return
         }
         if(userInfo.confirmPassword !== userInfo.password){
             confirmPassword.current.focus();
-            setAlert({show: true, message: 'password does not match'})
+            setAlert({show: true, message: "Gotta make sure the passwords match :)"})
             return
         }
-        // first check if email exist 
+        // first check if email exists 
 
-        // encrypting password
+        // ENCRYPT PASSWORD
         const saltRounds = 10;
         const hash = bcrypt.hashSync(userInfo.password, saltRounds);
         const userId = uuidv4();
 
-        // updating user Info by creating a shallow copy
+        // CREATE SHALLOW COPY OF USER INFO
         const newUser ={...userInfo, password: hash, userId: userId}
         // removing confirmPassword property for the data base
         delete newUser.confirmPassword;
 
-        // fetiching database 
+        // FETCH DATABASE
         const database = getDatabase(firebase);
         const dbRef = ref(database, `/users`);
         // check if users email is already in the database
@@ -79,7 +79,7 @@ function SignUp({userName, handleInput, userEmail, password, confirmPassword, us
             return
 
         }else {
-            // push the value of the `userInput` state to the database
+            // PUSH VALUE OF 'USERINPUT' STATE TO DATABASE
             try {
                 push(dbRef, newUser);
                 
@@ -97,18 +97,18 @@ function SignUp({userName, handleInput, userEmail, password, confirmPassword, us
     }
     return (
         <form>
-            <label htmlFor="userName" className='sr-only'>User Name</label>
-            <input type="text" ref={userName} placeholder='User Name' id="userName" onChange={handleInput} value={userInfo.userName}/>
+            <label htmlFor="userName">User Name</label>
+            <input type="text" ref={userName} id="userName" onChange={handleInput} value={userInfo.userName}/>
 
-            <label htmlFor="userEmail" className='sr-only'>Email</label>
-            <input type="email" ref={userEmail} placeholder='Email' id="userEmail" onChange={handleInput} value={userInfo.userEmail} />
+            <label htmlFor="userEmail">Email</label>
+            <input type="email" ref={userEmail} id="userEmail" onChange={handleInput} value={userInfo.userEmail} />
 
-            <label htmlFor="password" className='sr-only' >password</label>
-            <input type="password" ref={password} placeholder='Password' id="password" onChange={handleInput} value={userInfo.password}/>
+            <label htmlFor="password">password</label>
+            <input type="password" ref={password} id="password" onChange={handleInput} value={userInfo.password}/>
 
-            <label htmlFor="confirmPassword" className='sr-only'>Confirm Password</label>
-            <input type="password" ref={confirmPassword}  placeholder='confirmPassword' id="confirmPassword" onChange={handleInput} value={userInfo.confirmPassword}/>
-            <button onClick={handleSignUp}>Sign Up</button>
+            <label htmlFor="confirmPassword">Confirm Password</label>
+            <input type="password" ref={confirmPassword} id="confirmPassword" onChange={handleInput} value={userInfo.confirmPassword}/>
+            <button onClick={handleSignUp}>Create Account</button>
         </form>
     )
 }

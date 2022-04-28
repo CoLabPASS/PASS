@@ -1,7 +1,34 @@
+// Background colours
+$lightBlue: #D8F0FD;
+$offWhite: #F8FFFF;
+
+
+// Foreground colours 
+$purple: #34344A;
+
+// Accent colours 
+$teal: #087E8B;
+$orange: #E4572E;
+
+
+// Others
+$black: #000000;
+$darkGrey: #363636;
+
 .modal {
     background-color: rgba(23, 23, 24, 0.543);
-    form {
-        display: flex;
-        flex-direction: column;
+
+    .modal-content {
+        background-color: $lightBlue;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        
+            input {
+                margin-bottom: 1.5rem;
+            }
+    }
     }
 }

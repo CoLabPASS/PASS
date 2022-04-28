@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Halant&family=Lustria&display=swap");
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -221,8 +222,38 @@ html {
   overflow: hidden;
 }
 
+h1, h2, h3, h4, label, .modal-header {
+  font-family: "Halant", serif;
+}
+
+h5, p, li, button, a {
+  font-family: "Lustria", serif;
+  font-size: 14pt;
+}
+
+span {
+  color: #087E8B;
+}
+
+h1 {
+  font-size: 48pt;
+}
+
+h2 {
+  font-size: 36pt;
+}
+
+h3 {
+  font-size: 24pt;
+}
+
+h4 {
+  font-size: 18pt;
+}
+
 nav {
   background-color: #087E8B;
+  color: white;
 }
 nav div {
   display: flex;
@@ -237,9 +268,9 @@ nav div ul {
   flex-direction: row;
 }
 nav div ul .navItem {
+  color: white;
   background-color: transparent;
   padding: 1rem 0.5rem;
-  color: white;
 }
 nav div ul li button {
   padding-top: 2px;
@@ -247,7 +278,12 @@ nav div ul li button {
 
 header {
   height: 80vh;
+  background-image: url(../Assets/Mountain_landing_page.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   display: flex;
+  flex-direction: row;
   justify-content: flex-end;
 }
 header .wrapper {
@@ -265,16 +301,22 @@ header .headerDiv div {
   justify-content: start;
 }
 header .headerDiv div button {
+  background-color: #087E8B;
+  border-radius: 1rem;
+  font-family: "Lustria", serif;
+  color: white;
+  margin-top: 1rem;
   margin-right: 1.3rem;
   padding: 10px;
 }
-header .headerDiv div form {
-  display: flex;
-  flex-direction: column;
+header .headerDiv div button:hover, header .headerDiv div button:active {
+  background-color: white;
+  color: #000000;
+  border: 2px solid #E4572E;
 }
 
 .appDescription {
-  background-color: lightgrey;
+  background-color: #F8FFFF;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -298,10 +340,12 @@ header .headerDiv div form {
   width: 45%;
   height: 380px;
   background-color: white;
+  border: 1.5px solid black;
 }
 
 .callToAction {
   height: 200vh;
+  background-color: #D8F0FD;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -309,7 +353,7 @@ header .headerDiv div form {
 }
 .callToAction .ctaDiv {
   height: 30%;
-  background-color: lightgrey;
+  background-color: #F8FFFF;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -324,14 +368,29 @@ header .headerDiv div form {
   align-items: center;
   text-align: center;
 }
+.callToAction .ctaDiv .ctaText button {
+  background-color: #087E8B;
+  border-radius: 1rem;
+  font-family: "Lustria", serif;
+  color: white;
+  margin-right: 1.3rem;
+  padding: 10px;
+}
+.callToAction .ctaDiv .ctaText button:hover,
+.callToAction .ctaDiv .ctaText button:active {
+  background-color: white;
+  color: #000000;
+  border: 2px solid #E4572E;
+}
 .callToAction .ctaDiv .ctaImg {
   width: 40%;
   height: 80%;
   background-color: white;
+  border: 1.5px solid black;
 }
 .callToAction .testimonialsModal {
   height: 30%;
-  background-color: lightgrey;
+  background-color: #F8FFFF;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -350,28 +409,25 @@ header .headerDiv div form {
   width: 45%;
   height: 80%;
   background-color: white;
+  border: 1.5px solid black;
 }
 .callToAction .testimonialsModal .arrowDiv {
   position: absolute;
-  left: -20px;
-  width: 105%;
+  top: 50%;
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
 }
 .callToAction .testimonialsModal .arrowDiv button {
-  background-color: transparent;
   cursor: pointer;
 }
 .callToAction .testimonialsModal .arrowDiv img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: white;
+  width: 25%;
 }
 
 footer {
   min-height: 30vh;
-  background-color: gray;
+  background-color: lightgray;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -380,9 +436,16 @@ footer {
 .modal {
   background-color: rgba(23, 23, 24, 0.543);
 }
-.modal form {
+.modal .modal-content {
+  background-color: #D8F0FD;
+}
+.modal .modal-content form {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+}
+.modal .modal-content form input {
+  margin-bottom: 1.5rem;
 }
 
 .facts ul {

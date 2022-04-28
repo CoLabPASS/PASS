@@ -1,15 +1,36 @@
 
+// Background colours
+$lightBlue: #D8F0FD;
+$offWhite: #F8FFFF;
+
+
+// Foreground colours 
+$purple: #34344A;
+
+// Accent colours 
+$teal: #087E8B;
+$orange: #E4572E;
+
+
+// Others
+$black: #000000;
+$darkGrey: #363636;
 
 header {
     height: 80vh;
+    background-image: url(../Assets/Mountain_landing_page.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     display: flex;
+    flex-direction: row;
     justify-content: flex-end;
+
     .wrapper {
         display: flex;
         justify-content: end;
     }
     .headerDiv {
-        
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -19,14 +40,19 @@ header {
             display: flex;
             justify-content: start;
             button {
+                background-color: $teal;
+                border-radius: 1rem;
+                font-family: 'Lustria', serif;
+                color: white;
+                margin-top: 1rem;
                 margin-right: 1.3rem;
                 padding: 10px;
 
             }
-            form {
-                display: flex;
-                flex-direction: column;
-                
+            button:hover, button:active {
+                background-color: white;
+                color: $black;
+                border: 2px solid $orange;
             }
         }
     }

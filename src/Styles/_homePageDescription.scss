@@ -1,7 +1,25 @@
+// HOMEPAGE DESCRIPTION SECTION
 
+// COLOUR VARIABLES
+// Background colours
+$lightBlue: #D8F0FD;
+$offWhite: #F8FFFF;
+
+
+// Foreground colours 
+$purple: #34344A;
+
+// Accent colours 
+$teal: #087E8B;
+$orange: #E4572E;
+
+
+// Others
+$black: #000000;
+$darkGrey: #363636;
 
 .appDescription {
-    background-color: lightgrey;
+    background-color: $offWhite;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,6 +43,7 @@
             width: 45%;
             height: 380px;
             background-color: white;
+            border: 1.5px solid black;
         }
     }
 }
