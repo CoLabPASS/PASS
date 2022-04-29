@@ -76,7 +76,7 @@ return (
             <form onSubmit={(e)=>e.preventDefault()} className='wrapper'>
                 <div>
                     <label className='srOnly' hidden htmlFor="title">See what had happened was...</label>
-                    <input type="text" id='title' name="title" placeholder='What had happened was...' value={journalEntry.title}onChange={handleInput}/>
+                    <input type="text" id='title' name="title" placeholder='See what had happened was...' value={journalEntry.title}onChange={handleInput}/>
                 </div>
                 <div>
                     <label className='srOnly' hidden htmlFor="title">See what had happened was...</label>
