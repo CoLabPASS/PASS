@@ -19,16 +19,46 @@ $darkGrey: #363636;
     background-color: rgba(23, 23, 24, 0.543);
 
     .modal-content {
-        background-color: $lightBlue;
+        background-color: $offWhite;
+        border-radius: 2rem;
 
-        form {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-        
-            input {
-                margin-bottom: 1.5rem;
+        .modal-header {
+            border: none;
+        }
+
+        .modal-body {
+
+            form {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+
+                label {
+                    margin-left: 12rem;
+                }
+            
+                input {
+                    margin: 0 12rem 1.5rem 12rem;
+                }
+
+                button {
+                    background-color: $teal;
+                    border-radius: 1rem;
+                    font-family: 'Lustria', serif;
+                    color: white;
+                    margin: 2rem 17.5rem;
+                    padding: 10px;
+                
+                }
+                
+                button:hover,
+                button:active {
+                    background-color: white;
+                    color: $black;
+                    border: 2px solid $orange;
+                }
             }
-    }
+        }
+        
     }
 }

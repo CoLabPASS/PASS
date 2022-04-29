@@ -48,8 +48,9 @@ $darkGrey: #363636;
                 border-radius: 1rem;
                 font-family: 'Lustria', serif;
                 color: white;
+                margin-top: 1rem;
                 margin-right: 1.3rem;
-                padding: 10px;
+                padding: 0.5rem 3rem;
             
             }
             
@@ -86,6 +87,18 @@ $darkGrey: #363636;
             flex-direction: column;
             justify-content: space-evenly;
             align-items: flex-start;
+
+            h4 {
+                color: $teal;
+            }
+
+            h5 {
+                color: $black;
+
+                span {
+                    color: $black;
+                }
+            }
         }
 
         .testimonialImg {

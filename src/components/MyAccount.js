@@ -34,17 +34,16 @@ function MyAccount() {
     <div className='myAccount'>
         {!localUserId? <Navigate to='/' /> : null}
         <NavBar/>
-        <section className='wrapper'>
-            <h3>Hello <span>{user.userName}</span>!!</h3>
-            <h1>Ready To Journal</h1>
-            <hr />
+        <section className='wrapper accountGreeting'>
+            <h3>Hello <span>{user.userName}</span>,</h3>
+            <h1>Ready To Journal?</h1>
         </section>
         <section className='wrapper buttonContainer'>
           <div>
-            <Link className="mainBtn" to="/CheckTheFacts" >Check the Fact</Link>
-            <span> or </span>
+            <Link className="mainBtn" to="/QuickJournal">Quick  Journal</Link>
+            <span> </span>
             {/* <button>Quick Journal</button> */}
-            <Link className="mainBtn" to="/QuickJournal" >Quick Journal</Link>
+            <Link className="mainBtn" to="/CheckTheFacts">Check  the  Facts</Link>
 
           </div>
         </section>

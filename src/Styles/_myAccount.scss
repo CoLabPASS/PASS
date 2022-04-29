@@ -1,12 +1,23 @@
 .myAccount {
-    text-align: center;
-    h3 {
-        font-size: 1.7rem;
-        span {
-            font-size: 1.9rem;
-            color: #087E8B;
-            text-transform: capitalize;
-            // font-weight: bold;
+
+    .accountGreeting {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5rem;
+        margin-bottom: 3.5rem;
+        
+        h3 {
+            font-size: 1.7rem;
+        
+            span {
+                font-size: 1.9rem;
+                color: #087E8B;
+                text-transform: capitalize;
+                // font-weight: bold;
+            }
         }
     }
     .buttonContainer{
@@ -15,10 +26,11 @@
         justify-content: center;
         align-items: center;
         .mainBtn{
-            padding: 50px;
-            background-color: #087E8B;
+            padding: 3rem 10rem;
+            background-image: linear-gradient(to top left, #000000, #087E8B, #9EDAFA);
             color: white;
             font-size: 1.3rem;
+            border-radius: 1.5rem;
         }
         span {
             width: 10%;

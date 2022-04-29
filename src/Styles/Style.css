@@ -307,7 +307,7 @@ header .headerDiv div button {
   color: white;
   margin-top: 1rem;
   margin-right: 1.3rem;
-  padding: 10px;
+  padding: 0.5rem 3rem;
 }
 header .headerDiv div button:hover, header .headerDiv div button:active {
   background-color: white;
@@ -373,8 +373,9 @@ header .headerDiv div button:hover, header .headerDiv div button:active {
   border-radius: 1rem;
   font-family: "Lustria", serif;
   color: white;
+  margin-top: 1rem;
   margin-right: 1.3rem;
-  padding: 10px;
+  padding: 0.5rem 3rem;
 }
 .callToAction .ctaDiv .ctaText button:hover,
 .callToAction .ctaDiv .ctaText button:active {
@@ -404,6 +405,15 @@ header .headerDiv div button:hover, header .headerDiv div button:active {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-start;
+}
+.callToAction .testimonialsModal .testimonialText h4 {
+  color: #087E8B;
+}
+.callToAction .testimonialsModal .testimonialText h5 {
+  color: #000000;
+}
+.callToAction .testimonialsModal .testimonialText h5 span {
+  color: #000000;
 }
 .callToAction .testimonialsModal .testimonialImg {
   width: 45%;
@@ -437,15 +447,36 @@ footer {
   background-color: rgba(23, 23, 24, 0.543);
 }
 .modal .modal-content {
-  background-color: #D8F0FD;
+  background-color: #F8FFFF;
+  border-radius: 2rem;
 }
-.modal .modal-content form {
+.modal .modal-content .modal-header {
+  border: none;
+}
+.modal .modal-content .modal-body form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-.modal .modal-content form input {
-  margin-bottom: 1.5rem;
+.modal .modal-content .modal-body form label {
+  margin-left: 12rem;
+}
+.modal .modal-content .modal-body form input {
+  margin: 0 12rem 1.5rem 12rem;
+}
+.modal .modal-content .modal-body form button {
+  background-color: #087E8B;
+  border-radius: 1rem;
+  font-family: "Lustria", serif;
+  color: white;
+  margin: 2rem 17.5rem;
+  padding: 10px;
+}
+.modal .modal-content .modal-body form button:hover,
+.modal .modal-content .modal-body form button:active {
+  background-color: white;
+  color: #000000;
+  border: 2px solid #E4572E;
 }
 
 .facts ul {
@@ -491,13 +522,19 @@ footer {
   background: rgb(177, 243, 243);
 }
 
-.myAccount {
+.myAccount .accountGreeting {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  margin-bottom: 3.5rem;
 }
-.myAccount h3 {
+.myAccount .accountGreeting h3 {
   font-size: 1.7rem;
 }
-.myAccount h3 span {
+.myAccount .accountGreeting h3 span {
   font-size: 1.9rem;
   color: #087E8B;
   text-transform: capitalize;
@@ -509,10 +546,11 @@ footer {
   align-items: center;
 }
 .myAccount .buttonContainer .mainBtn {
-  padding: 50px;
-  background-color: #087E8B;
+  padding: 3rem 10rem;
+  background-image: linear-gradient(to top left, #000000, #087E8B, #9EDAFA);
   color: white;
   font-size: 1.3rem;
+  border-radius: 1.5rem;
 }
 .myAccount .buttonContainer span {
   width: 10%;
@@ -520,25 +558,30 @@ footer {
   padding: 20px;
 }
 
+.quickJournal {
+  height: 100vh;
+  background-color: #F8FFFF;
+}
 .quickJournal form {
   width: 80%;
-  margin: 0 auto;
+  margin: 5rem auto;
   min-height: 60vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
 }
 .quickJournal form div {
   width: 100%;
 }
 .quickJournal form div input {
   width: 100%;
-  border: none;
+  border: 1px solid #D8F0FD;
 }
 .quickJournal form div textarea {
   width: 100%;
   background-color: #dbdbdb;
-  border: none;
+  border: 1px solid #D8F0FD;
 }
 .quickJournal form div button {
   padding: 20px;

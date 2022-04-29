@@ -62,7 +62,7 @@ function QuickJournal() {
                 }, 500);
                 
             } catch (error) {
-                setAlert({show: true, message: 'there was an error, please try again'+ error})
+                setAlert({show: true, message: 'Something went wrong, try again please?'+ error})
             }
 
         }else {
@@ -72,14 +72,14 @@ function QuickJournal() {
 return (
     <>
         <NavBar/>
-        <section className='wrapper quickJournal'>
-            <form onSubmit={(e)=>e.preventDefault()}>
+        <section className='quickJournal'>
+            <form onSubmit={(e)=>e.preventDefault()} className='wrapper'>
                 <div>
-                    <label className='srOnly' hidden htmlFor="title">What had happened was...</label>
+                    <label className='srOnly' hidden htmlFor="title">See what had happened was...</label>
                     <input type="text" id='title' name="title" placeholder='What had happened was...' value={journalEntry.title}onChange={handleInput}/>
                 </div>
                 <div>
-                    <label className='srOnly' hidden htmlFor="title">What had happened was...</label>
+                    <label className='srOnly' hidden htmlFor="title">See what had happened was...</label>
                     <textarea name="text" id="text" cols="30" rows="10" value={journalEntry.text} onChange={handleInput}></textarea>
 
                 </div>
@@ -96,10 +96,10 @@ return (
                     <button onClick={submitEntry}>Save</button>
                     {
                         showFactsForm ? null: 
-                        <button onClick={()=>setShowFactsForm(true)}>Let try diving deeper</button>
+                        <button onClick={()=>setShowFactsForm(true)}>Let's try diving deeper</button>
                     }
                     {
-                        showFactsForm ? <button >never mind</button>
+                        showFactsForm ? <button >Oop, never mind!</button>
                         : 
                         null
                     }

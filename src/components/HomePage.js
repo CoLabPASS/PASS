@@ -63,7 +63,6 @@ function HomePage() {
                     centered
 >
                     <Modal.Header closeButton>
-                      {/* <Modal.Title>{signUpForm ? 'Sign Up' : 'Sign In'}</Modal.Title> */}
                     </Modal.Header>
                     <Modal.Body>
                       {
@@ -117,9 +116,9 @@ function HomePage() {
             <h2>User Testimonials</h2>
             <div className='testimonialsModal wrapper'>
               <div className='testimonialText'>
-                <h3>"Quote about Product second line example"</h3>
+                <h4>"Quote about Product second line example"</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque aperiam vitae sapiente, neque non ea pariatur minima corrupti perferendis exercitationem?</p>
-                <h3>Name <br/> <span>city,State</span></h3>
+                <h5>Name <br/> <br /> <span>City, State</span></h5>
               </div>
               <div className='testimonialImg'><img src="" alt="" /></div>
               <div className='arrowDiv'>

@@ -82,12 +82,12 @@ function SignIn({setAlert, handleClose}) {
   
   return (
     <form onSubmit={signUserIn}>
-      <label htmlFor="signInEmail" className='sr-only'>Email</label>
-      <input type="email" placeholder='Email' id="signInEmail" ref={signInEmailRef} value={userSignInInfo.signInEmail} onChange={handleInput} />
+      <label htmlFor="signInEmail">Email</label>
+      <input type="email" id="signInEmail" ref={signInEmailRef} value={userSignInInfo.signInEmail} onChange={handleInput} />
 
-      <label htmlFor="signInpassword" className='sr-only'>password</label>
-      <input type="password" placeholder='Password' id="signInpassword" value={userSignInInfo.signInpassword} ref={signInPasswordRef} onChange={handleInput}  />
-      <button className="btn-gray">signIn</button>
+      <label htmlFor="signInpassword">Password</label>
+      <input type="password" id="signInpassword" value={userSignInInfo.signInpassword} ref={signInPasswordRef} onChange={handleInput}  />
+      <button className="btn-gray">Sign In</button>
     </form>
   )
 }
