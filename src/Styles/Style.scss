@@ -10,6 +10,7 @@
 @import "myAccount";
 @import "quickJournal";
 @import "journalsPage";
+@import "emotionsSect";
 
 // Background colours
 $lightBlue: #D8F0FD;
@@ -52,6 +53,11 @@ body {
         padding: 0;
         margin: 0;
     }
+    .generalBtn {
+        padding: 10px 30px;
+
+
+    }
 
     a {
         text-decoration: none;
@@ -60,5 +66,8 @@ body {
     .centeredEverything{
         text-align: center;
         margin: 0 auto;
+    }
+    .myRow {
+        display: flex;
     }
 }

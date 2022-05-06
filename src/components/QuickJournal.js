@@ -5,9 +5,7 @@ import firebase from '../firebase';
 import { getDatabase, ref, push } from 'firebase/database';
 import Facts from './Facts';
 import { useNavigate } from "react-router-dom";
-
-
-
+import Emotions from './Emotions';
 
 
 function QuickJournal() {
@@ -86,7 +84,7 @@ return (
                 {
                 showFactsForm ? 
                     <div>
-                        <Facts/>
+                        <Emotions/>
                     </div>
                     :null
                 }

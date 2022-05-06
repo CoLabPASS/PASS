@@ -479,47 +479,40 @@ footer {
   border: 2px solid #E4572E;
 }
 
-.facts ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.facts ul .emoCardBtn {
-  padding: 5px;
-  width: 30%;
-  margin: 10px auto;
+.facts {
   text-align: center;
-  border-radius: 10px;
 }
-.facts ul .emoCardBtn button {
+.facts .prompts ul {
+  flex-wrap: wrap;
+}
+.facts .prompts ul li {
+  margin: 20px auto;
+  min-width: 30%;
+  max-width: 90%;
+}
+.facts .prompts ul li button {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-width: 100%;
+}
+.facts .prompts ul li button i {
+  padding: 10px;
+  background-color: white;
+  border: 1px solid rgb(85, 83, 83);
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.facts .prompts ul li button p {
+  margin: 0 auto;
   border: 1px solid rgb(85, 83, 83);
   width: 100%;
   padding: 10px 20px;
   border-radius: 5px;
-  display: inline-flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.facts ul .emoCardBtn button .emo {
-  font-size: 2rem;
-}
-.facts ul .emoCardBtn ul {
-  background-color: rgb(236, 186, 194);
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center;
-  padding: 5px;
-}
-.facts ul .emoCardBtn ul li {
-  width: 45%;
-  margin: 0 auto;
-}
-.facts ul .emoCardBtn ul li button {
-  border: 1px solid black;
-  justify-content: center;
-}
-.facts ul .emoCardBtn ul li .selected {
-  background: rgb(177, 243, 243);
+  min-width: 200px;
 }
 
 .myAccount .accountGreeting {
@@ -626,6 +619,49 @@ footer {
   font-weight: bold;
 }
 
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+ul .emoCardBtn {
+  padding: 5px;
+  width: 30%;
+  margin: 10px auto;
+  text-align: center;
+  border-radius: 10px;
+}
+ul .emoCardBtn button {
+  border: 1px solid rgb(85, 83, 83);
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ul .emoCardBtn button .emo {
+  font-size: 2rem;
+}
+ul .emoCardBtn ul {
+  background-color: rgb(236, 186, 194);
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 5px;
+}
+ul .emoCardBtn ul li {
+  width: 45%;
+  margin: 0 auto;
+}
+ul .emoCardBtn ul li button {
+  border: 1px solid black;
+  justify-content: center;
+}
+ul .emoCardBtn ul li .selected {
+  background: rgb(177, 243, 243);
+}
+
 body .wrapper {
   margin: 0 auto;
   padding: 0;
@@ -643,6 +679,9 @@ body button {
   padding: 0;
   margin: 0;
 }
+body .generalBtn {
+  padding: 10px 30px;
+}
 body a {
   text-decoration: none;
   display: inline-block;
@@ -650,4 +689,7 @@ body a {
 body .centeredEverything {
   text-align: center;
   margin: 0 auto;
+}
+body .myRow {
+  display: flex;
 }/*# sourceMappingURL=Style.css.map */

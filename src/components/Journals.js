@@ -42,7 +42,6 @@ function Journals() {
     })
     }, [localUserId])
   return (
-
     <>
         <NavBar/>
         <div className='wrapper journals'>
