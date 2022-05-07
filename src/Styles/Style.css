@@ -272,8 +272,23 @@ nav div ul .navItem {
   background-color: transparent;
   padding: 1rem 0.5rem;
 }
+nav div ul .navItem .otherBtn {
+  font-size: 2rem;
+}
+nav div ul .navItem i {
+  font-size: 1rem;
+}
 nav div ul li button {
   padding-top: 2px;
+}
+nav div .otherMenu {
+  background-color: #087E8B;
+  position: absolute;
+  flex-direction: column;
+  padding: 10px;
+}
+nav div .otherMenu li {
+  padding: 10px;
 }
 
 header {

@@ -19,12 +19,28 @@ nav {
                     color: white;
                     background-color: transparent;
                     padding: 1rem 0.5rem;
+                    .otherBtn{
+
+                        font-size: 2rem;
+                    }
+                    i {
+                        font-size: 1rem;
+                    }
                 }
             
                 li {
                     button {
                         padding-top: 2px;
                     }
+                }
+            }
+            .otherMenu{
+                background-color: #087E8B;
+                position: absolute;
+                flex-direction: column;
+                padding: 10px;
+                li{
+                    padding: 10px;
                 }
             }
         }
