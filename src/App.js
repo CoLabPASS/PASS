@@ -5,6 +5,7 @@ import MyAccount from './components/MyAccount';
 import QuickJournal from './components/QuickJournal';
 import Journals from './components/Journals';
 import Facts from './components/Facts';
+import JournalCalendar from './components/JournalCalendar';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path='/QuickJournal' element={<QuickJournal/>}/>
           <Route path='/Journals' element={<Journals/>}/>
           <Route path='/CheckTheFacts' element={<Facts/>}/>
+          <Route path='/Calendar' element={<JournalCalendar/>}/>
         </Routes>
       </Router>
     </div>

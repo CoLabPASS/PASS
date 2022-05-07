@@ -31,7 +31,6 @@ function NavBar() {
                     
                     :
                     null
-                    
                 }
                 {
                     localUserId ?
@@ -52,6 +51,15 @@ function NavBar() {
 
                     <li>
                         <Link to="/journals" className='navItem'>Journals</Link>
+                    </li> 
+                    :
+                    null
+                }
+                {localUserId ?
+                    location.pathname === "/Calendar" ?null :
+
+                    <li>
+                        <Link to="/Calendar" className='navItem'>Calendar</Link>
                     </li> 
                     :
                     null

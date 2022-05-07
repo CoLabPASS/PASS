@@ -86,7 +86,6 @@ function MyAccount() {
             <span> </span>
             {/* <button>Quick Journal</button> */}
             <Link className="mainBtn" to="/CheckTheFacts">Check  the  Facts</Link>
-
           </div>
         </section>
         <section className="myRow wrapper minHt">
@@ -95,7 +94,7 @@ function MyAccount() {
             <RecentJournal userJournals={userJournals}/>
 
           </div>
-          <JournalCalendar userJournals={userJournals}/>
+          {/* <JournalCalendar userJournals={userJournals}/> */}
         </section>
     </div>
   )

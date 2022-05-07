@@ -35,7 +35,7 @@ function Emotions({selectedEmos,setSelectedEmos}) {
                 {name:'Contempt', selectStat: false}, 
                 {name:'Dislike', selectStat: false}, 
                 {name:'Other', selectStat: false}
-        ]
+            ]
         },
         {
             id:3,
@@ -43,7 +43,7 @@ function Emotions({selectedEmos,setSelectedEmos}) {
             emoji: '👽',
             emos: [
                 {name:'Envy', selectStat: false}, {name:'Craving', selectStat: false},{name:'Greed', selectStat: false}, {name:'Longing', selectStat: false}, {name:'Resentment', selectStat: false}, {name:'Wishful', selectStat: false}, {name:'Displeased', selectStat: false}, {name:'Downhearted', selectStat: false}
-        ]
+            ]
         },
         {
             id:4,
@@ -51,7 +51,7 @@ function Emotions({selectedEmos,setSelectedEmos}) {
             emoji: '😮',
             emos: [
             {name:'Fear', selectStat: false}, {name:'Anxiety', selectStat: false},{name:'Dread', selectStat: false}, {name:'Apprehension', selectStat: false}, {name:'Fright', selectStat: false}, {name:'Horror', selectStat: false}, {name:'Nervous', selectStat: false}, {name:'Overwhelmed', selectStat: false}, {name:'Panic', selectStat: false}, {name:'Worry', selectStat: false}, {name:'Tenseness', selectStat: false}, {name:'Other', selectStat: false}
-        ]
+            ]
         },
         { 
             id:5,
@@ -59,7 +59,7 @@ function Emotions({selectedEmos,setSelectedEmos}) {
             emoji:'😥',
             emos: [
             {name:'Guilt', selectStat: false}, {name:'Culpability', selectStat: false},{name:'Remorse', selectStat: false}, {name:'Apologetic', selectStat: false}, {name:'Regret', selectStat: false}, {name:'Sorry', selectStat: false}
-        ]
+            ]
         },
         { 
             id:6,
@@ -67,7 +67,7 @@ function Emotions({selectedEmos,setSelectedEmos}) {
             emoji: '😄',
             emos: [
                 {name:'Happy', selectStat: false}, {name:'Enjoyment', selectStat: false},{name:'Relief', selectStat: false}, {name:'Amusement', selectStat: false}, {name:'Hope', selectStat: false}, {name:'Satisfied', selectStat: false}, {name:'Bliss', selectStat: false}, {name:'Enthusiasm', selectStat: false}, {name:'Content', selectStat: false}, {name:'Excitment', selectStat: false}, {name:'Ectasy', selectStat: false}, {name:'Other', selectStat: false}
-        ]
+            ]
         },
         {
             id:7,
@@ -219,7 +219,7 @@ function Emotions({selectedEmos,setSelectedEmos}) {
                 {emotions.map((emot)=>
                 <li className='emoCardBtn' key={emot.id}>
                     <button  onClick={(e)=>showEmoOptions(e,emot.name)}>
-                    <span className='emo'>{emot.emoji}</span><span>{emot.name}</span><span>{
+                        <span className='emo'>{emot.emoji}</span><span>{emot.name}</span><span>{
                     showEmoForms[`${emot.name}`] ? '▲': '▼'}</span>
                     </button>
                     {
