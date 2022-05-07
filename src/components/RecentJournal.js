@@ -5,8 +5,6 @@ import { getDatabase, ref, onValue } from 'firebase/database';
 import JournalDetail from './JournalDetail';
 
 
-
-
 function RecentJournal({userJournals}) {
     const [promptEvents, setPromptEvents]=useState(
         {
@@ -69,7 +67,9 @@ function RecentJournal({userJournals}) {
                 {userJournals.slice(0,6).map(journal=>
                     <li  key={journal.entryId}>
                         <button className='journalCards' onClick={()=>handleShow(journal.entryId, journal.firebaseId)}>
+                            {/* date */}
                             <p className='journalDate'>{journal.dateTime.month+1}/{journal.dateTime.date}/{journal.dateTime.year}</p>
+                            {/* tittle */}
                             <h4 className='journalTittle'>{journal.title}</h4>
                             {
                                 journal.type==='factsJournal' ?

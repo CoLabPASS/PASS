@@ -35,7 +35,6 @@ function Facts() {
     }else if (textInput.factsTitle ===''){
       return 
     }else {
-      
           const entryId = uuidv4();
           const postingTime = new Date()
           const dateTime ={ 
