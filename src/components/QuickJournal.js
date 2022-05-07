@@ -3,7 +3,6 @@ import NavBar from './NavBar'
 import { v4 as uuidv4 } from 'uuid';
 import firebase from '../firebase';
 import { getDatabase, ref, push } from 'firebase/database';
-import Facts from './Facts';
 import { useNavigate } from "react-router-dom";
 import Emotions from './Emotions';
 

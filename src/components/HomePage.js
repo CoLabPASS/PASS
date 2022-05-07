@@ -1,10 +1,8 @@
 import React, {useState, useRef} from 'react'
 import { Navigate} from 'react-router-dom';
 import NavBar from './NavBar'
-import arrowImg from '../Assets/next.png'
 import {Modal} from 'react-bootstrap'
 import SignUp from './SignUp';
-
 import SignIn from './SignIn';
 
 function HomePage() {
@@ -54,14 +52,13 @@ function HomePage() {
           <header>
             <div className="wrapper">
               <div className="headerDiv">
-                <h1>Journal emotional experiences, <br/> <span>Strengthen relationships!</span></h1>
+                <h1>Journal emotional experiences, <br/><span>Strengthen relationships!</span></h1>
                 <div>
                   <button onClick={()=>handleShow('SignIn')}>Sign In</button>
                   <button onClick={()=>handleShow('signUp')}>Sign Up</button>
                   <Modal show={show} onHide={handleClose} animation={false} size="lg"
                     aria-labelledby="contained-modal-title-vcenter"
-                    centered
->
+                    centered>
                     <Modal.Header closeButton>
                     </Modal.Header>
                     <Modal.Body>
@@ -77,7 +74,7 @@ function HomePage() {
                       }
                       {
                         alert.show ? <p>{alert.message}</p> : null
-                      }
+                        }
                     </Modal.Body>
                   </Modal>
                 </div>

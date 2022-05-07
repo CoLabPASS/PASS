@@ -1,46 +1,50 @@
-ul{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    .emoCardBtn {
-        padding: 5px;
-        width: 30%;
-        margin: 10px auto;
-        text-align: center;
-        border-radius: 10px;
-        button {
-            border: 1px solid rgb(85, 83, 83);
-            width: 100%;
-            // background: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            display: inline-flex;
-            justify-content: space-between;
-            align-items: center;
-            .emo {
-                font-size: 2rem;
-            }
-        }
-        ul {
-            background-color: rgb(236, 186, 194);
+    .feelingSect{
+
+        ul{
             display: flex;
             flex-wrap: wrap;
-            text-align: center;
-            padding: 5px;
-            li {
-                width: 45%;
-                margin: 0 auto;
+            justify-content: space-between;
+            .emoCardBtn {
+                padding: 5px;
+                width: 30%;
+                margin: 10px auto;
+                text-align: center;
+                border-radius: 10px;
                 button {
-                    border: 1px solid black;
-                    // text-align: center;
-                    justify-content: center;
+                    border: 1px solid rgb(85, 83, 83);
+                    width: 100%;
+                    // background: none;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    display: inline-flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .emo {
+                        font-size: 2rem;
+                    }
                 }
-                .selected {
-                    background: rgb(177, 243, 243);
-                    // color: red;
+                ul {
+                    background-color: rgb(236, 186, 194);
+                    display: flex;
+                    flex-wrap: wrap;
+                    text-align: center;
+                    padding: 5px;
+                    li {
+                        width: 45%;
+                        margin: 0 auto;
+                        button {
+                            border: 1px solid black;
+                            // text-align: center;
+                            justify-content: center;
+                        }
+                        .selected {
+                            background: rgb(177, 243, 243);
+                            // color: red;
+                        }
+                        
+                    }
                 }
-                
             }
         }
     }
-}
+    

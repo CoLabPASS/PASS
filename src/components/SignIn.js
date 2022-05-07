@@ -5,8 +5,6 @@ import bcrypt from 'bcryptjs'
 import { useNavigate } from "react-router-dom";
 
 
-
-
 function SignIn({setAlert, handleClose}) {
   let navigate = useNavigate();
   const [users, setUsers]=useState([])

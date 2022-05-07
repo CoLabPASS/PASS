@@ -94,8 +94,9 @@ function Emotions({selectedEmos,setSelectedEmos}) {
             ]
         }]
         )
-    const showEmoOptions =(emotion)=>{
-        console.log(emotion)
+    const showEmoOptions =(e,emotion)=>{
+        e.preventDefault()
+
         if(emotion === 'anger'){
         if(showEmoForms.anger){
             setShowEmoForms({...showEmoForms, anger:false})
@@ -161,15 +162,14 @@ function Emotions({selectedEmos,setSelectedEmos}) {
         }
 
     }
-    const selectMood=(category, mood)=>{
-
+    const selectMood=(e, category, mood)=>{
+        e.preventDefault()
         let copySelected = [...selectedEmos]
         let catExists = false;
         if(copySelected.length>0){
             copySelected.forEach(selected=>{
                 if(selected.cat === category){
                     catExists=true
-                    // console.log(copySelected)
                     let moodExist = false
                     let selectedMood
                     selected.mood.forEach(each=>{
@@ -218,7 +218,7 @@ function Emotions({selectedEmos,setSelectedEmos}) {
             <ul>
                 {emotions.map((emot)=>
                 <li className='emoCardBtn' key={emot.id}>
-                    <button  onClick={()=>showEmoOptions(emot.name)}>
+                    <button  onClick={(e)=>showEmoOptions(e,emot.name)}>
                     <span className='emo'>{emot.emoji}</span><span>{emot.name}</span><span>{
                     showEmoForms[`${emot.name}`] ? '▲': '▼'}</span>
                     </button>
@@ -226,7 +226,7 @@ function Emotions({selectedEmos,setSelectedEmos}) {
                     showEmoForms[`${emot.name}`] ? 
                     <ul >
                         {emot.emos.map((emo, num)=>
-                        <li key={num}><button className={emo.selectStat?'selected': null} onClick={()=>selectMood(emot.name, emo.name)}>{emo.name}</button></li>
+                        <li key={num}><button className={emo.selectStat?'selected': null} onClick={(e)=>selectMood(e,emot.name, emo.name)}>{emo.name}</button></li>
                         )}
                     </ul>
                     :null

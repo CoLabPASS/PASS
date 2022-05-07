@@ -1,16 +1,3 @@
-@import "normalize";
-@import "typography";
-@import "navBar";
-@import "homePageHeader";
-@import "homePageDescription";
-@import "homePageCTA";
-@import "homePageFooter";
-@import "signUpModal";
-@import "factsPage";
-@import "myAccount";
-@import "quickJournal";
-@import "journalsPage";
-@import "emotionsSect";
 
 // Background colours
 $lightBlue: #D8F0FD;
@@ -28,6 +15,22 @@ $orange: #E4572E;
 // Others
 $black: #000000;
 $darkGrey: #363636;
+
+@import "normalize";
+@import "typography";
+@import "navBar";
+@import "homePageHeader";
+@import "homePageDescription";
+@import "homePageCTA";
+@import "homePageFooter";
+@import "signUpModal";
+@import "factsPage";
+@import "myAccount";
+@import "quickJournal";
+@import "journalsPage";
+@import "emotionsSect";
+@import "calendar";
+@import "recentJournal";
 
 
 
@@ -69,5 +72,11 @@ body {
     }
     .myRow {
         display: flex;
+    }
+    .minHt{
+        min-height: 100vh;
+    }
+    .spaceBetween{
+        justify-content: space-between;
     }
 }

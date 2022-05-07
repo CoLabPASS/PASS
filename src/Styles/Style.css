@@ -483,6 +483,7 @@ footer {
   text-align: center;
 }
 .facts .prompts ul {
+  display: flex;
   flex-wrap: wrap;
 }
 .facts .prompts ul li {
@@ -514,7 +515,14 @@ footer {
   border-radius: 5px;
   min-width: 200px;
 }
+.facts .prompts ul li .active {
+  background-color: rebeccapurple;
+  color: white;
+}
 
+.myAccount {
+  background-color: #e2f5ff;
+}
 .myAccount .accountGreeting {
   text-align: center;
   display: flex;
@@ -619,19 +627,19 @@ footer {
   font-weight: bold;
 }
 
-ul {
+.feelingSect ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-ul .emoCardBtn {
+.feelingSect ul .emoCardBtn {
   padding: 5px;
   width: 30%;
   margin: 10px auto;
   text-align: center;
   border-radius: 10px;
 }
-ul .emoCardBtn button {
+.feelingSect ul .emoCardBtn button {
   border: 1px solid rgb(85, 83, 83);
   width: 100%;
   padding: 10px 20px;
@@ -640,26 +648,170 @@ ul .emoCardBtn button {
   justify-content: space-between;
   align-items: center;
 }
-ul .emoCardBtn button .emo {
+.feelingSect ul .emoCardBtn button .emo {
   font-size: 2rem;
 }
-ul .emoCardBtn ul {
+.feelingSect ul .emoCardBtn ul {
   background-color: rgb(236, 186, 194);
   display: flex;
   flex-wrap: wrap;
   text-align: center;
   padding: 5px;
 }
-ul .emoCardBtn ul li {
+.feelingSect ul .emoCardBtn ul li {
   width: 45%;
   margin: 0 auto;
 }
-ul .emoCardBtn ul li button {
+.feelingSect ul .emoCardBtn ul li button {
   border: 1px solid black;
   justify-content: center;
 }
-ul .emoCardBtn ul li .selected {
+.feelingSect ul .emoCardBtn ul li .selected {
   background: rgb(177, 243, 243);
+}
+
+.calendarJournal {
+  width: 100%;
+}
+.calendarJournal .react-calendar {
+  width: 85%;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #34344A;
+  border-radius: 5px;
+  text-align: center;
+}
+.calendarJournal .react-calendar .react-calendar__month-view__weekdays__weekday {
+  color: pink;
+}
+.calendarJournal .react-calendar .react-calendar__navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.calendarJournal .react-calendar .react-calendar__navigation .react-calendar__navigation__label {
+  background-color: white;
+  width: 50%;
+  padding: 10px;
+  border-radius: 5px;
+}
+.calendarJournal .react-calendar .react-calendar__tile {
+  border-radius: 10px;
+  background-color: white;
+  padding: 10px;
+  border: 3px solid #34344A;
+}
+.calendarJournal .react-calendar .react-calendar__tile:hover {
+  background-color: #9696c9;
+  color: white;
+}
+.calendarJournal .react-calendar .react-calendar__month-view__days__day {
+  color: black;
+}
+.calendarJournal .react-calendar .react-calendar__month-view__days__day--weekend {
+  background-color: rgba(227, 252, 255, 0.6039215686);
+}
+.calendarJournal .react-calendar .react-calendar__month-view__days__day--neighboringMonth {
+  background-color: #34344A;
+  color: white;
+}
+.calendarJournal .react-calendar .react-calendar__month-view__days__day--neighboringMonth:hover {
+  background-color: #5e5e8a;
+}
+.calendarJournal .react-calendar .react-calendar__navigation__arrow {
+  padding: 10px;
+  font-size: 30px;
+  background-color: transparent;
+}
+.calendarJournal .react-calendar .react-calendar__navigation__prev-button,
+.calendarJournal .react-calendar .react-calendar__navigation__next-button {
+  color: greenyellow;
+}
+.calendarJournal .react-calendar .react-calendar__navigation__prev2-button,
+.calendarJournal .react-calendar .react-calendar__navigation__next2-button {
+  color: rgb(212, 96, 49);
+}
+.calendarJournal .react-calendar .existingEvent {
+  color: white;
+  background-color: #E4572E;
+}
+.calendarJournal .react-calendar .todayDate {
+  background-color: rgb(69, 199, 195);
+  color: #fe7c54;
+  font-weight: bolder;
+}
+
+.recentJournal {
+  min-width: 48%;
+  border: 1px solid red;
+}
+.recentJournal ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.recentJournal ul .journalCards {
+  padding: 15px;
+  border: 2px solid #67c1f2;
+  border-radius: 10px;
+  min-width: 250px;
+  background: white;
+  margin: 10px auto;
+}
+.recentJournal ul .journalCards .journalDate {
+  margin: 0;
+  font-size: 0.9rem;
+}
+.recentJournal ul .journalCards h4 {
+  font-weight: bolder;
+}
+.recentJournal ul .journalCards .myRow {
+  justify-content: space-between;
+}
+.recentJournal ul .journalCards .myRow i {
+  color: #67c1f2;
+}
+
+.journalDetail {
+  min-height: 50vh;
+  padding: 10px 20px;
+}
+.journalDetail .emotions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.journalDetail .emotions li {
+  padding: 10px;
+  background-color: #9de7e7;
+  margin: 5px;
+  color: rgb(60, 60, 60);
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+.journalDetail .prompts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.journalDetail .prompts i {
+  padding: 10px;
+  background-color: #9de7e7;
+  margin: 5px;
+  color: rgb(60, 60, 60);
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+.journalDetail .editPrnt {
+  position: relative;
+}
+.journalDetail .editPrnt .editBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
 }
 
 body .wrapper {
@@ -692,4 +844,10 @@ body .centeredEverything {
 }
 body .myRow {
   display: flex;
+}
+body .minHt {
+  min-height: 100vh;
+}
+body .spaceBetween {
+  justify-content: space-between;
 }/*# sourceMappingURL=Style.css.map */
