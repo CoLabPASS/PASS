@@ -725,11 +725,11 @@ footer {
   width: 100%;
 }
 .calendarJournal .react-calendar {
-  width: 85%;
+  width: 70%;
   margin: 0 auto;
   padding: 10px;
-  background-color: #34344A;
-  border-radius: 5px;
+  background-color: rgb(225, 228, 229);
+  border-radius: 10px;
   text-align: center;
 }
 .calendarJournal .react-calendar .react-calendar__month-view__weekdays__weekday {
@@ -750,7 +750,7 @@ footer {
 .calendarJournal .react-calendar .react-calendar__tile {
   border-radius: 10px;
   background-color: white;
-  padding: 10px;
+  padding: 20px;
   border: 3px solid #34344A;
 }
 .calendarJournal .react-calendar .react-calendar__tile:hover {
@@ -791,6 +791,9 @@ footer {
   background-color: rgb(69, 199, 195);
   color: #fe7c54;
   font-weight: bolder;
+}
+.calendarJournal .journalDetail {
+  width: 30%;
 }
 
 .recentJournal {

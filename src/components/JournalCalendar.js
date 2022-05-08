@@ -10,12 +10,10 @@ function JournalCalendar() {
     const localUserId = localStorage.userId;
     const [userJournals, setUserJournals]=useState([])
 
-
     const [value, onChange] = useState(new Date());
     const [entriesThisDate, setEntriesThisDate] = useState([])
-    const clickingDay =(val, eve)=>{
+    const clickingDay =(val)=>{
         const selectedDate = `${val.getDate()}/${val.getMonth()}/${val.getUTCFullYear()}`
-        console.log(selectedDate)
         const entriesThisDay = []
         userJournals.forEach(userJour=>{
             const userDate = `${userJour.dateTime.date}/${userJour.dateTime.month}/${userJour.dateTime.year}`
@@ -25,17 +23,14 @@ function JournalCalendar() {
         })
         setEntriesThisDate(entriesThisDay)
     }
-    const renderingJournals =({ date, view })=>{
+    const renderingJournals =({ date })=>{
 
         let className = ''
         const d = new Date()
         const currentDate = `${date.getDate()}/${date.getMonth()}/${date.getUTCFullYear()}`
         const today = `${d.getDate()}/${d.getMonth()}/${d.getUTCFullYear()}`
-        // console.log(today)
-        // console.log(currentDate)
         if(currentDate === today){
             className = `todayDate`
-            console.log('its today')
         }
         if(userJournals){
             if(userJournals.length>0){
@@ -45,7 +40,6 @@ function JournalCalendar() {
                         if(className === ""){
                             className=`existingEvent`
                         }else{
-                            // console.log("className", className)
                             className=`${className} existingEvent`
                         }
                     }
@@ -91,17 +85,16 @@ function JournalCalendar() {
                 if(A.minutes > B.minutes) return -1
                 if(A.minutes < B.minutes) return 1
             })
-            console.log(sortingUserEntries)
             setUserJournals(sortingUserEntries)
         })
 
     }, [localUserId])
     return (
         <>
-        <NavBar/>
+            <NavBar/>
             <div className='calendarJournal wrapper myRow'>
                 <Calendar onChange={onChange} value={value} onClickDay={clickingDay} tileClassName={renderingJournals}/>
-                <div>
+                <div className='journalDetail'>
                     {
                         entriesThisDate.length>0 ?
                         <RecentJournal userJournals={entriesThisDate} />
