@@ -5,8 +5,6 @@ import PromptingEvent from './PromptingEvent'
 import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from "react-router-dom";
 import {Modal} from 'react-bootstrap'
-
-
 import { getDatabase, ref, push } from 'firebase/database';
 import firebase from '../firebase';
 
@@ -107,7 +105,6 @@ function Facts() {
     }
 
 
-    // console.log(journObj)
   }
   const handleInput =(e)=>{
     const {id, value} =e.target

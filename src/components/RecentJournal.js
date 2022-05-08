@@ -32,14 +32,11 @@ function RecentJournal({userJournals}) {
 
     const [alert, setAlert] = useState({ show: false, message:'' })
     const handleClose = () => {
-        // setSignUpForm(false)
-        // setSignInForm(false)
         setShow(false)
         
     };
     const handleShow = (entryId, fireId) => {
         setShow(true)
-        console.log(fireId)
               // create a variable that holds our database details
             const database = getDatabase(firebase)
     
@@ -47,7 +44,6 @@ function RecentJournal({userJournals}) {
             const dbRef = ref(database, `/entries/${fireId}`)
             onValue(dbRef, (res)=>{
                 const data = res.val()
-                console.log(data)
                 setJournalDetail(data)
             })
     };

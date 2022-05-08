@@ -20,7 +20,6 @@ function SignIn({setAlert, handleClose}) {
   }
   const signUserIn =(e)=>{
     e.preventDefault()
-    console.log(userSignInInfo.signInEmail)
     if(userSignInInfo.signInEmail === ""){
       signInEmailRef.current.focus();
       setAlert({show: true, message: 'please provide your email!'})
@@ -31,27 +30,19 @@ function SignIn({setAlert, handleClose}) {
       setAlert({show: true, message: 'please provide password!'})
       return
     }
-    console.log(userSignInInfo)
-    // console.log(userSignInInfo)
     // check for user:
 
       let userExist = false
       let foundUser
       users.forEach(user=>{
-        // console.log(user.userEmail)
-        // console.log(userSignInInfo.signInEmail)
         if(user.userEmail === userSignInInfo.signInEmail){
-          // console.log('user exist')
           foundUser = user
           userExist = true
         }
       })
       if(userExist){
-        // console.log('user exitst??????')
-        console.log(userSignInInfo.signInpassword)
-          console.log(foundUser)
           const isPassWordCorrect =bcrypt.compareSync(userSignInInfo.signInpassword, foundUser.password)
-                    if(isPassWordCorrect){
+          if(isPassWordCorrect){
             setAlert({show: true, message: 'success'})
             localStorage.setItem("userId", foundUser.userId);
             setTimeout(() => {

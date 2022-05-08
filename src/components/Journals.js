@@ -2,13 +2,11 @@ import React, {useEffect, useState} from 'react'
 import firebase from '../firebase';
 import { getDatabase, ref, onValue } from 'firebase/database';
 import NavBar from './NavBar';
-// import {Modal} from 'react-bootstrap'
 
 
 function Journals() {
     const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug", "Sep", "Oct", "Nov", "Dec"];
     const localUserId = localStorage.userId
-    // const [activeBtn, setActiveBtn]=useState({})
     const [selectedEntry, setSelectedEntry]=useState({})
 
     const [userEntries, setUserEntries]=useState([])
@@ -16,7 +14,6 @@ function Journals() {
         setSelectedEntry(entry)
     }
     const sortBy=(category)=>{
-        console.log(category)
         const copyEntries = [...userEntries]
         if(category ==='recent'){
             const sortingUserEntries = copyEntries.sort((a,b)=>{
@@ -74,7 +71,6 @@ function Journals() {
                 usersEntryList.push(entries)
             }
         })
-        console.log(usersEntryList)
         setUserEntries(usersEntryList)
     })
     }, [localUserId])

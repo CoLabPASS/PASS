@@ -66,7 +66,6 @@ function MyAccount() {
             if(A.minutes > B.minutes) return -1
             if(A.minutes < B.minutes) return 1
         })
-        console.log(sortingUserEntries)
           setUserJournals(sortingUserEntries)
       })
 
