@@ -16,7 +16,7 @@ function NavBar() {
     return (
     <nav>
         <div className="wrapper">
-            <h2>LOGO</h2>
+            <h2>iJournal</h2>
             <ul>
                 {localUserId ?
                     null : 

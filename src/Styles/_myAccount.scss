@@ -1,5 +1,6 @@
 .myAccount {
-    background-color: #e2f5ff;
+    background: $offWhite;
+    background-size: cover;
     .accountGreeting {
         text-align: center;
         display: flex;
@@ -26,7 +27,7 @@
         justify-content: center;
         align-items: center;
         .mainBtn{
-            padding: 3rem 10rem;
+            padding: 2.5rem 7rem;
             background-image: linear-gradient(to top left, #000000, #087E8B, #9EDAFA);
             color: white;
             font-size: 1.3rem;

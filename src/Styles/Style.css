@@ -252,7 +252,7 @@ h4 {
 }
 
 nav {
-  background-color: #087E8B;
+  background-color: #34344A;
   color: white;
 }
 nav div {
@@ -277,6 +277,9 @@ nav div ul .navItem .otherBtn {
 }
 nav div ul .navItem i {
   font-size: 1rem;
+}
+nav div ul li {
+  padding: 0 1rem;
 }
 nav div ul li button {
   padding-top: 2px;
@@ -316,17 +319,19 @@ header .headerDiv div {
   justify-content: start;
 }
 header .headerDiv div button {
+  transition: all 0.3s ease;
   background-color: #087E8B;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   font-family: "Lustria", serif;
   color: white;
-  margin-top: 1rem;
+  margin-top: 1.75rem;
   margin-right: 1.3rem;
-  padding: 0.5rem 3rem;
+  padding: 0.75rem 2.5rem;
 }
 header .headerDiv div button:hover, header .headerDiv div button:active {
   background-color: white;
   color: #000000;
+  font-weight: 500;
   border: 2px solid #E4572E;
 }
 
@@ -336,20 +341,23 @@ header .headerDiv div button:hover, header .headerDiv div button:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px 0;
+  padding: 3.5rem 0;
 }
 .appDescription .appDescDiv {
-  height: 60vh;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  padding: 2.5rem 0;
 }
 .appDescription .appDescDiv .appDescText {
   width: 45%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: flex-start;
+}
+.appDescription .appDescDiv .appDescText p {
+  margin: 1.25rem 0;
 }
 .appDescription .appDescDiv .appDescImg {
   width: 45%;
@@ -357,22 +365,25 @@ header .headerDiv div button:hover, header .headerDiv div button:active {
   background-color: white;
   border: 1.5px solid black;
 }
+.appDescription .appDescDiv .appDescImg img {
+  width: 100%;
+}
 
 .callToAction {
-  height: 200vh;
   background-color: #D8F0FD;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  padding: 7rem 0;
 }
 .callToAction .ctaDiv {
-  height: 30%;
   background-color: #F8FFFF;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 54px;
+  padding: 5rem 0;
 }
 .callToAction .ctaDiv .ctaText {
   width: 40%;
@@ -384,6 +395,7 @@ header .headerDiv div button:hover, header .headerDiv div button:active {
   text-align: center;
 }
 .callToAction .ctaDiv .ctaText button {
+  transition: all 0.3s ease;
   background-color: #087E8B;
   border-radius: 1rem;
   font-family: "Lustria", serif;
@@ -400,54 +412,8 @@ header .headerDiv div button:hover, header .headerDiv div button:active {
 }
 .callToAction .ctaDiv .ctaImg {
   width: 40%;
-  height: 80%;
   background-color: white;
   border: 1.5px solid black;
-}
-.callToAction .testimonialsModal {
-  height: 30%;
-  background-color: #F8FFFF;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 54px;
-  padding: 100px;
-  position: relative;
-}
-.callToAction .testimonialsModal .testimonialText {
-  width: 45%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: flex-start;
-}
-.callToAction .testimonialsModal .testimonialText h4 {
-  color: #087E8B;
-}
-.callToAction .testimonialsModal .testimonialText h5 {
-  color: #000000;
-}
-.callToAction .testimonialsModal .testimonialText h5 span {
-  color: #000000;
-}
-.callToAction .testimonialsModal .testimonialImg {
-  width: 45%;
-  height: 80%;
-  background-color: white;
-  border: 1.5px solid black;
-}
-.callToAction .testimonialsModal .arrowDiv {
-  position: absolute;
-  top: 50%;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-}
-.callToAction .testimonialsModal .arrowDiv button {
-  cursor: pointer;
-}
-.callToAction .testimonialsModal .arrowDiv img {
-  width: 25%;
 }
 
 footer {
@@ -480,6 +446,7 @@ footer {
   margin: 0 12rem 1.5rem 12rem;
 }
 .modal .modal-content .modal-body form button {
+  transition: all 0.3s ease;
   background-color: #087E8B;
   border-radius: 1rem;
   font-family: "Lustria", serif;
@@ -536,7 +503,8 @@ footer {
 }
 
 .myAccount {
-  background-color: #e2f5ff;
+  background: #F8FFFF;
+  background-size: cover;
 }
 .myAccount .accountGreeting {
   text-align: center;
@@ -562,7 +530,7 @@ footer {
   align-items: center;
 }
 .myAccount .buttonContainer .mainBtn {
-  padding: 3rem 10rem;
+  padding: 2.5rem 7rem;
   background-image: linear-gradient(to top left, #000000, #087E8B, #9EDAFA);
   color: white;
   font-size: 1.3rem;
@@ -624,6 +592,7 @@ footer {
   background-color: #e0eff0;
 }
 .journals ul li button {
+  transition: all 0.3s ease;
   background-color: #e0eff0;
   font-size: 1.1rem;
   width: 100%;

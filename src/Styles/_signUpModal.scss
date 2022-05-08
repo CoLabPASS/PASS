@@ -43,6 +43,7 @@ $darkGrey: #363636;
                 }
 
                 button {
+                    transition: all 0.3s ease;
                     background-color: $teal;
                     border-radius: 1rem;
                     font-family: 'Lustria', serif;
