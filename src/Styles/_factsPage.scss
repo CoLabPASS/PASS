@@ -1,5 +1,23 @@
 .facts {
     text-align: center;
+    .parentCntr{
+        position: relative;
+        input {
+            width: 100%;
+        }
+        p {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: aqua;
+            padding: 10px;
+        }
+    }
+    form {
+        .active {
+            background-color: aquamarine;
+        }
+    }
     .prompts{
         ul {
             display: flex;

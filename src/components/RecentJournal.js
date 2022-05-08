@@ -4,7 +4,6 @@ import firebase from '../firebase';
 import { getDatabase, ref, onValue } from 'firebase/database';
 import JournalDetail from './JournalDetail';
 
-
 function RecentJournal({userJournals}) {
     const [promptEvents, setPromptEvents]=useState(
         {
@@ -92,7 +91,7 @@ function RecentJournal({userJournals}) {
                             }
                         </button>
                     </li>
-                    )}
+                )}
             </ul>
         </div>
     )

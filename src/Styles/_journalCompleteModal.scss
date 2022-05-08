@@ -1,0 +1,48 @@
+.modalComplete{
+    .modal-content{
+        .modal-header{
+            min-height: 30vh;
+            background-image: url('https://images.unsplash.com/photo-1578941838877-141265f3a898?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2565&q=80');
+            background-size: cover;
+            background-position-y: bottom;
+            border-top-right-radius: 30px;
+            border-top-left-radius: 30px;
+            position: relative;
+            button {
+                background-color: white;
+                padding: 15px;
+                border-radius: 50%;
+                position: absolute;
+                top: 25px;
+                right: 25px;
+            }
+        }
+        .modal-body{
+            min-height: 50vh;
+            background-color: #34344A;
+            border-bottom-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            h3 {
+                margin: 46px auto;
+                font-weight: bolder;
+
+            }
+            p {
+                margin: auto;
+            }
+            button {
+                max-width: 30%;
+                margin: 55px auto;
+                background-color: #087E8B;
+                color: white;
+                padding: 10px 20px;
+            }
+
+        }
+    }
+}

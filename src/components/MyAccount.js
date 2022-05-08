@@ -3,7 +3,6 @@ import NavBar from './NavBar'
 import firebase from '../firebase';
 import { getDatabase, ref, onValue } from 'firebase/database';
 import { Navigate, Link } from 'react-router-dom';
-import JournalCalendar from "./JournalCalendar";
 import RecentJournal from "./RecentJournal";
 
 function MyAccount() {
