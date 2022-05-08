@@ -2,18 +2,52 @@ import React, {useEffect, useState} from 'react'
 import firebase from '../firebase';
 import { getDatabase, ref, onValue } from 'firebase/database';
 import NavBar from './NavBar';
-// import {Modal} from 'react-bootstrap'
 
 
 function Journals() {
     const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug", "Sep", "Oct", "Nov", "Dec"];
     const localUserId = localStorage.userId
-    // const [activeBtn, setActiveBtn]=useState({})
     const [selectedEntry, setSelectedEntry]=useState({})
 
     const [userEntries, setUserEntries]=useState([])
     const slectEntry =(entry)=>{
         setSelectedEntry(entry)
+    }
+    const sortBy=(category)=>{
+        const copyEntries = [...userEntries]
+        if(category ==='recent'){
+            const sortingUserEntries = copyEntries.sort((a,b)=>{
+                let A = a.dateTime
+                let B = b.dateTime
+                if(A.year > B.year) return -1
+                if(A.year < B.year) return 1
+                if(A.month > B.month) return -1
+                if(A.month < B.month) return 1
+                if(A.date > B.date) return -1
+                if(A.date < B.date) return 1
+                if(A.hours > B.hours) return -1
+                if(A.hours < B.hours) return 1
+                if(A.minutes > B.minutes) return -1
+                if(A.minutes < B.minutes) return 1
+            })
+            setUserEntries(sortingUserEntries)
+        }else {
+            const sortingUserEntries = copyEntries.sort((a,b)=>{
+                let A = a.dateTime
+                let B = b.dateTime
+                if(A.year > B.year) return 1
+                if(A.year < B.year) return -1
+                if(A.month > B.month) return 1
+                if(A.month < B.month) return -1
+                if(A.date > B.date) return 1
+                if(A.date < B.date) return -1
+                if(A.hours > B.hours) return 1
+                if(A.hours < B.hours) return -1
+                if(A.minutes > B.minutes) return 1
+                if(A.minutes < B.minutes) return -1
+            })
+            setUserEntries(sortingUserEntries)
+        }
     }
     useEffect(() => {
       // create a variable that holds our database details
@@ -37,7 +71,6 @@ function Journals() {
                 usersEntryList.push(entries)
             }
         })
-        console.log(usersEntryList)
         setUserEntries(usersEntryList)
     })
     }, [localUserId])
@@ -45,8 +78,19 @@ function Journals() {
     <>
         <NavBar/>
         <div className='wrapper journals'>
-            <div>
-                <h2>Journals</h2>
+            <div className='journalLists'>
+                <div className="myRow justify-content-between">
+                    <h2>Journals</h2>
+                    <div className='sortBtn'>
+                        <button className="dropDownBtn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Sort <i className='fas fa-caret-down'></i>
+                        </button>
+                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a className="dropdown-item" href="#" onClick={()=>sortBy('recent')}>Sort by recent</a>
+                            <a className="dropdown-item" href="#" onClick={()=>sortBy('oldest')}>Sort by oldest</a>
+                        </div>
+                    </div>
+                </div>
                 {userEntries.length>0 ?
                     <ul className="list-group">
                         {userEntries.map(entry=>

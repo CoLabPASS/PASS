@@ -4,15 +4,16 @@ import { v4 as uuidv4 } from 'uuid';
 import firebase from '../firebase';
 import { getDatabase, ref, push } from 'firebase/database';
 import { useNavigate } from "react-router-dom";
-import Emotions from './Emotions';
+import {Modal} from 'react-bootstrap'
 
 
 function QuickJournal() {
     let navigate = useNavigate();
 
     const [showSaveBtn, setShowSaveBtn] = useState(false)
-
     const [alert, setAlert] = useState({ show: false, message:'' })
+    const [show, setShow] = useState(false);
+
 
     const localUserId = localStorage.userId
 
@@ -44,8 +45,6 @@ function QuickJournal() {
                 minutes: postingTime.getMinutes(),
                 }
             const newEntry = {...journalEntry, dateTime, entryId}
-            // console.log(newEntry)
-            // fetiching database 
             const database = getDatabase(firebase);
             const dbRef = ref(database, `/entries`);
             try {
@@ -53,22 +52,43 @@ function QuickJournal() {
 
                 setAlert({show: true, message: 'journal added!'})
                 setJournalEntry({title: '', text: '', userId: localUserId})
+                setShow(true)
                 setTimeout(() => {
                     setAlert({show: false, message: ''})
+                    setShow(false)
+
                     navigate(`/MyAccount`)
-                }, 500);
+                }, 3000);
                 
             } catch (error) {
                 setAlert({show: true, message: 'Something went wrong, try again please?'+ error})
             }
-
         }else {
             return 
         }
     }
+    const handleClose = () => {
+        setShow(false)
+    };
+    const moveToNext= ()=>{
+    navigate(`/MyAccount`)
+    setShow(false)
+    }
 return (
     <>
         <NavBar/>
+        <Modal className='modalComplete' show={show} onHide={handleClose} animation={false} size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered>
+            <Modal.Header closeButton>
+            </Modal.Header>
+            <Modal.Body>
+            <h3>Breathe Easy</h3>
+            <p>Your journal is ready</p>
+
+            <button onClick={moveToNext}>continue</button>
+            </Modal.Body>
+        </Modal>
         <section className='quickJournal'>
             <form onSubmit={(e)=>e.preventDefault()} className='wrapper'>
                 <div>
@@ -80,34 +100,33 @@ return (
                     <textarea name="text" id="text" cols="30" rows="10" value={journalEntry.text} onChange={handleInput}></textarea>
 
                 </div>
-                {
+                {/* {
                 showFactsForm ? 
                     <div>
                         <Emotions/>
                     </div>
                     :null
-                }
+                } */}
             {
                 showSaveBtn ?
                 <div>
                     <button onClick={submitEntry}>Save</button>
-                    {
+                    {/* {
                         showFactsForm ? null: 
                         <button onClick={()=>setShowFactsForm(true)}>Let's try diving deeper</button>
-                    }
-                    {
+                    } */}
+                    {/* {
                         showFactsForm ? <button >Oop, never mind!</button>
                         : 
                         null
-                    }
+                    } */}
                     
                 </div>
                 : null
-                }
-            </form>
-            {
-                alert.show ? <p>{alert.message}</p> : null
             }
+
+            </form>
+            { alert.show ? <p>{alert.message}</p> : null }
         </section>
 
     </>

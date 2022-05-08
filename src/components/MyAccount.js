@@ -3,7 +3,6 @@ import NavBar from './NavBar'
 import firebase from '../firebase';
 import { getDatabase, ref, onValue } from 'firebase/database';
 import { Navigate, Link } from 'react-router-dom';
-import JournalCalendar from "./JournalCalendar";
 import RecentJournal from "./RecentJournal";
 
 function MyAccount() {
@@ -67,7 +66,6 @@ function MyAccount() {
             if(A.minutes > B.minutes) return -1
             if(A.minutes < B.minutes) return 1
         })
-        console.log(sortingUserEntries)
           setUserJournals(sortingUserEntries)
       })
 

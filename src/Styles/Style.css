@@ -464,6 +464,22 @@ footer {
 .facts {
   text-align: center;
 }
+.facts .parentCntr {
+  position: relative;
+}
+.facts .parentCntr input {
+  width: 100%;
+}
+.facts .parentCntr p {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: aqua;
+  padding: 10px;
+}
+.facts form .active {
+  background-color: aquamarine;
+}
 .facts .prompts ul {
   display: flex;
   flex-wrap: wrap;
@@ -581,13 +597,33 @@ footer {
   color: #608b8c;
   font-weight: bold;
 }
-.journals div {
-  width: 45%;
+.journals .sortBtn .dropDownBtn {
+  min-width: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+}
+.journals .sortBtn .dropdown-menu {
+  width: 200px;
+}
+.journals .journalLists {
+  width: 40%;
   padding: 20px;
+}
+.journals .journalDetails {
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  width: 55%;
+  top: 0;
+  padding: 20px;
+  overflow-y: auto;
 }
 .journals .journalDetails div {
   width: 100%;
   margin: 0 auto;
+  padding: 20px;
   min-height: 80vh;
   background-color: #e0eff0;
 }
@@ -796,6 +832,49 @@ footer {
   top: 0;
   right: 0;
   padding: 10px;
+}
+
+.modalComplete .modal-content .modal-header {
+  min-height: 30vh;
+  background-image: url("https://images.unsplash.com/photo-1578941838877-141265f3a898?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2565&q=80");
+  background-size: cover;
+  background-position-y: bottom;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  position: relative;
+}
+.modalComplete .modal-content .modal-header button {
+  background-color: white;
+  padding: 15px;
+  border-radius: 50%;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+.modalComplete .modal-content .modal-body {
+  min-height: 50vh;
+  background-color: #34344A;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+.modalComplete .modal-content .modal-body h3 {
+  margin: 46px auto;
+  font-weight: bolder;
+}
+.modalComplete .modal-content .modal-body p {
+  margin: auto;
+}
+.modalComplete .modal-content .modal-body button {
+  max-width: 30%;
+  margin: 55px auto;
+  background-color: #087E8B;
+  color: white;
+  padding: 10px 20px;
 }
 
 body .wrapper {

@@ -4,7 +4,6 @@ import firebase from '../firebase';
 import { getDatabase, ref, onValue } from 'firebase/database';
 import JournalDetail from './JournalDetail';
 
-
 function RecentJournal({userJournals}) {
     const [promptEvents, setPromptEvents]=useState(
         {
@@ -33,14 +32,11 @@ function RecentJournal({userJournals}) {
 
     const [alert, setAlert] = useState({ show: false, message:'' })
     const handleClose = () => {
-        // setSignUpForm(false)
-        // setSignInForm(false)
         setShow(false)
         
     };
     const handleShow = (entryId, fireId) => {
         setShow(true)
-        console.log(fireId)
               // create a variable that holds our database details
             const database = getDatabase(firebase)
     
@@ -48,7 +44,6 @@ function RecentJournal({userJournals}) {
             const dbRef = ref(database, `/entries/${fireId}`)
             onValue(dbRef, (res)=>{
                 const data = res.val()
-                console.log(data)
                 setJournalDetail(data)
             })
     };
@@ -92,7 +87,7 @@ function RecentJournal({userJournals}) {
                             }
                         </button>
                     </li>
-                    )}
+                )}
             </ul>
         </div>
     )
