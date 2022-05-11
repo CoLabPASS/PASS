@@ -252,7 +252,7 @@ h4 {
 }
 
 nav {
-  background-color: #34344A;
+  background-color: #34344a;
   color: white;
 }
 nav div {
@@ -262,6 +262,9 @@ nav div {
 nav div h2 {
   padding: 1rem 0.5rem;
   margin: 0;
+}
+nav div h2 .logoSolo {
+  width: 1.5rem;
 }
 nav div ul {
   display: flex;
@@ -276,7 +279,7 @@ nav div ul .navItem .otherBtn {
   font-size: 2rem;
 }
 nav div ul .navItem i {
-  font-size: 1rem;
+  font-size: 2rem;
 }
 nav div ul li {
   padding: 0 1rem;
@@ -285,13 +288,45 @@ nav div ul li button {
   padding-top: 2px;
 }
 nav div .otherMenu {
-  background-color: #087E8B;
+  background-color: #34344a;
   position: absolute;
+  right: 0;
+  z-index: 50;
+  width: 100%;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   padding: 10px;
+  -webkit-animation: slideOut 0.5s ease forwards;
+          animation: slideOut 0.5s ease forwards;
+  transform-origin: top right;
 }
 nav div .otherMenu li {
+  -webkit-animation: all 0.5s ease-in-out;
+          animation: all 0.5s ease-in-out;
   padding: 10px;
+  margin: 1rem 0;
+}
+nav div .otherMenu li:hover, nav div .otherMenu li:focus, nav div .otherMenu li:active {
+  -webkit-text-decoration: underline white solid;
+          text-decoration: underline white solid;
+}
+@-webkit-keyframes slideOut {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes slideOut {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
 }
 
 header {
@@ -321,18 +356,21 @@ header .headerDiv div {
 header .headerDiv div button {
   transition: all 0.3s ease;
   background-color: #087E8B;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   font-family: "Lustria", serif;
   color: white;
-  margin-top: 1.75rem;
+  margin-top: 1rem;
   margin-right: 1.3rem;
-  padding: 0.75rem 2.5rem;
+  padding: 0.5rem 3rem;
 }
-header .headerDiv div button:hover, header .headerDiv div button:active {
+header .headerDiv div button:hover {
   background-color: white;
   color: #000000;
-  font-weight: 500;
   border: 2px solid #E4572E;
+}
+header .headerDiv div button:active {
+  background-color: #E4572E;
+  color: white;
 }
 
 .appDescription {
@@ -371,16 +409,12 @@ header .headerDiv div button:hover, header .headerDiv div button:active {
 
 .callToAction {
   background-color: #D8F0FD;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
   padding: 7rem 0;
 }
 .callToAction .ctaDiv {
   background-color: #F8FFFF;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   border-radius: 54px;
   padding: 5rem 0;
@@ -394,6 +428,9 @@ header .headerDiv div button:hover, header .headerDiv div button:active {
   align-items: center;
   text-align: center;
 }
+.callToAction .ctaDiv .ctaText p {
+  padding: 1rem 0;
+}
 .callToAction .ctaDiv .ctaText button {
   transition: all 0.3s ease;
   background-color: #087E8B;
@@ -404,14 +441,17 @@ header .headerDiv div button:hover, header .headerDiv div button:active {
   margin-right: 1.3rem;
   padding: 0.5rem 3rem;
 }
-.callToAction .ctaDiv .ctaText button:hover,
-.callToAction .ctaDiv .ctaText button:active {
+.callToAction .ctaDiv .ctaText button:hover {
   background-color: white;
   color: #000000;
   border: 2px solid #E4572E;
 }
+.callToAction .ctaDiv .ctaText button:active {
+  background-color: #E4572E;
+  color: white;
+}
 .callToAction .ctaDiv .ctaImg {
-  width: 40%;
+  width: 30%;
   background-color: white;
   border: 1.5px solid black;
 }
@@ -443,16 +483,19 @@ footer {
   margin-left: 12rem;
 }
 .modal .modal-content .modal-body form input {
+  background-color: white;
+  border: 2px solid #979494;
+  border-radius: 0.25rem;
   margin: 0 12rem 1.5rem 12rem;
 }
 .modal .modal-content .modal-body form button {
   transition: all 0.3s ease;
   background-color: #087E8B;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   font-family: "Lustria", serif;
   color: white;
   margin: 2rem 17.5rem;
-  padding: 10px;
+  padding: 1rem;
 }
 .modal .modal-content .modal-body form button:hover,
 .modal .modal-content .modal-body form button:active {
@@ -462,13 +505,17 @@ footer {
 }
 
 .facts {
+  background: url(../Assets/gradientBgDesktop.jpg) no-repeat fixed;
   text-align: center;
 }
 .facts .parentCntr {
   position: relative;
 }
 .facts .parentCntr input {
-  width: 100%;
+  width: 70%;
+  background: transparent;
+  border: #087E8B solid 1px;
+  border-radius: 0.5rem;
 }
 .facts .parentCntr p {
   position: absolute;
@@ -521,72 +568,209 @@ footer {
 .myAccount {
   background: #F8FFFF;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 .myAccount .accountGreeting {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 7.5%;
+}
+.myAccount .accountGreeting h1 {
   text-align: center;
+  transform: scale(0.94);
+  -webkit-animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+          animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+.myAccount .accountGreeting h1 span {
+  color: #087E8B;
+  display: inline-block;
+  opacity: 0;
+  filter: blur(4px);
+  margin-right: 12px;
+}
+.myAccount .accountGreeting h1 .greetingName {
+  text-transform: capitalize;
+}
+.myAccount .accountGreeting h1 span:nth-child(1) {
+  -webkit-animation: fade-in 0.6s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+          animation: fade-in 0.6s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+.myAccount .accountGreeting h1 span:nth-child(2) {
+  -webkit-animation: fade-in 0.6s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+          animation: fade-in 0.6s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+.myAccount .accountGreeting h1 span:nth-child(3) {
+  -webkit-animation: fade-in 0.6s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+          animation: fade-in 0.6s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+@-webkit-keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+.myAccount .accountGreeting h2 {
+  text-transform: capitalize;
+  text-align: center;
+  transform: scale(0.94);
+  -webkit-animation: scale 4s forwards cubic-bezier(0.5, 1, 0.89, 1);
+          animation: scale 4s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+.myAccount .accountGreeting h2 span {
+  color: #000000;
+  display: inline-block;
+  opacity: 0;
+  filter: blur(4px);
+  margin-right: 10px;
+}
+.myAccount .accountGreeting h2 span:nth-child(1) {
+  -webkit-animation: fade-in 1.75s 1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+          animation: fade-in 1.75s 1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+.myAccount .accountGreeting h2 span:nth-child(2) {
+  -webkit-animation: fade-in 1.75s 1.15s forwards cubic-bezier(0.11, 0, 0.5, 0);
+          animation: fade-in 1.75s 1.15s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+.myAccount .accountGreeting h2 span:nth-child(3) {
+  -webkit-animation: fade-in 1.75s 1.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+          animation: fade-in 1.75s 1.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+.myAccount .accountGreeting h2 span:nth-child(4) {
+  -webkit-animation: fade-in 1.75s 1.45s forwards cubic-bezier(0.11, 0, 0.5, 0);
+          animation: fade-in 1.75s 1.45s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+.myAccount .accountGreeting h2 span:nth-child(5) {
+  -webkit-animation: fade-in 1.75s 1.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+          animation: fade-in 1.75s 1.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+.myAccount .accountGreeting h2 span:nth-child(6) {
+  -webkit-animation: fade-in 1.75s 1.75s forwards cubic-bezier(0.11, 0, 0.5, 0);
+          animation: fade-in 1.75s 1.75s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+@-webkit-keyframes scale {
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes scale {
+  100% {
+    transform: scale(1);
+  }
+}
+.myAccount .buttonContainer {
+  margin: 3.5% auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.myAccount .buttonContainer .mainBtn {
+  transition: all 0.5s ease-in;
+  background-image: linear-gradient(to top left, #000000, #046874, #4ec3d0);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  letter-spacing: 0.15rem;
+  border-radius: 1.5rem;
+  padding: 2.5rem 7rem;
+  margin: 1.5rem 2.5rem;
+}
+.myAccount .buttonContainer .mainBtn:hover, .myAccount .buttonContainer .mainBtn:focus, .myAccount .buttonContainer .mainBtn:active {
+  box-shadow: inset 0px 0px 5px #686c6c;
+}
+.myAccount .myRow {
+  margin: 2% auto;
+  justify-content: center;
+}
+.myAccount .myRow h2 {
+  margin: 1rem auto;
+  -webkit-text-decoration: underline #087E8B solid 1px;
+          text-decoration: underline #087E8B solid 1px;
+  text-align: center;
+}
+
+.quickJournal {
+  height: 100vh;
+  background: url(../Assets/gradientBgDesktop.jpg) no-repeat;
+  background-attachment: fixed;
+  padding: 10% 0;
+}
+.quickJournal form {
+  width: 80%;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 5rem;
-  margin-bottom: 3.5rem;
-}
-.myAccount .accountGreeting h3 {
-  font-size: 1.7rem;
-}
-.myAccount .accountGreeting h3 span {
-  font-size: 1.9rem;
-  color: #087E8B;
-  text-transform: capitalize;
-}
-.myAccount .buttonContainer {
-  min-height: 40vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.myAccount .buttonContainer .mainBtn {
-  padding: 2.5rem 7rem;
-  background-image: linear-gradient(to top left, #000000, #087E8B, #9EDAFA);
-  color: white;
-  font-size: 1.3rem;
-  border-radius: 1.5rem;
-}
-.myAccount .buttonContainer span {
-  width: 10%;
-  margin: 20px auto;
-  padding: 20px;
-}
-
-.quickJournal {
-  height: 100vh;
-  background-color: #F8FFFF;
-}
-.quickJournal form {
-  width: 80%;
-  margin: 5rem auto;
-  min-height: 60vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
 }
 .quickJournal form div {
   width: 100%;
+  margin: 0.5rem auto;
+}
+.quickJournal form div label {
+  font-size: 1.5rem;
 }
 .quickJournal form div input {
+  line-height: 2rem;
   width: 100%;
-  border: 1px solid #D8F0FD;
+  border: 0.5px solid #087E8B;
+  background: #F8FFFF;
+  border-radius: 0.5rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.quickJournal form div input ::-moz-placeholder {
+  color: black;
+}
+.quickJournal form div input :-ms-input-placeholder {
+  color: black;
+}
+.quickJournal form div input ::placeholder {
+  color: black;
+}
+.quickJournal form div input:hover, .quickJournal form div input:focus, .quickJournal form div input:active {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 .quickJournal form div textarea {
+  line-height: 1.75rem;
   width: 100%;
-  background-color: #dbdbdb;
-  border: 1px solid #D8F0FD;
+  resize: none;
+  background-color: #F8FFFF;
+  border: 0.5px solid #087E8B;
+  border-radius: 0.5rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .quickJournal form div button {
-  padding: 20px;
-  margin-top: 10px;
-  margin-right: 10px;
+  transition: all 0.3s ease;
+  background-color: #087E8B;
+  border-radius: 1rem;
+  font-family: "Lustria", serif;
+  color: white;
+  margin-top: 1rem;
+  margin-right: 1.3rem;
+  padding: 0.5rem 3rem;
+}
+.quickJournal form div button:hover {
+  background-color: white;
+  color: #000000;
+  border: 2px solid #E4572E;
+}
+.quickJournal form div button:active {
+  background-color: #E4572E;
+  color: white;
 }
 
 .journals {
@@ -660,7 +844,9 @@ footer {
   border-radius: 10px;
 }
 .feelingSect ul .emoCardBtn button {
-  border: 1px solid rgb(85, 83, 83);
+  background-color: #F8FFFF;
+  border: #087E8B solid 2px;
+  color: #000000;
   width: 100%;
   padding: 10px 20px;
   border-radius: 5px;
@@ -672,7 +858,6 @@ footer {
   font-size: 2rem;
 }
 .feelingSect ul .emoCardBtn ul {
-  background-color: rgb(236, 186, 194);
   display: flex;
   flex-wrap: wrap;
   text-align: center;
@@ -683,6 +868,7 @@ footer {
   margin: 0 auto;
 }
 .feelingSect ul .emoCardBtn ul li button {
+  background-color: #F8FFFF;
   border: 1px solid black;
   justify-content: center;
 }
@@ -762,10 +948,6 @@ footer {
   font-weight: bolder;
 }
 
-.recentJournal {
-  min-width: 48%;
-  border: 1px solid red;
-}
 .recentJournal ul {
   display: flex;
   flex-direction: row;
@@ -779,13 +961,17 @@ footer {
   min-width: 250px;
   background: white;
   margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
 }
 .recentJournal ul .journalCards .journalDate {
   margin: 0;
   font-size: 0.9rem;
 }
 .recentJournal ul .journalCards h4 {
-  font-weight: bolder;
+  font-weight: bold;
 }
 .recentJournal ul .journalCards .myRow {
   justify-content: space-between;
@@ -801,7 +987,6 @@ footer {
 .journalDetail .emotions {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 .journalDetail .emotions li {
   padding: 10px;

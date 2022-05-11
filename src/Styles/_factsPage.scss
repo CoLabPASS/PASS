@@ -1,9 +1,14 @@
 .facts {
+    background: url(../Assets/gradientBgDesktop.jpg) no-repeat fixed;
     text-align: center;
+
     .parentCntr{
         position: relative;
         input {
-            width: 100%;
+            width: 70%;
+            background: transparent;
+            border: $teal solid 1px;
+            border-radius: 0.5rem;
         }
         p {
             position: absolute;

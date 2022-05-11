@@ -64,27 +64,24 @@ function RecentJournal({userJournals}) {
                         <button className='journalCards' onClick={()=>handleShow(journal.entryId, journal.firebaseId)}>
                             {/* date */}
                             <p className='journalDate'>{journal.dateTime.month+1}/{journal.dateTime.date}/{journal.dateTime.year}</p>
-                            {/* tittle */}
-                            <h4 className='journalTittle'>{journal.title}</h4>
-                            {
-                                journal.type==='factsJournal' ?
+                            {/* title */}
+                            <h4 className='journalTitle'>{journal.title}</h4>
+                            {journal.type==='factsJournal' ?
                                 <div className='myRow'>
                                     {journal.promptingEvents ? 
-                                    <div>
-                                        <i className={promptEvents[`${journal.promptingEvents[0]}`]}></i>
-                                        {journal.promptingEvents[0]}
-                                    </div>
+                                        <div>
+                                            <i className={promptEvents[`${journal.promptingEvents[0]}`]}></i>
+                                            {journal.promptingEvents[0]}
+                                        </div>
                                     :null}
                                     {journal.emotions ? 
-                                    <div>
-                                        {emotions[`${journal.emotions[0].cat}`]}
-                                        {journal.emotions[0].cat}
-                                    </div>
+                                        <div>
+                                            {emotions[`${journal.emotions[0].cat}`]}
+                                            {journal.emotions[0].cat}
+                                        </div>
                                     :null}
-                                    
                                 </div>
-                                :null
-                            }
+                            :null}
                         </button>
                     </li>
                 )}

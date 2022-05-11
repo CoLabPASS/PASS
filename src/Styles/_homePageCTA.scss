@@ -20,16 +20,12 @@ $darkGrey: #363636;
 
 .callToAction {
     background-color: $lightBlue;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
     padding: 7rem 0;
 
     .ctaDiv {
         background-color: $offWhite;
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
         border-radius: 54px;
         padding: 5rem 0;
@@ -43,6 +39,10 @@ $darkGrey: #363636;
             align-items: center;
             text-align: center;
 
+            p {
+                padding: 1rem 0;
+            }
+
             button {
                 transition: all 0.3s ease;
                 background-color: $teal;
@@ -55,16 +55,20 @@ $darkGrey: #363636;
             
             }
             
-            button:hover,
-            button:active {
+            button:hover {
                 background-color: white;
                 color: $black;
                 border: 2px solid $orange;
             }
+
+            button:active {
+                background-color: $orange;
+                color: white;
+            }
         }
 
         .ctaImg {
-            width: 40%;
+            width: 30%;
             background-color: white;
             border: 1.5px solid black;
         }

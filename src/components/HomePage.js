@@ -96,7 +96,7 @@ function HomePage() {
               <div className='appDescImg'><img src="" alt="" /></div>
               <div className='appDescText'>
                 <h2>Fast and memorable <br/> <span>during counseling sessions</span> </h2>
-                <p>It can be tough to pinpoint and remember exactly how you felt during a past conflict. <br/><br/>Our Check The Facts journal feature can help you get right to the point and get more out of your time with your mental health care provider.</p>
+                <p>It can be tough to pinpoint and remember exactly how you felt during a past conflict. <br/><br/>Our Check The Facts journal feature can help you make the most of the time you have with your mental health care provider.</p>
               </div>
             </div>
           </section> {/**** DESCRIPTION SECTION END ****/}
@@ -106,7 +106,7 @@ function HomePage() {
             <div className='ctaDiv wrapper'>
               <div className='ctaText'>
                 <h2>Build healthy, <br /><span>emotional bonds</span> </h2>
-                <p>Our journal is fast and easy to use. It allows you to quickly add your emotional state and details about your experiences with a device that is already in your pocket.</p>
+                <p>iJournal is fast and easy to use. Whether you want to make a quick journal entry or dive straight into a guided approach to try and map out the details of an important interaction, we can help.</p>
                 <button>Get Started</button>
               </div>
               <div className='ctaImg'><img src="" alt="" /></div>

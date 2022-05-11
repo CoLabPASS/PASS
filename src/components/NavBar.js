@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {Link, useLocation, useNavigate } from "react-router-dom";
+import logoSolo from '../Assets/logoSolo.png'
 
 
 function NavBar() {
@@ -16,7 +17,7 @@ function NavBar() {
     return (
     <nav>
         <div className="wrapper">
-            <h2>iJournal</h2>
+            <h2><img className="logoSolo" src={logoSolo} alt="logo"/> iJournal</h2>
             <ul>
                 {localUserId ?
                     null : 
@@ -55,8 +56,7 @@ function NavBar() {
                 } */}
                     <li >
                         <button className='navItem otherBtn' onClick={()=>setShowOtherMenu(!showOtherMenu)}> 
-                        {/* <i class="fas fa-bars"></i> */}
-                            <i class="fas fa-caret-down"></i>
+                        <i class="fas fa-bars"></i>
                         </button>
                         {showOtherMenu ?
                             <ul className='otherMenu'>

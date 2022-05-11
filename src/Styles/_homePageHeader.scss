@@ -39,22 +39,27 @@ header {
             width: 100%;
             display: flex;
             justify-content: start;
+            
             button {
                 transition: all 0.3s ease;
                 background-color: $teal;
-                border-radius: 0.5rem;
+                border-radius: 1rem;
                 font-family: 'Lustria', serif;
                 color: white;
-                margin-top: 1.75rem;
+                margin-top: 1rem;
                 margin-right: 1.3rem;
-                padding: 0.75rem 2.5rem;
-
+                padding: 0.5rem 3rem;
             }
-            button:hover, button:active {
+            
+            button:hover {
                 background-color: white;
                 color: $black;
-                font-weight: 500;
                 border: 2px solid $orange;
+            }
+            
+            button:active {
+                background-color: $orange;
+                color: white;
             }
         }
     }

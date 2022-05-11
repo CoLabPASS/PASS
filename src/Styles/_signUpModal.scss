@@ -14,6 +14,7 @@ $orange: #E4572E;
 // Others
 $black: #000000;
 $darkGrey: #363636;
+$lightGrey: #979494;
 
 
 .modal {
@@ -39,17 +40,20 @@ $darkGrey: #363636;
                 }
             
                 input {
+                    background-color: white;
+                    border: 2px solid $lightGrey;
+                    border-radius: 0.25rem;
                     margin: 0 12rem 1.5rem 12rem;
                 }
 
                 button {
                     transition: all 0.3s ease;
                     background-color: $teal;
-                    border-radius: 1rem;
+                    border-radius: 0.5rem;
                     font-family: 'Lustria', serif;
                     color: white;
                     margin: 2rem 17.5rem;
-                    padding: 10px;
+                    padding: 1rem;
                 
                 }
                 
