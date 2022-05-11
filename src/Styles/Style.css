@@ -911,6 +911,70 @@ footer {
   padding: 10px 20px;
 }
 
+.factsPromptCard {
+  min-height: 100vh;
+  background-color: rgb(174, 205, 194);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.factsPromptCard .promptCard {
+  margin: 0 auto;
+  background-color: white;
+  width: 70%;
+  border-radius: 10px;
+}
+.factsPromptCard .promptCard .cardSects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+.factsPromptCard .promptCard .cardSects ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.factsPromptCard .promptCard .cardSects ul .emoCardBtn {
+  padding: 5px;
+  width: 30%;
+  margin: 10px auto;
+  text-align: center;
+  border-radius: 10px;
+}
+.factsPromptCard .promptCard .cardSects ul .emoCardBtn button {
+  border: 1px solid rgb(85, 83, 83);
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.factsPromptCard .promptCard .cardSects ul .emoCardBtn button .emo {
+  font-size: 2rem;
+}
+.factsPromptCard .promptCard .cardSects ul .emoCardBtn ul {
+  background-color: rgb(236, 186, 194);
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 5px;
+}
+.factsPromptCard .promptCard .cardSects ul .emoCardBtn ul li {
+  width: 45%;
+  margin: 0 auto;
+}
+.factsPromptCard .promptCard .cardSects ul .emoCardBtn ul li button {
+  border: 1px solid black;
+  justify-content: center;
+}
+.factsPromptCard .promptCard .cardSects ul .emoCardBtn ul li .selected {
+  background: rgb(177, 243, 243);
+}
+
 body .wrapper {
   margin: 0 auto;
   padding: 0;

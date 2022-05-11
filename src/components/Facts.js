@@ -8,7 +8,6 @@ import {Modal} from 'react-bootstrap'
 import { getDatabase, ref, push } from 'firebase/database';
 import firebase from '../firebase';
 
-
 function Facts() {
   let navigate = useNavigate();
   const journalTitle = useRef();
@@ -23,7 +22,6 @@ function Facts() {
   const [showText2Alert, setShowText2Alert]=useState(false)
   const [alert, setAlert] = useState({ show: false, message:'' })
   const [showSaveBtn, setShowSaveBtn] = useState(false)
-
 
   const [selectedEmos, setSelectedEmos]=useState([])
   const [selectedPromptEvent, setSelectedPromptEvent]=useState([])
