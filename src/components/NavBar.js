@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {Link, useLocation, useNavigate } from "react-router-dom";
 
 
-function NavBar() {
+function NavBar({handleShow}) {
     let navigate = useNavigate();
     let location = useLocation();
     const [showOtherMenu, setShowOtherMenu]=useState(false)
@@ -37,22 +37,20 @@ function NavBar() {
                     localUserId ?
                     null : 
                     <li>
-                        <button className='navItem'> Sign In</button>
+                        <button className='navItem' onClick={()=>handleShow('SignIn')}> Sign In</button>
                     </li>
                 }
                 {
                     localUserId ?
                     null : 
                     <li>
-                        <button className='navItem'>Sign Up</button>
+                        <button className='navItem' onClick={()=>handleShow('signUp')}>Sign Up</button>
                     </li>
                 }
-                {/* {localUserId ?
-                    <li>
-                        <button className='navItem' onClick={signOut}>Sign Out</button>
-                    </li> :
-                    null
-                } */}
+
+                {
+                    localUserId ? 
+
                     <li >
                         <button className='navItem otherBtn' onClick={()=>setShowOtherMenu(!showOtherMenu)}> 
                         {/* <i class="fas fa-bars"></i> */}
@@ -71,7 +69,8 @@ function NavBar() {
                                     null
                                 }
                                 
-                                {localUserId ?
+                                {
+                                localUserId ?
                                     location.pathname === "/Calendar" ?null :
 
                                     <li>
@@ -80,7 +79,12 @@ function NavBar() {
                                     :
                                     null
                                 }
-                                <li><button className='navItem' onClick={signOut}><i class="fas fa-sign-in-alt"></i> &nbsp;Sign Out</button></li>
+                                {
+                                    localUserId ?
+
+                                    <li><button className='navItem' onClick={signOut}><i class="fas fa-sign-in-alt"></i> &nbsp;Sign Out</button></li>
+                                    :null
+                                }
                             </ul>
 
                         :
@@ -89,6 +93,8 @@ function NavBar() {
                         }
 
                     </li> 
+                    : null
+                }
             </ul>
         </div>
     </nav>

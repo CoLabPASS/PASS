@@ -47,7 +47,7 @@ function HomePage() {
   return (
     <>
     {localUserId? <Navigate to='/MyAccount' /> : null}
-        <NavBar/>
+        <NavBar handleShow={handleShow}/>
         <main>
           <header>
             <div className="wrapper">
