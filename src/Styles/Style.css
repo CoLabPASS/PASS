@@ -287,6 +287,11 @@ nav div ul li {
 nav div ul li button {
   padding-top: 2px;
 }
+nav div ul li button:hover,
+nav div ul li button:active {
+  -webkit-text-decoration: underline solid 1px white;
+          text-decoration: underline solid 1px white;
+}
 nav div .otherMenu {
   background-color: #34344a;
   position: absolute;
@@ -308,7 +313,7 @@ nav div .otherMenu li {
   padding: 10px;
   margin: 1rem 0;
 }
-nav div .otherMenu li:hover, nav div .otherMenu li:focus, nav div .otherMenu li:active {
+nav div .otherMenu li:hover, nav div .otherMenu li:active {
   -webkit-text-decoration: underline white solid;
           text-decoration: underline white solid;
 }
@@ -388,7 +393,7 @@ header .headerDiv div button:active {
   padding: 2.5rem 0;
 }
 .appDescription .appDescDiv .appDescText {
-  width: 45%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -398,10 +403,8 @@ header .headerDiv div button:active {
   margin: 1.25rem 0;
 }
 .appDescription .appDescDiv .appDescImg {
-  width: 45%;
+  width: 50%;
   height: 380px;
-  background-color: white;
-  border: 1.5px solid black;
 }
 .appDescription .appDescDiv .appDescImg img {
   width: 100%;
@@ -418,9 +421,10 @@ header .headerDiv div button:active {
   align-items: center;
   border-radius: 54px;
   padding: 5rem 0;
+  position: relative;
 }
 .callToAction .ctaDiv .ctaText {
-  width: 40%;
+  width: 45%;
   height: 80%;
   display: flex;
   flex-direction: column;
@@ -451,9 +455,14 @@ header .headerDiv div button:active {
   color: white;
 }
 .callToAction .ctaDiv .ctaImg {
-  width: 30%;
-  background-color: white;
-  border: 1.5px solid black;
+  width: 50%;
+  height: 90%;
+}
+.callToAction .ctaDiv .ctaImg img {
+  width: 65%;
+  position: absolute;
+  left: 47.5%;
+  bottom: 5%;
 }
 
 footer {
@@ -497,7 +506,7 @@ footer {
   margin: 2rem 17.5rem;
   padding: 1rem;
 }
-.modal .modal-content .modal-body form button:hover,
+.modal .modal-content .modal-body form button:hover, .modal .modal-content .modal-body form button:focus,
 .modal .modal-content .modal-body form button:active {
   background-color: white;
   color: #000000;
@@ -508,35 +517,80 @@ footer {
   background: url(../Assets/gradientBgDesktop.jpg) no-repeat fixed;
   text-align: center;
 }
-.facts .parentCntr {
+.facts .wrapper h1 {
+  padding-top: 5%;
+}
+.facts .wrapper form .active {
+  background-color: aquamarine;
+}
+.facts .wrapper form .parentCntr {
   position: relative;
 }
-.facts .parentCntr input {
+.facts .wrapper form .parentCntr input {
   width: 70%;
+  padding: 0 1rem;
+  text-align: center;
   background: transparent;
   border: #087E8B solid 1px;
   border-radius: 0.5rem;
 }
-.facts .parentCntr p {
+.facts .wrapper form .parentCntr input:hover, .facts .wrapper form .parentCntr input:active {
+  border: solid 2px #000000;
+}
+.facts .wrapper form .parentCntr p {
   position: absolute;
   bottom: 0;
   right: 0;
   background-color: aqua;
   padding: 10px;
 }
-.facts form .active {
-  background-color: aquamarine;
+.facts .wrapper form h3 {
+  padding-top: 5%;
 }
-.facts .prompts ul {
+.facts .wrapper form .journalTxtDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.facts .wrapper form .journalTxtDiv textarea {
+  max-width: 650px;
+  width: 100%;
+  border: solid 1px #087E8B;
+  border-radius: 1rem;
+  resize: none;
+  padding: 1rem;
+  margin: 2rem auto;
+}
+.facts .wrapper form .journalTxtDiv textarea:hover, .facts .wrapper form .journalTxtDiv textarea:active {
+  border: solid 2px #000000;
+}
+.facts .wrapper form .generalBtn {
+  width: 80px;
+  font-family: "Lustria", serif;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+  background-color: #087E8B;
+  border-radius: 0.5rem;
+  color: white;
+  margin: 2rem 17.5rem;
+  padding: 0.5rem 1rem;
+  margin: 5% auto;
+}
+.facts .wrapper form .generalBtn:hover, .facts .wrapper form .generalBtn:active {
+  background-color: white;
+  color: #000000;
+  border: 2px solid #E4572E;
+}
+.facts .wrapper .prompts ul {
   display: flex;
   flex-wrap: wrap;
 }
-.facts .prompts ul li {
+.facts .wrapper .prompts ul li {
   margin: 20px auto;
   min-width: 30%;
   max-width: 90%;
 }
-.facts .prompts ul li button {
+.facts .wrapper .prompts ul li button {
   background-color: transparent;
   display: flex;
   flex-direction: row;
@@ -545,24 +599,27 @@ footer {
   text-align: center;
   min-width: 100%;
 }
-.facts .prompts ul li button i {
+.facts .wrapper .prompts ul li button i {
   padding: 10px;
-  background-color: white;
   border: 1px solid rgb(85, 83, 83);
   border-radius: 50%;
   margin-right: 10px;
 }
-.facts .prompts ul li button p {
+.facts .wrapper .prompts ul li button p {
   margin: 0 auto;
-  border: 1px solid rgb(85, 83, 83);
+  background: #F8FFFF;
+  border: 1px solid #087E8B;
   width: 100%;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 1rem;
   min-width: 200px;
 }
-.facts .prompts ul li .active {
-  background-color: rebeccapurple;
-  color: white;
+.facts .wrapper .prompts ul li button p:hover {
+  border: solid 2px #000000;
+}
+.facts .wrapper .prompts ul li .active {
+  background: rgb(177, 243, 243);
+  border: solid 2px #000000;
 }
 
 .myAccount {
@@ -706,16 +763,16 @@ footer {
   height: 100vh;
   background: url(../Assets/gradientBgDesktop.jpg) no-repeat;
   background-attachment: fixed;
-  padding: 10% 0;
+  padding: 5% 0;
 }
 .quickJournal form {
+  max-width: 750px;
   width: 80%;
   min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 5rem;
 }
 .quickJournal form div {
   width: 100%;
@@ -723,6 +780,7 @@ footer {
 }
 .quickJournal form div label {
   font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 .quickJournal form div input {
   line-height: 2rem;
@@ -833,58 +891,73 @@ footer {
 
 .feelingSect ul {
   display: flex;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 .feelingSect ul .emoCardBtn {
-  padding: 5px;
+  padding: 1rem;
   width: 30%;
+  min-width: 300px;
   margin: 10px auto;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 .feelingSect ul .emoCardBtn button {
   background-color: #F8FFFF;
   border: #087E8B solid 2px;
-  color: #000000;
   width: 100%;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 1rem;
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
 }
 .feelingSect ul .emoCardBtn button .emo {
-  font-size: 2rem;
+  font-size: 1.5rem;
+}
+.feelingSect ul .emoCardBtn button span {
+  color: black;
+}
+.feelingSect ul .emoCardBtn button:hover, .feelingSect ul .emoCardBtn button:active {
+  border: #087E8B solid 3px;
 }
 .feelingSect ul .emoCardBtn ul {
+  width: 100%;
+  background-color: #F8FFFF;
+  border: solid 2px #087E8B;
+  border-radius: 1rem;
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  padding: 5px;
 }
 .feelingSect ul .emoCardBtn ul li {
-  width: 45%;
-  margin: 0 auto;
+  width: calc(50% - 10px);
+  margin: 6.5px 5px;
 }
 .feelingSect ul .emoCardBtn ul li button {
+  width: 100%;
+  font-size: 16px;
   background-color: #F8FFFF;
-  border: 1px solid black;
+  border: solid 0.25px #000000;
   justify-content: center;
+}
+.feelingSect ul .emoCardBtn ul li button:hover {
+  border: solid 2px #000000;
 }
 .feelingSect ul .emoCardBtn ul li .selected {
   background: rgb(177, 243, 243);
+  border: solid 2px #000000;
 }
 
 .calendarJournal {
   width: 100%;
 }
 .calendarJournal .react-calendar {
-  width: 85%;
+  width: 70%;
   margin: 0 auto;
   padding: 10px;
-  background-color: #34344A;
-  border-radius: 5px;
+  background-color: rgb(225, 228, 229);
+  border-radius: 10px;
   text-align: center;
 }
 .calendarJournal .react-calendar .react-calendar__month-view__weekdays__weekday {
@@ -905,7 +978,7 @@ footer {
 .calendarJournal .react-calendar .react-calendar__tile {
   border-radius: 10px;
   background-color: white;
-  padding: 10px;
+  padding: 20px;
   border: 3px solid #34344A;
 }
 .calendarJournal .react-calendar .react-calendar__tile:hover {
@@ -947,6 +1020,9 @@ footer {
   color: #fe7c54;
   font-weight: bolder;
 }
+.calendarJournal .journalDetail {
+  width: 30%;
+}
 
 .recentJournal ul {
   display: flex;
@@ -956,15 +1032,17 @@ footer {
 }
 .recentJournal ul .journalCards {
   padding: 15px;
-  border: 2px solid #67c1f2;
+  border: 2px solid #65B1EF;
   border-radius: 10px;
   min-width: 250px;
   background: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin: 10px auto;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-start;
+  transition: all 0.3s ease;
 }
 .recentJournal ul .journalCards .journalDate {
   margin: 0;
@@ -978,6 +1056,14 @@ footer {
 }
 .recentJournal ul .journalCards .myRow i {
   color: #67c1f2;
+}
+.recentJournal ul .journalCards:hover,
+.recentJournal ul .journalCards:focus,
+.recentJournal ul .journalCards:active {
+  background-color: white;
+  color: #000000;
+  border: 1.5px solid #E4572E;
+  box-shadow: -0.5px -0.5px 2.5px 0.5px #E4572E;
 }
 
 .journalDetail {
@@ -1019,14 +1105,23 @@ footer {
   padding: 10px;
 }
 
+.modalComplete .modal-content {
+  max-width: 450px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .modalComplete .modal-content .modal-header {
-  min-height: 30vh;
-  background-image: url("https://images.unsplash.com/photo-1578941838877-141265f3a898?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2565&q=80");
-  background-size: cover;
-  background-position-y: bottom;
-  border-top-right-radius: 30px;
-  border-top-left-radius: 30px;
-  position: relative;
+  margin: 0 auto;
+}
+.modalComplete .modal-content .modal-header .breatheImg {
+  display: flex;
+  margin: 0 auto;
+}
+.modalComplete .modal-content .modal-header .breatheImg img {
+  width: 100%;
 }
 .modalComplete .modal-content .modal-header button {
   background-color: white;
@@ -1037,29 +1132,103 @@ footer {
   right: 25px;
 }
 .modalComplete .modal-content .modal-body {
-  min-height: 50vh;
   background-color: #34344A;
   border-bottom-right-radius: 30px;
   border-bottom-left-radius: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
   color: white;
 }
 .modalComplete .modal-content .modal-body h3 {
-  margin: 46px auto;
+  margin: 1.5rem auto;
   font-weight: bolder;
 }
 .modalComplete .modal-content .modal-body p {
-  margin: auto;
+  font-size: 1rem;
+  width: 80%;
 }
 .modalComplete .modal-content .modal-body button {
-  max-width: 30%;
-  margin: 55px auto;
+  transition: all 0.4s ease-in;
   background-color: #087E8B;
+  border: solid 1px #087E8B;
+  border-radius: 0.5rem;
+  font-family: "Lustria", serif;
   color: white;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+}
+.modalComplete .modal-content .modal-body button:hover,
+.modalComplete .modal-content .modal-body button:active {
+  background-color: white;
+  color: #000000;
+  border: 2px solid #E4572E;
+}
+
+.factsPromptCard {
+  min-height: 100vh;
+  background-color: rgb(174, 205, 194);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.factsPromptCard .promptCard {
+  margin: 0 auto;
+  background-color: white;
+  width: 70%;
+  border-radius: 10px;
+}
+.factsPromptCard .promptCard .cardSects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+.factsPromptCard .promptCard .cardSects ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.factsPromptCard .promptCard .cardSects ul .emoCardBtn {
+  padding: 5px;
+  width: 30%;
+  margin: 10px auto;
+  text-align: center;
+  border-radius: 10px;
+}
+.factsPromptCard .promptCard .cardSects ul .emoCardBtn button {
+  border: 1px solid rgb(85, 83, 83);
+  width: 100%;
   padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.factsPromptCard .promptCard .cardSects ul .emoCardBtn button .emo {
+  font-size: 2rem;
+}
+.factsPromptCard .promptCard .cardSects ul .emoCardBtn ul {
+  background-color: rgb(236, 186, 194);
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 5px;
+}
+.factsPromptCard .promptCard .cardSects ul .emoCardBtn ul li {
+  width: 45%;
+  margin: 0 auto;
+}
+.factsPromptCard .promptCard .cardSects ul .emoCardBtn ul li button {
+  border: 1px solid black;
+  justify-content: center;
+}
+.factsPromptCard .promptCard .cardSects ul .emoCardBtn ul li .selected {
+  background: rgb(177, 243, 243);
 }
 
 body .wrapper {

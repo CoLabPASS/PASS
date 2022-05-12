@@ -4,17 +4,19 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
-        .journalCards{
+        .journalCards {
             padding: 15px;
-            border: 2px solid #67c1f2;
+            border: 2px solid #65B1EF;
             border-radius: 10px;
             min-width: 250px;
             background: white;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             margin: 10px auto;
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
             align-items: flex-start;
+            transition: all 0.3s ease;
             .journalDate{
                 margin: 0;
                 font-size: .9rem;
@@ -28,6 +30,15 @@
                     color: #67c1f2;
                 }
             }
+        }
+
+        .journalCards:hover,
+        .journalCards:focus,
+        .journalCards:active {
+            background-color: white;
+            color: $black;
+            border: 1.5px solid $orange;
+            box-shadow: -0.5px -0.5px 2.5px 0.5px $orange;
         }
    
     }

@@ -2,64 +2,135 @@
     background: url(../Assets/gradientBgDesktop.jpg) no-repeat fixed;
     text-align: center;
 
-    .parentCntr{
-        position: relative;
-        input {
-            width: 70%;
-            background: transparent;
-            border: $teal solid 1px;
-            border-radius: 0.5rem;
-        }
-        p {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            background-color: aqua;
-            padding: 10px;
-        }
-    }
-    form {
-        .active {
-            background-color: aquamarine;
-        }
-    }
-    .prompts{
-        ul {
-            display: flex;
-            flex-wrap: wrap;
-            li {
-                margin: 20px auto;
-                min-width: 30%;
-                max-width: 90%;
-                button {
-                    background-color: transparent;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    align-items: center;
+    .wrapper {
+
+        h1 {
+            padding-top: 5%;
+            }
+    
+        form {
+            .active {
+                background-color: aquamarine;
+            }
+            .parentCntr {
+                position: relative;
+
+                input {
+                    width: 70%;
+                    padding: 0 1rem;
                     text-align: center;
-                    min-width: 100%;
-                    i {
-                        padding: 10px;
-                        background-color: white;
-                        border: 1px solid rgb(85, 83, 83);
-                        border-radius: 50%;
-                        margin-right: 10px;
-                    }
-                    p{
-                        margin: 0 auto;
-                        border: 1px solid rgb(85, 83, 83);
-                        width: 100%;
-                        padding: 10px 20px;
-                        border-radius: 5px;
-                        min-width: 200px;
-                    }
+                    background: transparent;
+                    border: $teal solid 1px;
+                    border-radius: 0.5rem;
                 }
-                .active {
-                    background-color: rebeccapurple;
-                    color: white;
+
+                input:hover, input:active {
+                    border: solid 2px $black;
+                }
+
+                p {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    background-color: aqua;
+                    padding: 10px;
+                }
+            }
+
+            h3 {
+                padding-top: 5%;
+            }
+
+            .journalTxtDiv {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                textarea {
+                    max-width: 650px;
+                    width: 100%;
+                    border: solid 1px $teal;
+                    border-radius: 1rem;
+                    resize: none;
+                    padding: 1rem;
+                    margin: 2rem auto;
+                }
+
+                textarea:hover, textarea:active {
+                    border: solid 2px $black;
+                }
+            }
+
+            .generalBtn { 
+                width: 80px;
+                font-family: 'Lustria', serif;
+                text-transform: capitalize;
+                transition: all 0.3s ease;
+                background-color: $teal;
+                border-radius: 0.5rem;
+                color: white;
+                margin: 2rem 17.5rem;
+                padding: 0.5rem 1rem;
+                margin: 5% auto;
+            }
+
+            .generalBtn:hover, .generalBtn:active {
+                background-color: white;
+                color: $black;
+                border: 2px solid $orange;
+            }
+
+        }
+    
+        .prompts {
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+    
+                li {
+                    margin: 20px auto;
+                    min-width: 30%;
+                    max-width: 90%;
+    
+                    button {
+                        background-color: transparent;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        min-width: 100%;
+    
+                        i {
+                            padding: 10px;
+                            border: 1px solid rgb(85, 83, 83);
+                            border-radius: 50%;
+                            margin-right: 10px;
+                        }
+    
+                        p {
+                            margin: 0 auto;
+                            background: $offWhite;
+                            border: 1px solid $teal;
+                            width: 100%;
+                            padding: 10px 20px;
+                            border-radius: 1rem;
+                            min-width: 200px;
+                        }
+
+                        p:hover {
+                            border: solid 2px $black;
+                        }
+                    }
+    
+                    .active {
+                        background: rgb(177, 243, 243);
+                        border: solid 2px $black;
+                    }
                 }
             }
         }
+
     }
+    
 }

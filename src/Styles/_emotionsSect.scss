@@ -19,50 +19,67 @@
 
         ul{
             display: flex;
+            justify-content: space-evenly;
             flex-wrap: wrap;
-            justify-content: space-between;
             .emoCardBtn {
-                padding: 5px;
+                padding: 1rem;
                 width: 30%;
+                min-width: 300px;
                 margin: 10px auto;
                 text-align: center;
-                border-radius: 10px;
+                border-radius: 1rem;
                 button {
                     background-color: $offWhite;
                     border: $teal solid 2px;
-                    color: $black;
                     width: 100%;
-                    // background: none;
                     padding: 10px 20px;
-                    border-radius: 5px;
+                    border-radius: 1rem;
                     display: inline-flex;
                     justify-content: space-between;
                     align-items: center;
                     .emo {
-                        font-size: 2rem;
+                        font-size: 1.5rem;
+                    }
+                    span {
+                        color: black;
                     }
                 }
+                button:hover, button:active {
+                    border: $teal solid 3px;
+                }
+
                 ul {
+                    width: 100%;
+                    background-color: $offWhite;
+                    border: solid 2px $teal;
+                    border-radius: 1rem;
                     display: flex;
                     flex-wrap: wrap;
                     text-align: center;
-                    padding: 5px;
+
                     li {
-                        width: 45%;
-                        margin: 0 auto;
+                        width: calc((100% / 2) - 10px);
+                        margin: 6.5px 5px;
+
                         button {
+                            width: 100%;
+                            font-size: 16px;
                             background-color: $offWhite;
-                            border: 1px solid black;
+                            border: solid 0.25px $black;
                             justify-content: center;
                         }
+
+                        button:hover {
+                            border: solid 2px $black;
+                        }
+
                         .selected {
                             background: rgb(177, 243, 243);
-                            // color: red;
+                            border: solid 2px $black;
                         }
-                        
+
                     }
                 }
             }
         }
     }
-    

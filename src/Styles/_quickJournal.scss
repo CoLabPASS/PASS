@@ -19,16 +19,16 @@ $darkGrey: #363636;
     height: 100vh;
     background: url(../Assets/gradientBgDesktop.jpg) no-repeat; 
     background-attachment: fixed;
-    padding: 10% 0;
+    padding: 5% 0;
 
     form {
+        max-width: 750px;
         width: 80%;
         min-height: 60vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 5rem;
 
         div {
             width: 100%;
@@ -36,6 +36,7 @@ $darkGrey: #363636;
 
             label {
                 font-size: 1.5rem;
+                margin-bottom: 1rem;
             }
 
             input {

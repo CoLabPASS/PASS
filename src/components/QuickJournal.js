@@ -5,6 +5,7 @@ import firebase from '../firebase';
 import { getDatabase, ref, push } from 'firebase/database';
 import { useNavigate } from "react-router-dom";
 import {Modal} from 'react-bootstrap'
+import breatheEasy from '../Assets/breatheEasy.jpg'
 
 
 function QuickJournal() {
@@ -81,10 +82,13 @@ return (
         aria-labelledby="contained-modal-title-vcenter"
         centered>
             <Modal.Header closeButton>
+                <div className="breatheImg">
+                    <img src={breatheEasy} alt=""/>
+                </div>
             </Modal.Header>
             <Modal.Body>
             <h3>Breathe Easy</h3>
-            <p>Your journal is ready</p>
+            <p>This entry has been safely tucked away.<br/>Maybe take a break and do something that makes you smile?</p>
 
             <button onClick={moveToNext}>continue</button>
             </Modal.Body>

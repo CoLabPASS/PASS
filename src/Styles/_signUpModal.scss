@@ -57,7 +57,7 @@ $lightGrey: #979494;
                 
                 }
                 
-                button:hover,
+                button:hover, button:focus, 
                 button:active {
                     background-color: white;
                     color: $black;

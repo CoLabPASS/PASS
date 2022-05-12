@@ -4,6 +4,9 @@ import NavBar from './NavBar'
 import {Modal} from 'react-bootstrap'
 import SignUp from './SignUp';
 import SignIn from './SignIn';
+import graphicOne from '../Assets/graphicOne.jpg';
+import graphicTwo from '../Assets/graphicTwo.jpg';
+import mockup from '../Assets/mockup.png'
 
 function HomePage() {
   const localUserId = localStorage.userId
@@ -47,7 +50,7 @@ function HomePage() {
   return (
     <>
     {localUserId? <Navigate to='/MyAccount' /> : null}
-        <NavBar/>
+        <NavBar handleShow={handleShow}/>
         <main>
           <header>
             <div className="wrapper">
@@ -88,12 +91,12 @@ function HomePage() {
                 <p>Emotional regulation is hard. Especially in the midst of an emotionally charged interaction with a whole other human. <br/><br/> Journaling your experiences and using some of the cues we've provided can help.</p>
               </div>
               <div className='appDescImg'>
-                <img src="../Assets/descriptionArt1.jpg" alt="" />
+                <img src={graphicOne} alt="" />
               </div>
             </div>
 
             <div className='appDescDiv wrapper'>
-              <div className='appDescImg'><img src="" alt="" /></div>
+              <div className='appDescImg'><img src={graphicTwo} alt="" /></div>
               <div className='appDescText'>
                 <h2>Fast and memorable <br/> <span>during counseling sessions</span> </h2>
                 <p>It can be tough to pinpoint and remember exactly how you felt during a past conflict. <br/><br/>Our Check The Facts journal feature can help you make the most of the time you have with your mental health care provider.</p>
@@ -109,15 +112,15 @@ function HomePage() {
                 <p>iJournal is fast and easy to use. Whether you want to make a quick journal entry or dive straight into a guided approach to try and map out the details of an important interaction, we can help.</p>
                 <button>Get Started</button>
               </div>
-              <div className='ctaImg'><img src="" alt="" /></div>
+              <div className='ctaImg'><img src={mockup}alt="" /></div>
             </div>
 
           </section> {/**** CALL TO ACTION SECTION END ****/}
 
-          <footer>
+          {/* <footer>
             <div className="wrapper">
             </div>
-          </footer>
+          </footer> */}
         </main>
     </>
   )
