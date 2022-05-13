@@ -728,12 +728,13 @@ footer {
   width: 70%;
   margin: 0 auto;
   padding: 10px;
-  background-color: rgb(225, 228, 229);
   border-radius: 10px;
   text-align: center;
 }
 .calendarJournal .react-calendar .react-calendar__month-view__weekdays__weekday {
-  color: pink;
+  color: rgb(93, 93, 93);
+  font-size: 1.2rem;
+  text-decoration: none;
 }
 .calendarJournal .react-calendar .react-calendar__navigation {
   display: flex;
@@ -742,16 +743,64 @@ footer {
   align-items: center;
 }
 .calendarJournal .react-calendar .react-calendar__navigation .react-calendar__navigation__label {
-  background-color: white;
-  width: 50%;
+  min-width: 60%;
   padding: 10px;
   border-radius: 5px;
 }
+.calendarJournal .react-calendar .react-calendar__navigation .react-calendar__navigation__label span {
+  padding: 10px;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+.calendarJournal .react-calendar .react-calendar__navigation .react-calendar__navigation__prev-button,
+.calendarJournal .react-calendar .react-calendar__navigation .react-calendar__navigation__next-button {
+  color: rgb(95, 95, 95);
+  width: 20%;
+  padding: 10px;
+  font-weight: bolder;
+  position: relative;
+}
+.calendarJournal .react-calendar .react-calendar__navigation .react-calendar__navigation__prev-button:hover,
+.calendarJournal .react-calendar .react-calendar__navigation .react-calendar__navigation__next-button:hover {
+  color: #ff9879;
+}
+.calendarJournal .react-calendar .react-calendar__navigation .react-calendar__navigation__prev-button:hover::after {
+  content: "previous month";
+  position: absolute;
+  font-size: 0.9rem;
+  background-color: #ff9879;
+  color: white;
+  border-radius: 5px;
+  z-index: 1000;
+  min-width: 142px;
+  top: -18px;
+  left: -31px;
+  padding: 10px;
+}
+.calendarJournal .react-calendar .react-calendar__navigation .react-calendar__navigation__next-button:hover::after {
+  content: "next month";
+  position: absolute;
+  font-size: 0.9rem;
+  background-color: #ff9879;
+  color: white;
+  border-radius: 5px;
+  z-index: 1000;
+  min-width: 142px;
+  top: -18px;
+  left: -31px;
+  padding: 10px 5px;
+}
+.calendarJournal .react-calendar .react-calendar__navigation .react-calendar__navigation__prev2-button,
+.calendarJournal .react-calendar .react-calendar__navigation .react-calendar__navigation__next2-button {
+  color: rgb(212, 96, 49);
+}
 .calendarJournal .react-calendar .react-calendar__tile {
-  border-radius: 10px;
   background-color: white;
   padding: 20px;
-  border: 3px solid #34344A;
+  border: 3px solid #f2f2ff;
+  position: relative;
 }
 .calendarJournal .react-calendar .react-calendar__tile:hover {
   background-color: #9696c9;
@@ -761,36 +810,42 @@ footer {
   color: black;
 }
 .calendarJournal .react-calendar .react-calendar__month-view__days__day--weekend {
-  background-color: rgba(227, 252, 255, 0.6039215686);
+  color: #ff9879;
+  font-weight: bolder;
 }
 .calendarJournal .react-calendar .react-calendar__month-view__days__day--neighboringMonth {
-  background-color: #34344A;
-  color: white;
+  background-color: rgb(192, 192, 192);
+  color: rgb(99, 99, 99);
 }
 .calendarJournal .react-calendar .react-calendar__month-view__days__day--neighboringMonth:hover {
-  background-color: #5e5e8a;
+  background-color: rgba(77, 77, 99, 0.4666666667);
 }
 .calendarJournal .react-calendar .react-calendar__navigation__arrow {
   padding: 10px;
   font-size: 30px;
   background-color: transparent;
 }
-.calendarJournal .react-calendar .react-calendar__navigation__prev-button,
-.calendarJournal .react-calendar .react-calendar__navigation__next-button {
-  color: greenyellow;
+.calendarJournal .react-calendar .existingEvent::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: rgba(69, 199, 195, 0.4470588235);
+  z-index: 1000;
 }
-.calendarJournal .react-calendar .react-calendar__navigation__prev2-button,
-.calendarJournal .react-calendar .react-calendar__navigation__next2-button {
-  color: rgb(212, 96, 49);
-}
-.calendarJournal .react-calendar .existingEvent {
-  color: white;
-  background-color: #E4572E;
+.calendarJournal .react-calendar .existingEvent:hover::after {
+  background-color: #45c7c3;
 }
 .calendarJournal .react-calendar .todayDate {
-  background-color: rgb(69, 199, 195);
-  color: #fe7c54;
+  background-color: #45c7c3;
+  color: white;
   font-weight: bolder;
+}
+.calendarJournal .react-calendar .selectedDay {
+  background-color: red;
 }
 .calendarJournal .journalDetail {
   width: 30%;
