@@ -136,54 +136,54 @@ function Facts() {
           <button onClick={moveToNext}>continue</button>
         </Modal.Body>
       </Modal>
-      <section className='facts wrapper'>
-        <h1>Check the Facts Journal Entry</h1>
-        <hr />
-        <form >
-          <span>Tittle</span>
-          <div className='parentCntr'>
-            <label className='srOnly' hidden htmlFor="factsTitle">See what had happened was...</label>
-            <input type="text" id='factsTitle' name="factsTitle" placeholder='See what had happened was...' ref={journalTitle} value={textInput.factsTitle} onChange={handleInput}/>
-            {
-              showTitleAlert ?
-              <p>please provide a title</p> : null
-            }
-          </div>
+      <section className='facts'>
+        <div className="wrapper">
+          <h1>Check the Facts</h1>
           <hr />
-          <Emotions selectedEmos={selectedEmos} setSelectedEmos={setSelectedEmos}/>
-          <hr />
-          <PromptingEvent selectedPromptEvent={selectedPromptEvent} setSelectedPromptEvent={setSelectedPromptEvent}/>
-
-          <h3>What are my interpretations, thoughts, and assumptions about the event?</h3>
-          <div className='parentCntr'>
-            <label className='srOnly' hidden htmlFor="input1"></label>
-            <textarea ref={journalText1} name="input1" id="input1" cols="30" rows="10" value={textInput.input1} onChange={handleInput}></textarea>
+          <form >
+            <div className='parentCntr'>
+              <label className='srOnly' hidden htmlFor="factsTitle">Title</label>
+              <input type="text" id='factsTitle' name="factsTitle" placeholder='Title hint: Try to come up with an at-a-glance recap of this event' ref={journalTitle} value={textInput.factsTitle} onChange={handleInput}/>
               {
-                showText1Alert ?
-                <p>please fill up</p> : null
+                showTitleAlert ?
+                <p>What do we want to call this journal entry?</p> : null
               }
-          </div>
-          <hr />
+            </div>
+            
+            <Emotions selectedEmos={selectedEmos} setSelectedEmos={setSelectedEmos}/>
+            
+            <PromptingEvent selectedPromptEvent={selectedPromptEvent} setSelectedPromptEvent={setSelectedPromptEvent}/>
 
-          <h3>Does my emotion and/or its intensity fit the actual facts? Explain</h3>
-          <div className='parentCntr'>
-            <label className='srOnly' hidden htmlFor="input2"></label>
-            <textarea ref={journalText2} name="input2" id="input2" cols="30" rows="10" value={textInput.input2} onChange={handleInput}></textarea>
+            <h3>What are my interpretations, thoughts, and assumptions about the event?</h3>
+            <div className='parentCntr journalTxtDiv'>
+              <label className='srOnly' hidden htmlFor="input1">Type here</label>
+              <textarea ref={journalText1} name="input1" id="input1" cols="30" rows="10" placeholder='Type here' value={textInput.input1} onChange={handleInput}></textarea>
+                {
+                  showText1Alert ?
+                  <p>please fill up</p> : null
+                }
+            </div>
+
+            <h3>Does my emotion and/or its intensity fit the actual facts? Explain</h3>
+            <div className='parentCntr journalTxtDiv'>
+              <label className='srOnly' hidden htmlFor="input2">Type here</label>
+              <textarea ref={journalText2} name="input2" id="input2" cols="30" rows="10" placeholder='Type here' value={textInput.input2} onChange={handleInput}></textarea>
+              {
+                  showText2Alert ?
+                  <p>please fill up</p> : null
+                }
+            </div>
+            <hr />
+
             {
-                showText2Alert ?
-                <p>please fill up</p> : null
-              }
-          </div>
-          <hr />
-
-          {
-            showSaveBtn ? 
-            <button className='generalBtn active' onClick={(e)=>saveEmotions(e,'')}>save</button> : 
-            <button className='generalBtn' onClick={(e)=>saveEmotions(e, 'completeForm')}>save</button> 
-          }
-        </form>
-        { alert.show ? <p>{alert.message}</p> : null
+              showSaveBtn ? 
+              <button className='saveBtn generalBtn active' onClick={(e)=>saveEmotions(e,'')}>save</button> : 
+              <button className='generalBtn' onClick={(e)=>saveEmotions(e, 'completeForm')}>save</button> 
             }
+          </form>
+          { alert.show ? <p>{alert.message}</p> : null
+              }
+        </div>
       </section>
     </>
   )

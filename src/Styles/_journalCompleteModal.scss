@@ -1,13 +1,22 @@
 .modalComplete{
     .modal-content{
+        max-width: 450px;
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
         .modal-header{
-            min-height: 30vh;
-            background-image: url('https://images.unsplash.com/photo-1578941838877-141265f3a898?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2565&q=80');
-            background-size: cover;
-            background-position-y: bottom;
-            border-top-right-radius: 30px;
-            border-top-left-radius: 30px;
-            position: relative;
+            margin: 0 auto;
+            .breatheImg {
+                display: flex;
+                margin: 0 auto;
+
+                img{
+                    width: 100%;
+                }
+            }
             button {
                 background-color: white;
                 padding: 15px;
@@ -18,29 +27,41 @@
             }
         }
         .modal-body{
-            min-height: 50vh;
             background-color: #34344A;
             border-bottom-right-radius: 30px;
             border-bottom-left-radius: 30px;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
             text-align: center;
             color: white;
+
             h3 {
-                margin: 46px auto;
+                margin: 1.5rem auto;
                 font-weight: bolder;
 
             }
             p {
-                margin: auto;
+                font-size: 1rem;
+                width: 80%;
             }
             button {
-                max-width: 30%;
-                margin: 55px auto;
-                background-color: #087E8B;
+                transition: all 0.4s ease-in;
+                background-color: $teal;
+                border: solid 1px $teal;
+                border-radius: 0.5rem;
+                font-family: 'Lustria', serif;
                 color: white;
-                padding: 10px 20px;
+                margin: 1rem auto;
+                padding: 0.5rem 1rem;
+            }
+
+            button:hover,
+            button:active {
+                background-color: white;
+                color: $black;
+                border: 2px solid $orange;
             }
 
         }

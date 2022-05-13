@@ -74,26 +74,38 @@ function MyAccount() {
     <div className='myAccount'>
         {!localUserId? <Navigate to='/' /> : null}
         <NavBar/>
+
         <section className='wrapper accountGreeting'>
-            <h3>Hello <span>{user.userName}</span>,</h3>
-            <h1>Ready To Journal?</h1>
+            <h1> 
+              <span>Hey</span> 
+              <span className="greetingName">{user.userName}</span>
+              <span>,</span>
+            </h1>
+
+            <h2> 
+              <span>Which</span> 
+              <span>journal</span>
+              <span>are</span>
+              <span>we</span>
+              <span>feeling</span>
+              <span>today?</span>
+            </h2>
         </section>
+
         <section className='wrapper buttonContainer'>
           <div>
             <Link className="mainBtn" to="/QuickJournal">Quick  Journal</Link>
-            <span> </span>
-            {/* <button>Quick Journal</button> */}
             <Link className="mainBtn" to="/CheckTheFacts">Check  the  Facts</Link>
           </div>
         </section>
+
         <section className="myRow wrapper minHt">
           <div>
-            <h3>My Recent Journals</h3>
+            <h2>My Recent Journals</h2>
             <RecentJournal userJournals={userJournals}/>
-
           </div>
-          {/* <JournalCalendar userJournals={userJournals}/> */}
         </section>
+
     </div>
   )
 }

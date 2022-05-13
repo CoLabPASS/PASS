@@ -4,6 +4,9 @@ import NavBar from './NavBar'
 import {Modal} from 'react-bootstrap'
 import SignUp from './SignUp';
 import SignIn from './SignIn';
+import graphicOne from '../Assets/graphicOne.jpg';
+import graphicTwo from '../Assets/graphicTwo.jpg';
+import mockup from '../Assets/mockup.png'
 
 function HomePage() {
   const localUserId = localStorage.userId
@@ -85,18 +88,20 @@ function HomePage() {
             <div className='appDescDiv wrapper'>
               <div className='appDescText'>
                 <h2>Articulate Emotions,<br/> <span>improve relationships </span></h2>
-                <p>Emotional regulation is hard and can impact your relationships. Having conflicts with loved ones is a normal part of life. <br/> By journaling your emotional experiences of a coflict you utilize this tool to come to a solution.</p>
+                <p>Emotional regulation is hard. Especially in the midst of an emotionally charged interaction with a whole other human. <br/><br/> Journaling your experiences and using some of the cues we've provided can help.</p>
               </div>
-              <div className='appDescImg'><img src="" alt="" /></div>
-            </div>
-            <div className='appDescDiv wrapper'>
-              <div className='appDescImg'><img src="" alt="" /></div>
-              <div className='appDescText'>
-                <h2>Fast and memorable <br/> <span>during counseling sessions</span> </h2>
-                <p>If you struggle with exactly how you felt during an experience of conflict, journaling your emotional experience could be vital to finding solutions with your mental health care provider.</p>
+              <div className='appDescImg'>
+                <img src={graphicOne} alt="" />
               </div>
             </div>
 
+            <div className='appDescDiv wrapper'>
+              <div className='appDescImg'><img src={graphicTwo} alt="" /></div>
+              <div className='appDescText'>
+                <h2>Fast and memorable <br/> <span>during counseling sessions</span> </h2>
+                <p>It can be tough to pinpoint and remember exactly how you felt during a past conflict. <br/><br/>Our Check The Facts journal feature can help you make the most of the time you have with your mental health care provider.</p>
+              </div>
+            </div>
           </section> {/**** DESCRIPTION SECTION END ****/}
           
           <section className='callToAction'>
@@ -104,37 +109,18 @@ function HomePage() {
             <div className='ctaDiv wrapper'>
               <div className='ctaText'>
                 <h2>Build healthy, <br /><span>emotional bonds</span> </h2>
-                <p>Our journal is fast and easy to use. It allows you to quickly add your emotional state and details about your experiences with a device that is already in your pocket.</p>
+                <p>iJournal is fast and easy to use. Whether you want to make a quick journal entry or dive straight into a guided approach to try and map out the details of an important interaction, we can help.</p>
                 <button>Get Started</button>
               </div>
-              <div className='ctaImg'><img src="" alt="" /></div>
-            </div>
-
-            <h2>User Testimonials</h2>
-            <div className='testimonialsModal wrapper'>
-              <div className='testimonialText'>
-                <h4>"Quote about Product second line example"</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque aperiam vitae sapiente, neque non ea pariatur minima corrupti perferendis exercitationem?</p>
-                <h5>Name <br/> <br /> <span>City, State</span></h5>
-              </div>
-              <div className='testimonialImg'><img src="" alt="" /></div>
-              <div className='arrowDiv'>
-                <button>
-                  <img src="../Assets/Right Arrow Icon.jpg" alt="" />
-                </button>
-                <button>
-                  <img src="../Assets/Left Arrow Icon.png" alt="" />
-
-                </button>
-              </div>
+              <div className='ctaImg'><img src={mockup}alt="" /></div>
             </div>
 
           </section> {/**** CALL TO ACTION SECTION END ****/}
 
-          <footer>
+          {/* <footer>
             <div className="wrapper">
             </div>
-          </footer>
+          </footer> */}
         </main>
     </>
   )

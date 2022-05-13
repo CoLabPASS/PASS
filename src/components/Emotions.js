@@ -18,8 +18,7 @@ function Emotions({selectedEmos,setSelectedEmos}) {
                 {id:4,name:'Frustration', selectStat: false},
                 {id:5,name:'Grumpy', selectStat: false}, 
                 {name:'Rage',selectStat: false},
-                {id:6,name:'Bitterness', selectStat: false},
-                {id:7,name:'Other', selectStat: false}
+                {id:6,name:'Bitterness', selectStat: false}
             ],
         },
         {
@@ -33,8 +32,7 @@ function Emotions({selectedEmos,setSelectedEmos}) {
                 {name:'Spite', selectStat: false}, 
                 {name:'Sickened', selectStat: false}, 
                 {name:'Contempt', selectStat: false}, 
-                {name:'Dislike', selectStat: false}, 
-                {name:'Other', selectStat: false}
+                {name:'Dislike', selectStat: false}
             ]
         },
         {
@@ -50,7 +48,7 @@ function Emotions({selectedEmos,setSelectedEmos}) {
             name: 'fear',
             emoji: '😮',
             emos: [
-            {name:'Fear', selectStat: false}, {name:'Anxiety', selectStat: false},{name:'Dread', selectStat: false}, {name:'Apprehension', selectStat: false}, {name:'Fright', selectStat: false}, {name:'Horror', selectStat: false}, {name:'Nervous', selectStat: false}, {name:'Overwhelmed', selectStat: false}, {name:'Panic', selectStat: false}, {name:'Worry', selectStat: false}, {name:'Tenseness', selectStat: false}, {name:'Other', selectStat: false}
+            {name:'Fear', selectStat: false}, {name:'Anxiety', selectStat: false},{name:'Dread', selectStat: false}, {name:'Apprehension', selectStat: false}, {name:'Fright', selectStat: false}, {name:'Horror', selectStat: false}, {name:'Nervous', selectStat: false}, {name:'Overwhelmed', selectStat: false}, {name:'Panic', selectStat: false}, {name:'Worry', selectStat: false}, {name:'Tenseness', selectStat: false}
             ]
         },
         { 
@@ -66,7 +64,7 @@ function Emotions({selectedEmos,setSelectedEmos}) {
             name: 'happy',
             emoji: '😄',
             emos: [
-                {name:'Happy', selectStat: false}, {name:'Enjoyment', selectStat: false},{name:'Relief', selectStat: false}, {name:'Amusement', selectStat: false}, {name:'Hope', selectStat: false}, {name:'Satisfied', selectStat: false}, {name:'Bliss', selectStat: false}, {name:'Enthusiasm', selectStat: false}, {name:'Content', selectStat: false}, {name:'Excitment', selectStat: false}, {name:'Ectasy', selectStat: false}, {name:'Other', selectStat: false}
+                {name:'Happy', selectStat: false}, {name:'Enjoyment', selectStat: false},{name:'Relief', selectStat: false}, {name:'Amusement', selectStat: false}, {name:'Hope', selectStat: false}, {name:'Satisfied', selectStat: false}, {name:'Bliss', selectStat: false}, {name:'Enthusiasm', selectStat: false}, {name:'Content', selectStat: false}, {name:'Excitment', selectStat: false}, {name:'Ectasy', selectStat: false}
             ]
         },
         {
@@ -74,7 +72,7 @@ function Emotions({selectedEmos,setSelectedEmos}) {
             name: 'jealousy',
             emoji: '😔',
             emos: [
-            {name:'Jealousy', selectStat: false}, {name:'Cautious', selectStat: false},{name:'Clingling', selectStat: false}, {name:'Defensive', selectStat: false}, {name:'Mistrustrful', selectStat: false}, {name:'Fear of Loss', selectStat: false}, {name:'Possessive', selectStat: false}, {name:'Suspicious', selectStat: false}, {name:'Self Protective', selectStat: false}, {name:'Wary', selectStat: false}, {name:'Watchful', selectStat: false}, {name:'Other', selectStat: false}
+            {name:'Jealousy', selectStat: false}, {name:'Cautious', selectStat: false},{name:'Clingling', selectStat: false}, {name:'Defensive', selectStat: false}, {name:'Mistrustrful', selectStat: false}, {name:'Fear of Loss', selectStat: false}, {name:'Possessive', selectStat: false}, {name:'Suspicious', selectStat: false}, {name:'Self Protective', selectStat: false}, {name:'Wary', selectStat: false}, {name:'Watchful', selectStat: false}
             ]
         },
         {
@@ -82,7 +80,7 @@ function Emotions({selectedEmos,setSelectedEmos}) {
             name: 'love',
             emoji: '😍',
             emos: [
-            {name:'Love', selectStat: false}, {name:'Adoration', selectStat: false},{name:'Affection', selectStat: false}, {name:'Attraction', selectStat: false}, {name:'Arousal', selectStat: false}, {name:'Caring', selectStat: false}, {name:'Charmed', selectStat: false}, {name:'Desire', selectStat: false}, {name:'Kindness', selectStat: false}, {name:'Sentimental', selectStat: false}, {name:'Infactuation', selectStat: false}, {name:'Other', selectStat: false}
+            {name:'Love', selectStat: false}, {name:'Adoration', selectStat: false},{name:'Affection', selectStat: false}, {name:'Attraction', selectStat: false}, {name:'Arousal', selectStat: false}, {name:'Caring', selectStat: false}, {name:'Charmed', selectStat: false}, {name:'Desire', selectStat: false}, {name:'Kindness', selectStat: false}, {name:'Sentimental', selectStat: false}, {name:'Infactuation', selectStat: false}
             ]
         },
         {
@@ -90,7 +88,7 @@ function Emotions({selectedEmos,setSelectedEmos}) {
             name: 'sadness',
             emoji: '😞',
             emos: [
-            {name:'Sadness', selectStat: false}, {name:'Despair', selectStat: false},{name:'Grief', selectStat: false}, {name:'Agony', selectStat: false}, {name:'Disappointment'}, {name: 'Alienation', selectStat: false}, {name:'Neglected', selectStat: false}, {name:'Hurt', selectStat: false}, {name:'Rejection', selectStat: false}, {name:'Insecure', selectStat: false}, {name:'Defeat', selectStat: false}, {name:'Other', selectStat: false}
+            {name:'Sadness', selectStat: false}, {name:'Despair', selectStat: false},{name:'Grief', selectStat: false}, {name:'Agony', selectStat: false}, {name:'Disappointment'}, {name: 'Alienation', selectStat: false}, {name:'Neglected', selectStat: false}, {name:'Hurt', selectStat: false}, {name:'Rejection', selectStat: false}, {name:'Insecure', selectStat: false}, {name:'Defeat', selectStat: false}
             ]
         }]
         )

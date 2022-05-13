@@ -1,50 +1,85 @@
+    // Background colours
+    $lightBlue: #D8F0FD;
+    $offWhite: #F8FFFF;
+
+
+    // Foreground colours 
+    $purple: #34344A;
+
+    // Accent colours 
+    $teal: #087E8B;
+    $orange: #E4572E;
+
+
+    // Others
+    $black: #000000;
+    $darkGrey: #363636;
+    
     .feelingSect{
 
         ul{
             display: flex;
+            justify-content: space-evenly;
             flex-wrap: wrap;
-            justify-content: space-between;
             .emoCardBtn {
-                padding: 5px;
+                padding: 1rem;
                 width: 30%;
+                min-width: 300px;
                 margin: 10px auto;
                 text-align: center;
-                border-radius: 10px;
+                border-radius: 1rem;
                 button {
-                    border: 1px solid rgb(85, 83, 83);
+                    background-color: $offWhite;
+                    border: $teal solid 2px;
                     width: 100%;
-                    // background: none;
                     padding: 10px 20px;
-                    border-radius: 5px;
+                    border-radius: 1rem;
                     display: inline-flex;
                     justify-content: space-between;
                     align-items: center;
                     .emo {
-                        font-size: 2rem;
+                        font-size: 1.5rem;
+                    }
+                    span {
+                        color: black;
                     }
                 }
+                button:hover, button:active {
+                    border: $teal solid 3px;
+                }
+
                 ul {
-                    background-color: rgb(236, 186, 194);
+                    width: 100%;
+                    background-color: $offWhite;
+                    border: solid 2px $teal;
+                    border-radius: 1rem;
                     display: flex;
                     flex-wrap: wrap;
                     text-align: center;
-                    padding: 5px;
+
                     li {
-                        width: 45%;
-                        margin: 0 auto;
+                        width: calc((100% / 2) - 10px);
+                        margin: 6.5px 5px;
+
                         button {
-                            border: 1px solid black;
-                            // text-align: center;
+                            width: 100%;
+                            font-size: 16px;
+                            background-color: $offWhite;
+                            border: solid 0.25px $black;
                             justify-content: center;
                         }
+
+                        button:hover {
+                            border: solid 2px $black;
+                        }
+
                         .selected {
                             background: rgb(177, 243, 243);
-                            // color: red;
+                            border: solid 2px $black;
                         }
-                        
+
                     }
                 }
             }
         }
     }
-    

@@ -19,23 +19,20 @@ $black: #000000;
 $darkGrey: #363636;
 
 .callToAction {
-    height: 200vh;
     background-color: $lightBlue;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    padding: 7rem 0;
 
     .ctaDiv {
-        height: 30%;
         background-color: $offWhite;
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
         border-radius: 54px;
+        padding: 5rem 0;
+        position: relative;
 
         .ctaText {
-            width: 40%;
+            width: 45%;
             height: 80%;
             display: flex;
             flex-direction: column;
@@ -43,7 +40,12 @@ $darkGrey: #363636;
             align-items: center;
             text-align: center;
 
+            p {
+                padding: 1rem 0;
+            }
+
             button {
+                transition: all 0.3s ease;
                 background-color: $teal;
                 border-radius: 1rem;
                 font-family: 'Lustria', serif;
@@ -54,72 +56,29 @@ $darkGrey: #363636;
             
             }
             
-            button:hover,
-            button:active {
+            button:hover {
                 background-color: white;
                 color: $black;
                 border: 2px solid $orange;
             }
+
+            button:active {
+                background-color: $orange;
+                color: white;
+            }
         }
 
         .ctaImg {
-            width: 40%;
-            height: 80%;
-            background-color: white;
-            border: 1.5px solid black;
-        }
-    }
+            width: 50%;
+            height: 90%;
+            // border: 1.5px solid black;
 
-    .testimonialsModal {
-        height: 30%;
-        background-color: $offWhite;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-radius: 54px;
-        padding: 100px;
-        position: relative;
-
-
-        .testimonialText {
-            width: 45%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            align-items: flex-start;
-
-            h4 {
-                color: $teal;
-            }
-
-            h5 {
-                color: $black;
-
-                span {
-                    color: $black;
-                }
-            }
-        }
-
-        .testimonialImg {
-            width: 45%;
-            height: 80%;
-            background-color: white;
-            border: 1.5px solid black;
-        }
-        .arrowDiv {
-            position: absolute;
-            top: 50%;
-            display: flex;
-            flex-direction: row-reverse;
-            justify-content: space-between;
-            button {
-                cursor: pointer;
-            }
             img {
-                width: 25%;
+                width: 65%;
+                position: absolute;
+                left: 47.5%;
+                bottom: 5%;
             }
-
         }
     }
 }

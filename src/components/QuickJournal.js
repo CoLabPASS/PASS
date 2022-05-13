@@ -5,6 +5,7 @@ import firebase from '../firebase';
 import { getDatabase, ref, push } from 'firebase/database';
 import { useNavigate } from "react-router-dom";
 import {Modal} from 'react-bootstrap'
+import breatheEasy from '../Assets/breatheEasy.jpg'
 
 
 function QuickJournal() {
@@ -81,23 +82,26 @@ return (
         aria-labelledby="contained-modal-title-vcenter"
         centered>
             <Modal.Header closeButton>
+                <div className="breatheImg">
+                    <img src={breatheEasy} alt=""/>
+                </div>
             </Modal.Header>
             <Modal.Body>
             <h3>Breathe Easy</h3>
-            <p>Your journal is ready</p>
+            <p>This entry has been safely tucked away.<br/>Maybe take a break and do something that makes you smile?</p>
 
             <button onClick={moveToNext}>continue</button>
             </Modal.Body>
         </Modal>
         <section className='quickJournal'>
             <form onSubmit={(e)=>e.preventDefault()} className='wrapper'>
-                <div>
-                    <label className='srOnly' hidden htmlFor="title">See what had happened was...</label>
-                    <input type="text" id='title' name="title" placeholder='See what had happened was...' value={journalEntry.title}onChange={handleInput}/>
+                <div className='titleDiv' >
+                    <label htmlFor="title"> Title:</label>
+                    <input type="text" id='title' name="title" placeholder='(try to make this an at-a-glance recap of the event)' value={journalEntry.title}onChange={handleInput}/>
                 </div>
-                <div>
+                <div className='bodyDiv' >
                     <label className='srOnly' hidden htmlFor="title">See what had happened was...</label>
-                    <textarea name="text" id="text" cols="30" rows="10" value={journalEntry.text} onChange={handleInput}></textarea>
+                    <textarea name="text" id="text" cols="30" rows="15" placeholder='See, what had happened was...' value={journalEntry.text} onChange={handleInput}></textarea>
 
                 </div>
                 {/* {
