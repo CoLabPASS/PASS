@@ -306,14 +306,15 @@ nav div .otherMenu {
   -webkit-animation: slideOut 0.5s ease forwards;
           animation: slideOut 0.5s ease forwards;
   transform-origin: top right;
+  z-index: 1005;
 }
 nav div .otherMenu li {
-  -webkit-animation: all 0.5s ease-in-out;
-          animation: all 0.5s ease-in-out;
   padding: 10px;
+}
+nav div .otherMenu li a {
   margin: 1rem 0;
 }
-nav div .otherMenu li:hover, nav div .otherMenu li:active {
+nav div .otherMenu li a:hover, nav div .otherMenu li a:active {
   -webkit-text-decoration: underline white solid;
           text-decoration: underline white solid;
 }
@@ -516,6 +517,7 @@ footer {
 .facts {
   background: url(../Assets/gradientBgDesktop.jpg) no-repeat fixed;
   text-align: center;
+  background-size: cover;
 }
 .facts .wrapper h1 {
   padding-top: 5%;
@@ -764,6 +766,7 @@ footer {
   background: url(../Assets/gradientBgDesktop.jpg) no-repeat;
   background-attachment: fixed;
   padding: 5% 0;
+  background-size: cover;
 }
 .quickJournal form {
   max-width: 750px;
