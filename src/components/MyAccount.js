@@ -92,16 +92,14 @@ function MyAccount() {
             </h2>
         </section>
 
-        <section className='wrapper '>
+        <section className='wrapper'>
           <div className='buttonContainer'>
             <Link className="mainBtn" to="/QuickJournal">Quick  Journal</Link>
             <Link className="mainBtn" to="/CheckTheFacts">Check  the  Facts</Link>
           </div>
         </section>
-
         <section className="myRow wrapper minHt">
           <div>
-            <h2>My Recent Journals</h2>
             <RecentJournal userJournals={userJournals}/>
           </div>
         </section>

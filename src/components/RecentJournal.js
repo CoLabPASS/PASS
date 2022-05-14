@@ -49,6 +49,10 @@ function RecentJournal({userJournals}) {
     };
     return (
         <div className='recentJournal'>
+            {
+                userJournals.length > 0 ?             <h2>My Recent Journals</h2>
+                : null
+            }
             <Modal show={show} onHide={handleClose} animation={false} size="lg"
             aria-labelledby="contained-modal-title-vcenter"
             centered>

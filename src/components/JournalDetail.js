@@ -34,15 +34,18 @@ function JournalDetail({journalDetail}) {
                     {/* emotions */}
                         { journalDetail.emotions?
                         <div>
+                            <h4>During this time I felt: </h4>
+
                             <div className='emotions'>
-                                <h4>emotions</h4>
                                 <ul className='myRow'>
                                     {
                                         journalDetail.emotions.map((emo, idx)=>
-                                        <li key={`emo${idx}`}>{emotions[`${emo.cat}`]}</li>
+                                        <li key={`emo${idx}`}>{emotions[`${emo.cat}`] }
+                                        </li>
                                         )
                                     }
                                 </ul>
+                                <h4>emotions</h4>
                             </div>
                             <hr />
                         </div>
@@ -53,7 +56,6 @@ function JournalDetail({journalDetail}) {
                         { journalDetail.promptingEvents?
                         <div>
                             <div className='prompts'>
-                                <h4>Prompts</h4>
                                 <ul className='myRow'>
                                     {
                                         journalDetail.promptingEvents.map((prompts, idx)=>
@@ -63,6 +65,7 @@ function JournalDetail({journalDetail}) {
                                         )
                                     }
                                 </ul>
+                                    <h4>Prompts</h4>
                             </div>
                                 <hr />
                         </div>
