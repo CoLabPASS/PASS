@@ -1,0 +1,78 @@
+// Background colours
+$lightBlue: #D8F0FD;
+$offWhite: #F8FFFF;
+
+
+// Foreground colours 
+$purple: #34344A;
+
+// Accent colours 
+$teal: #087E8B;
+$orange: #E4572E;
+
+
+// Others
+$black: #000000;
+$darkGrey: #363636;
+
+// Navbar 
+@media (max-width: 700px) {
+
+    header {
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .headerDiv {
+
+            h1 {
+                text-align: center;
+                font-size: 1.5rem;
+                line-height: 2rem;
+
+                span {
+                    padding: 2.5rem 0;
+                }
+            }
+
+            div {
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: center;
+
+
+                button {
+                    font-size: 16px;
+                    max-width: 170px;
+                }
+            }
+        }
+    }
+
+    .appDescription {
+
+        .appDescDiv {
+            flex-direction: column;
+
+            .appDescText {
+                width: 100%;
+            }
+
+            .appDescImg {
+                width: 100%;
+                height: auto;
+                margin: 5px;
+            }
+        }
+
+        .descDivReverse {
+            flex-direction: column-reverse;
+        }
+    }
+}

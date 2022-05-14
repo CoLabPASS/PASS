@@ -85,7 +85,7 @@ function HomePage() {
             </div>
           </header> {/**** HEADER END ****/}
           <section className='appDescription'>
-            <div className='appDescDiv wrapper'>
+            <div className='appDescDiv descDivReverse wrapper'>
               <div className='appDescText'>
                 <h2>Articulate Emotions,<br/> <span>improve relationships </span></h2>
                 <p>Emotional regulation is hard. Especially in the midst of an emotionally charged interaction with a whole other human. <br/><br/> Journaling your experiences and using some of the cues we've provided can help.</p>

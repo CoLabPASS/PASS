@@ -177,7 +177,7 @@ function Facts() {
 
             {
               showSaveBtn ? 
-              <button className='saveBtn generalBtn active' onClick={(e)=>saveEmotions(e,'')}>save</button> : 
+              <button className='generalBtn active' onClick={(e)=>saveEmotions(e,'')}>save</button> : 
               <button className='generalBtn' onClick={(e)=>saveEmotions(e, 'completeForm')}>save</button> 
             }
           </form>

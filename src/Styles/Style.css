@@ -288,7 +288,9 @@ nav div ul li button {
   padding-top: 2px;
 }
 nav div ul li button:hover,
-nav div ul li button:active {
+nav div ul li button:active,
+nav div ul li a:hover,
+nav div ul li a:active {
   -webkit-text-decoration: underline solid 1px white;
           text-decoration: underline solid 1px white;
 }
@@ -623,8 +625,9 @@ footer {
 }
 
 .myAccount {
-  background: #F8FFFF;
+  background: url(../Assets/gradientBgDesktop.jpg);
   background-size: cover;
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -645,7 +648,7 @@ footer {
   font-weight: bold;
 }
 .myAccount .accountGreeting h1 span {
-  color: #087E8B;
+  color: #065a63;
   display: inline-block;
   opacity: 0;
   filter: blur(4px);
@@ -1231,6 +1234,50 @@ footer {
   background: rgb(177, 243, 243);
 }
 
+@media (max-width: 700px) {
+  header {
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  header .wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  header .headerDiv h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  header .headerDiv h1 span {
+    padding: 2.5rem 0;
+  }
+  header .headerDiv div {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  header .headerDiv div button {
+    font-size: 16px;
+    max-width: 170px;
+  }
+
+  .appDescription .appDescDiv {
+    flex-direction: column;
+  }
+  .appDescription .appDescDiv .appDescText {
+    width: 100%;
+  }
+  .appDescription .appDescDiv .appDescImg {
+    width: 100%;
+    height: auto;
+    margin: 5px;
+  }
+  .appDescription .descDivReverse {
+    flex-direction: column-reverse;
+  }
+}
 body .wrapper {
   margin: 0 auto;
   padding: 0;

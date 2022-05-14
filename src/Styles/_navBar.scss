@@ -58,7 +58,9 @@ nav {
                     padding-top: 2px;
                 }
                 button:hover,
-                button:active {
+                button:active, 
+                a:hover, 
+                a:active {
                     text-decoration: underline solid 1px white;
                 }
             }
