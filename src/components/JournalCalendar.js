@@ -8,12 +8,13 @@ import NavBar from './NavBar';
 
 function JournalCalendar() {
     const localUserId = localStorage.userId;
+    const [selectedDay, setSelectedDay]=useState('')
     const [userJournals, setUserJournals]=useState([])
-
     const [value, onChange] = useState(new Date());
     const [entriesThisDate, setEntriesThisDate] = useState([])
     const clickingDay =(val)=>{
         const selectedDate = `${val.getDate()}/${val.getMonth()}/${val.getUTCFullYear()}`
+        setSelectedDay(selectedDate)
         const entriesThisDay = []
         userJournals.forEach(userJour=>{
             const userDate = `${userJour.dateTime.date}/${userJour.dateTime.month}/${userJour.dateTime.year}`
@@ -24,7 +25,6 @@ function JournalCalendar() {
         setEntriesThisDate(entriesThisDay)
     }
     const renderingJournals =({ date })=>{
-
         let className = ''
         const d = new Date()
         const currentDate = `${date.getDate()}/${date.getMonth()}/${date.getUTCFullYear()}`
@@ -46,10 +46,19 @@ function JournalCalendar() {
                 })
             }
         }
+        if(selectedDay === 'currentDate'){
+            if(className === ""){
+                className=`selectedDay`
+            }else{
+                className=`${className} selectedDay`
+            }            
+        }
         return className
 
     }
     useEffect(() => {
+        const el = document.querySelector('.react-calendar__navigation__label')
+        el.style.flexGrow = 0
         // create a variable that holds our database details
         const database = getDatabase(firebase)
     
@@ -77,6 +86,7 @@ function JournalCalendar() {
                 if(A.year > B.year) return -1
                 if(A.year < B.year) return 1
                 if(A.month > B.month) return -1
+
                 if(A.month < B.month) return 1
                 if(A.date > B.date) return -1
                 if(A.date < B.date) return 1
@@ -87,8 +97,9 @@ function JournalCalendar() {
             })
             setUserJournals(sortingUserEntries)
         })
-
+        
     }, [localUserId])
+
     return (
         <>
             <NavBar/>
