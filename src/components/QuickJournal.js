@@ -19,7 +19,6 @@ function QuickJournal() {
     const localUserId = localStorage.userId
 
     const [journalEntry, setJournalEntry]=useState({title: '', text: '', userId: localUserId})
-    const [showFactsForm, setShowFactsForm]=useState(false)
 
     const handleInput =(e)=>{
         const {id, value}=e.target

@@ -5,16 +5,14 @@ import { getDatabase, ref, onValue } from 'firebase/database';
 import JournalDetail from './JournalDetail';
 
 function RecentJournal({userJournals}) {
-    const [promptEvents, setPromptEvents]=useState(
-        {
+    const promptEvents={
             Work: "fas fa-briefcase",
             Romance: "fas fa-kiss",
             Friends: 'fas fa-users',
             Family: 'fas fa-users',
             Finance: 'fas fa-dollar-sign'
         }
-    )
-    const [emotions, setEmotions]=useState(
+    const emotions=
         {
             anger: '😡',
             disgust: "🤢",
@@ -26,11 +24,9 @@ function RecentJournal({userJournals}) {
             love: '😍',
             sadness: '😞',
         }
-    )
     const [show, setShow] = useState(false);
     const [journalDetail, setJournalDetail] = useState({});
 
-    const [alert, setAlert] = useState({ show: false, message:'' })
     const handleClose = () => {
         setShow(false)
         
