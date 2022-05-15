@@ -16,7 +16,7 @@ function Facts() {
   const journalTitle = useRef();
   const journalText1 = useRef();
   const journalText2 = useRef();
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
 
   const localUserId = localStorage.userId
