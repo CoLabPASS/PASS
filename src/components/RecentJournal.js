@@ -12,6 +12,7 @@ function RecentJournal({userJournals}) {
             Family: 'fas fa-users',
             Finance: 'fas fa-dollar-sign'
         }
+    
     const emotions=
         {
             anger: '😡',

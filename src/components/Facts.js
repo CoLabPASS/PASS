@@ -7,13 +7,16 @@ import { useNavigate } from "react-router-dom";
 import {Modal} from 'react-bootstrap'
 import { getDatabase, ref, push } from 'firebase/database';
 import firebase from '../firebase';
+import breatheEasy from '../Assets/breatheEasy.jpg'
+
+
 
 function Facts() {
   let navigate = useNavigate();
   const journalTitle = useRef();
   const journalText1 = useRef();
   const journalText2 = useRef();
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
 
 
   const localUserId = localStorage.userId
@@ -128,11 +131,13 @@ function Facts() {
         aria-labelledby="contained-modal-title-vcenter"
         centered>
         <Modal.Header closeButton>
+        <div className="breatheImg">
+                    <img src={breatheEasy} alt=""/>
+                </div>
         </Modal.Header>
         <Modal.Body>
           <h3>Breathe Easy</h3>
           <p>Your journal is ready</p>
-
           <button onClick={moveToNext}>continue</button>
         </Modal.Body>
       </Modal>
