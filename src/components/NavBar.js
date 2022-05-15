@@ -7,6 +7,7 @@ function NavBar({handleShow}) {
     let navigate = useNavigate();
     let location = useLocation();
     const [showOtherMenu, setShowOtherMenu]=useState(false)
+    const [showMainMenu, setShowMainMenu]=useState(false)
     const localUserId = localStorage.userId;
     const signOut=()=>{
         localStorage.removeItem("userId");
@@ -18,21 +19,20 @@ function NavBar({handleShow}) {
     <nav>
         <div className="wrapper">
             <h2><img className="logoSolo" src={logoSolo} alt="logo"/> iJournal</h2>
-            <ul>
+            <button className='navItem hamburger' onClick={()=>setShowMainMenu(!showMainMenu)}><i class="fas fa-bars"></i></button>
+            <ul className={showMainMenu ? 'mainMenu' : 'mainMenu hide'}>
+                {
+                    showMainMenu ? 
+                    <li>
+                        <button className='navItem closeMenuBtn' onClick={()=>setShowMainMenu(!showMainMenu)}><i class="fas fa-times"></i></button>
+                    </li>
+                    : null
+                }
                 {localUserId ?
                     null : 
                     <li>
                         <Link to="/" className='navItem'>Home</Link>
                     </li>
-                }
-                {localUserId ?
-                    location.pathname === "/MyAccount" ?null :
-                    <li>
-                        <Link to="/MyAccount" className='navItem'>My Account</Link>
-                    </li> 
-                    
-                    :
-                    null
                 }
                 {
                     localUserId ?
@@ -48,16 +48,23 @@ function NavBar({handleShow}) {
                         <button className='navItem' onClick={()=>handleShow('signUp')}>Sign Up</button>
                     </li>
                 }
-
+                {localUserId ?
+                    location.pathname === "/MyAccount" ?null :
+                    <li>
+                        <Link to="/MyAccount" className='navItem'>My Account</Link>
+                    </li> 
+                    
+                    :
+                    null
+                }
                 {
                     localUserId ? 
-
                     <li >
                         <button className='navItem otherBtn' onClick={()=>setShowOtherMenu(!showOtherMenu)}> 
-                        <i class="fas fa-bars"></i>
+                            Other &nbsp; &nbsp; {showOtherMenu ? <i class="fas fa-angle-up"></i> : <i class="fas fa-angle-down"></i>} 
                         </button>
                         {showOtherMenu ?
-                            <ul className='otherMenu'>
+                            <ul className={showMainMenu ? 'otherMenu' : 'otherMenu mxHght'}>
                                 
                                 {localUserId ?
                                     location.pathname === "/journals" ?null :
@@ -86,7 +93,6 @@ function NavBar({handleShow}) {
                                     :null
                                 }
                             </ul>
-
                         :
                         null
                         

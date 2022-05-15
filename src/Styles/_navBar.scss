@@ -22,6 +22,15 @@ nav {
     background-color: $purple;
     color: white;
 
+    .hamburger{
+        display: none;
+        color: white;
+        background-color: transparent;
+        padding: 1rem 0.5rem;
+        font-size: 2rem;
+
+    }
+
     div {
         display: flex;
         justify-content: space-between;
@@ -34,7 +43,6 @@ nav {
                 width: 1.5rem;
             }
         }
-        
         ul {
             display: flex;
             flex-direction: row;
@@ -47,7 +55,7 @@ nav {
                     font-size: 2rem;
                 }
                 i {
-                    font-size: 2rem;
+                    font-size: 1.4rem;
                 }
             }
         
@@ -63,7 +71,7 @@ nav {
                 }
             }
         }
-        
+
         .otherMenu{
             background-color: $purple;   
             position: absolute;
@@ -73,26 +81,90 @@ nav {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             padding: 10px;
             animation: slideOut 0.5s ease forwards;
             transform-origin: top right;
             z-index: 1005;
-
+            text-align: center;
             li {
                 padding: 10px;
+                width: 100%;
                 a{
                     margin: 1rem 0;
                 }
-    
                 a:hover, a:active {
                     text-decoration: underline white solid ;
                 }
                 
             }
         }
+        .mxHght{
+            height: 100vh;
+        }
 
         @keyframes slideOut {
+            0% {
+                transform: scaley(0);
+            }
+
+            100% {
+                transform: scaley(1);
+            }
+        }
+    }
+}
+@media (max-width: 750px) {
+    nav {
+        .hamburger{
+            display: block;
+        }
+        .mainMenuClosBtn {
+            display: block;
+        }
+        div {
+            .otherMenu{
+                // background-color: red;
+                min-height: 10vh;
+            }
+            .closeMenuBtn{
+                position: absolute;
+                top: 10px;
+                right: 15px;
+                // color: #c6cece;
+                i {
+                    transition: .3s all ease;
+                    color: #b4b4b4;
+                }
+                li {
+                    width: 100%;
+                }
+            }
+            .closeMenuBtn:hover i, .closeMenuBtn:focus i{
+                color: #F8FFFF;
+            }
+
+        }
+        .mainMenu{
+            padding: 60px;
+            position: absolute;
+            background-color: $purple;   
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            flex-direction: column;
+            z-index: 1000;
+            text-align: center;
+            animation: slideOutMenu 0.5s ease forwards ;
+            transform-origin: top right;
+
+        }
+        .hide {
+            display: none;
+        }
+
+        
+        @keyframes slideOutMenu {
             0% {
                 transform: scaleX(0);
             }
@@ -100,7 +172,9 @@ nav {
             100% {
                 transform: scaleX(1);
             }
-            
         }
+
+
     }
+
 }

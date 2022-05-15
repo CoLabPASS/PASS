@@ -255,6 +255,13 @@ nav {
   background-color: #34344a;
   color: white;
 }
+nav .hamburger {
+  display: none;
+  color: white;
+  background-color: transparent;
+  padding: 1rem 0.5rem;
+  font-size: 2rem;
+}
 nav div {
   display: flex;
   justify-content: space-between;
@@ -279,7 +286,7 @@ nav div ul .navItem .otherBtn {
   font-size: 2rem;
 }
 nav div ul .navItem i {
-  font-size: 2rem;
+  font-size: 1.4rem;
 }
 nav div ul li {
   padding: 0 1rem;
@@ -301,15 +308,16 @@ nav div .otherMenu {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   padding: 10px;
   -webkit-animation: slideOut 0.5s ease forwards;
           animation: slideOut 0.5s ease forwards;
   transform-origin: top right;
   z-index: 1005;
+  text-align: center;
 }
 nav div .otherMenu li {
   padding: 10px;
+  width: 100%;
 }
 nav div .otherMenu li a {
   margin: 1rem 0;
@@ -318,23 +326,86 @@ nav div .otherMenu li a:hover, nav div .otherMenu li a:active {
   -webkit-text-decoration: underline white solid;
           text-decoration: underline white solid;
 }
+nav div .mxHght {
+  height: 100vh;
+}
 @-webkit-keyframes slideOut {
   0% {
-    transform: scaleX(0);
+    transform: scaley(0);
   }
   100% {
-    transform: scaleX(1);
+    transform: scaley(1);
   }
 }
 @keyframes slideOut {
   0% {
-    transform: scaleX(0);
+    transform: scaley(0);
   }
   100% {
-    transform: scaleX(1);
+    transform: scaley(1);
   }
 }
 
+@media (max-width: 750px) {
+  nav .hamburger {
+    display: block;
+  }
+  nav .mainMenuClosBtn {
+    display: block;
+  }
+  nav div .otherMenu {
+    min-height: 10vh;
+  }
+  nav div .closeMenuBtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+  }
+  nav div .closeMenuBtn i {
+    transition: 0.3s all ease;
+    color: #b4b4b4;
+  }
+  nav div .closeMenuBtn li {
+    width: 100%;
+  }
+  nav div .closeMenuBtn:hover i, nav div .closeMenuBtn:focus i {
+    color: #F8FFFF;
+  }
+  nav .mainMenu {
+    padding: 60px;
+    position: absolute;
+    background-color: #34344a;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    flex-direction: column;
+    z-index: 1000;
+    text-align: center;
+    -webkit-animation: slideOutMenu 0.5s ease forwards;
+            animation: slideOutMenu 0.5s ease forwards;
+    transform-origin: top right;
+  }
+  nav .hide {
+    display: none;
+  }
+  @-webkit-keyframes slideOutMenu {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+  @keyframes slideOutMenu {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+}
 header {
   height: 80vh;
   background-image: url(../Assets/Mountain_landing_page.png);
